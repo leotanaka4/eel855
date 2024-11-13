@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+    <!-- POSITIONER JOINTS -->
+    <!-- joint 1 (A1) -->
+    <joint name="${prefix}joint_e1" type="revolute">
+      <origin xyz="0 0 0.865" rpy="0 ${DEG2RAD * 180} 0"/>
+      <parent link="${prefix}kp2_base_link"/>
+      <child link="${prefix}kp2_link_1"/>
+      <axis xyz="1 0 0"/>
+      <limit effort="0" lower="${DEG2RAD * 0}" upper="${DEG2RAD * 115}" velocity="${DEG2RAD * 60}"/>
+    </joint>
+    <!-- joint 2 (A2) -->
+    <joint name="${prefix}joint_e2" type="revolute">
+      <origin xyz="0 0 -0.22" rpy="0 ${DEG2RAD * 180} 0"/><!--For an aligned coordinate system for the plate use rpy="0 0 1.2653638"-->
+      <parent link="${prefix}kp2_link_1"/>
+      <child link="${prefix}kp2_link_2"/>
+      <axis xyz="0 0 1"/>
+      <limit effort="0" lower="${-DEG2RAD * 185}" upper="${DEG2RAD * 185}" velocity="${DEG2RAD * 90}"/>
+    </joint>
+    
+    <!-- tool frame - fixed frame -->
+    <joint name="${prefix}joint_e2-tool0" type="fixed">
+      <parent link="${prefix}kp2_link_2"/>
+      <child link="${prefix}kp2_tool0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+	
+  </xacro:macro>
+</robot>
+
+

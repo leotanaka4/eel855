@@ -1,0 +1,251 @@
+\documentclass[10pt]{article}
+
+% Pacotes extras necessários
+\usepackage{amsmath}
+\usepackage[lmargin=0.5in, rmargin=0.5in, tmargin=0.5in, bmargin=0.5in, includehead, includefoot]{geometry}
+\usepackage{amsfonts}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{appendix} % For creating appendix sections
+
+% More defined colors
+\usepackage[dvipsnames]{xcolor}
+
+% Define a custom style for the code listing
+\lstdefinestyle{mystyle}{
+    language=Octave,
+    backgroundcolor=\color{white},   % Choose the background color
+    basicstyle=\ttfamily\footnotesize, % Set the font and size for the code
+    numbers=left,                    % Line numbers on the left
+    numberstyle=\tiny\color{gray},   % Line numbers style
+    numbersep=5pt,                   % Distance of line numbers from the code
+    tabsize=2,                       % Set tab size (default is 8 spaces)
+    breaklines=true,                 % Automatically wrap long lines
+    keywordstyle=\color{blue},       % Keywords in blue
+    commentstyle=\color{green!60!black}, % Comments in green
+    stringstyle=\color{orange},      % Strings in orange
+    frame=single,                    % Draw a frame around the code
+    keepspaces=true,                 % Preserve spaces in text
+    showspaces=false,                % Don't show spaces in strings
+    showstringspaces=false,          % Don't show spaces in strings
+    showtabs=false,                  % Don't show tabs in strings
+    % Add any other options you need
+}
+
+\lstset{style=mystyle} % Set the custom style
+ 
+% Required package
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\graphicspath{ {./images/} }
+
+% Sets para outras partes
+\setlength{\parindent}{0pt}
+\setstretch{1.5}
+\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\sinc}{sinc}
+
+%% Facilidades
+%% -- Laplace
+\newcommand{\Lap}[1]{\mathcal{L}\left\{#1\right\}}
+
+%% -- Negrito em matemáticas
+\newcommand{\bm}[1]{\boldsymbol{#1}}
+
+
+% ------- Estilo do trabalho -------- %
+\fancypagestyle{capa}{
+    \fancyhf{}
+    \renewcommand\headrulewidth{0pt}
+}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{\thepage}
+\fancyfoot{}
+% ----------------------------------- %
+
+% Dados do Grupo
+\title{ Robótica e Automação - Trabalho Nº1}
+\author{
+    Leonardo Soares da Costa Tanaka - DRE: 121067652 \\
+    Engenharia de Controle e Automação/UFRJ \\
+    Rio de Janeiro, Brasil \\
+    Novembro de 2024
+}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{capa}
+
+\section{Introdução}
+
+\quad Este trabalho tem como objetivo explorar a modelagem cinemática de um sistema robótico composto por um braço robótico Kuka KR90 de 6 graus de liberdade e uma mesa posicionadora KUKA KP2 de 2 graus de liberdade.
+O efetuador do braço é uma tocha de soldagem, e a cinemática do sistema é descrita por meio de dois arquivos URDF: um para o braço e outro para a mesa.
+Com base nesses arquivos e na transformação homogênea Tat fornecida, será possível determinar os parâmetros de Denavit-Hartenberg (DH) de ambos os subsistemas (KR90 e KP2) e do sistema integrado KR90-KP2, visando descrever a cinemática direta e desenvolver o modelo no Matlab utilizando o toolbox de robótica de Peter Corke.
+O trabalho também inclui a validação da cinemática direta e inversa do sistema através de uma trajetória de waypoints pré-definidos, assim como a determinação e validação do Jacobiano do sistema.
+
+\section{Desenvolvimento}
+
+\quad Foi considerado o sistema da figura composto por um braço robótico Kuka KR90 do tipo 6R e uma
+mesa posicionadora KUKA KP2 do tipo 2R.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.65]{figura1.png}
+    \caption{Braço robótico e mesa posicionadora}
+\end{figure}
+
+\quad Foi considerado que o efetuador do braço manipulador é uma tocha para soldagem.
+Ademais, a cinemática deste sistema robótico é descrito em 2 arquivos urdf, um descrevendo a
+cinemática do KR90, kr90.urdf e outro descrevendo a cinemática da mesa posicionadora
+KP2, kp2.urdf.
+Além disso, foi considerado que a transformação homogênea do sistema de coordenadas da mesa Ftb com
+respeito a base do braço Fab é dada por:
+
+\begin{equation}
+    T_{at} = \begin{bmatrix}
+        -1 & 0 & 0 & 1.73923 \\
+        0 & -1 & 0 & 0.39198 \\
+        0 & 0 & 1 & -0.46360 \\
+        0 & 0 & 0 & 1 
+        \end{bmatrix}
+\end{equation}
+
+\subsection{Parâmetros de Denavit-Hartenberg do braço robótico KR90}
+
+\quad Para determinar os parâmetros de Denavit-Hartenberg do braço robótico KR90, foi necessário analisar o URDF desse braço robótico que pode ser descrito pela seguinte tabela:
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \textbf{Joint $i$} & \textbf{parent} & \textbf{child} & \textbf{xyz} & \textbf{rpy} & \textbf{type} & \textbf{axis} \\ \hline
+    1 & kr90\_base\_link & kr90\_link\_1 & 0, 0, 0.675 & 0, 0, 0 & revolute & 0, 0, -1 \\ \hline
+    2 & kr90\_link\_1 & kr90\_link\_2 & 0.35, 0, 0 & 0, 0, 0 & revolute & 0, 1, 0 \\ \hline
+    3 & kr90\_link\_2 & kr90\_link\_3 & 1.35, 0, 0 & 0, 0, 0 & revolute & 0, 1, 0 \\ \hline
+    4 & kr90\_link\_3 & kr90\_link\_4 & 0, 0, -0.041 & 0, 0, 0 & revolute & -1, 0, 0 \\ \hline
+    5 & kr90\_link\_4 & kr90\_link\_5 & 1.2, 0, 0 & 0, 0, 0 & revolute & 0, 1, 0 \\ \hline
+    6 & kr90\_link\_5 & kr90\_link\_6 & 0.215, 0, 0 & 0, 1.5708, 0 & revolute & 0, 0, -1 \\ \hline
+    7 & kr90\_link\_6 & kr90\_tool0 & 0.03046, 0.033, 0.43161 & -0.2356, 0.8988, -0.0942 & fixed & - \\ \hline
+    \end{tabular}
+    \caption{URDF do braço robótico KR90}
+\end{table}
+
+\quad Além disso, foi posicionado o eixo z do sistema de coordenadas 0 \((z_0)\) no mesmo sentido e direção do eixo de rotação da junta 1.
+Fazendo a seguinte transformação homogênea da base para o eixo de coordenadas 0:
+
+\begin{equation}
+    T_{b0} = \begin{bmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & -1 & 0 & 0 \\
+        0 & 0 & -1 & 0 \\
+        0 & 0 & 0 & 1 
+        \end{bmatrix}
+\end{equation}
+
+\quad Então, foi possível obter os parâmetros do Denavit-Hartenberg Standard a seguir:
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \textbf{Elo $i$} & $\theta_i$ & $d_i$ & $a_i$ & $\alpha_i$ & \textbf{type} & \textbf{offset} \\ \hline
+    1 & $\theta_1$ & -0.675 & 0.35 & $\pi/2$ & revolute & 0 \\ \hline
+    2 & $\theta_2$ & 0 & 1.35 & 0 & revolute & 0 \\ \hline
+    3 & $\theta_3$ & 0 & 0.041 & $-\pi/2$ & revolute & $\pi/2$ \\ \hline
+    4 & $\theta_4$ & -1.2 & 0 & $\pi/2$ & revolute & 0 \\ \hline
+    5 & $\theta_5$ & 0 & 0.15203 & $-\pi/2$ & revolute & $-\pi/4$ \\ \hline
+    6 & $\theta_6$ & -0.15203 & 0 & $-\pi$ & revolute & 0 \\ \hline
+    \end{tabular}
+    \caption{DH do braço robótico}
+\end{table}
+
+\quad Além disso, foi necessário obter a transformação homogênea do sistema de coordenadas 6 para o efetuador a seguir:
+
+\begin{equation}
+    T_{6e} = \begin{bmatrix}
+        0.61978941 & -0.09040281 & 0.77954372 & 0.03046 \\
+        -0.05855747 & 0.98524594 & 0.16081497 & 0.033 \\
+        -0.78258041 & -0.14531952 & 0.60535125 & 0.43161 \\
+        0 & 0 & 0 & 1 
+        \end{bmatrix}
+\end{equation}
+
+\subsection{Parâmetros de Denavit-Hartenberg da mesa posicionadora KP2}
+
+\quad Para determinar os parâmetros de Denavit-Hartenberg da mesa posicionadora KP2, foi necessário analisar o URDF dessa mesa posicionadora que pode ser descrita pela seguinte tabela:
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \textbf{Joint $i$} & \textbf{parent} & \textbf{child} & \textbf{xyz} & \textbf{rpy} & \textbf{type} & \textbf{axis} \\ \hline
+    1 & kp2\_base\_link & kp2\_link\_1 & 0, 0, 0.865 & 0, 3.1416, 0 & revolute & 1, 0, 0 \\ \hline
+    2 & kp2\_link\_1 & kp2\_link\_2 & 0, 0, -0.22 & 0, 3.1416, 0 & revolute & 0, 0, 1 \\ \hline
+    3 & kp2\_link\_2 & kp2\_tool0 & 0, 0, 0 & 0, 0, 0 & fixed & - \\ \hline
+    \end{tabular}
+    \caption{URDF da mesa posicionadora KP2}
+\end{table}
+
+\quad Além disso, foi posicionado o eixo z do sistema de coordenadas 0 \((z_0)\) no mesmo sentido e direção do eixo de rotação da junta 1.
+Fazendo a seguinte transformação homogênea da base para o eixo de coordenadas 0:
+
+\begin{equation}
+    T_{b0} = \begin{bmatrix}
+        0 & 0 & -1 & 0 \\
+        0 & 1 & 0 & 0 \\
+        1 & 0 & 0 & 0.865 \\
+        0 & 0 & 0 & 1 
+        \end{bmatrix}
+\end{equation}
+
+\quad Então, foi possível obter os parâmetros do Denavit-Hartenberg Standard a seguir:
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \textbf{Elo $i$} & $\theta_i$ & $d_i$ & $a_i$ & $\alpha_i$ & \textbf{type} & \textbf{offset} \\ \hline
+    1 & $\theta_1$ & 0 & 0 & $-\pi/2$ & revolute & $-\pi/2$ \\ \hline
+    2 & $\theta_2$ & 0.22 & 0 & 0 & revolute & $\pi/2$ \\ \hline
+    \end{tabular}
+    \caption{DH do braço robótico}
+\end{table}
+
+\quad Além disso, foi necessário obter a transformação homogênea do sistema de coordenadas 2 para o efetuador a seguir:
+
+\begin{equation}
+    T_{2e} = \begin{bmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1 
+        \end{bmatrix}
+\end{equation}
+
+\subsection{Parâmetros de Denavit-Hartenberg dos sistemas KR90-KP2}
+
+\subsection{Modelos dos sistemas}
+
+\subsection{Validação dos parâmetros de Denavit-Hartenberg}
+
+\subsection{Verificação dos resultados da cinemática inversa}
+
+\subsection{Determine o Jacobiano de Ft com respeito a Fde}
+
+\subsection{Validação do Jacobiano}
+
+\subsection{Implementação da solução da cinemática inversa pelo método iterativo}
+
+\section{Conclusão}
+
+\end{document}

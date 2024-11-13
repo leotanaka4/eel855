@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+    <!-- JOINTS -->
+    <!-- joint 1 (A1) -->
+    <joint name="${prefix}joint_a1" type="revolute">
+      <origin xyz="0 0 0.675" rpy="0 0 0"/>
+      <parent link="${prefix}kr90_base_link"/>
+      <child link="${prefix}kr90_link_1"/>
+      <axis xyz="0 0 -1"/>
+      <limit effort="0" lower="${-DEG2RAD * 185}" upper="${DEG2RAD * 185}" velocity="${DEG2RAD * 105}"/>
+    </joint>
+    <!-- joint 2 (A2) -->
+    <joint name="${prefix}joint_a2" type="revolute">
+      <origin xyz="0.35 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}kr90_link_1"/>
+      <child link="${prefix}kr90_link_2"/>
+      <axis xyz="0 1 0"/>
+      <limit effort="0" lower="${-DEG2RAD * 140}" upper="${DEG2RAD * 140}" velocity="${DEG2RAD * 101}"/>
+    </joint>
+    <!-- joint 3 (A3) -->
+    <joint name="${prefix}joint_a3" type="revolute">
+      <origin xyz="1.35 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}kr90_link_2"/>
+      <child link="${prefix}kr90_link_3"/>
+      <axis xyz="0 1 0"/>
+      <limit effort="0" lower="${-DEG2RAD * 120}" upper="${DEG2RAD * 155}" velocity="${DEG2RAD * 107}"/>
+    </joint>
+    <!-- joint 4 (A4) -->
+    <joint name="${prefix}joint_a4" type="revolute">
+      <origin xyz="0 0 -0.041" rpy="0 0 0"/>
+      <parent link="${prefix}kr90_link_3"/>
+      <child link="${prefix}kr90_link_4"/>
+      <axis xyz="-1 0 0"/>
+      <limit effort="0" lower="${-DEG2RAD * 350}" upper="${DEG2RAD * 350}" velocity="${DEG2RAD * 292}"/>
+    </joint>
+    <!-- joint 5 (A5) -->
+    <joint name="${prefix}joint_a5" type="revolute">
+      <origin xyz="1.2 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}kr90_link_4"/>
+      <child link="${prefix}kr90_link_5"/>
+      <axis xyz="0 1 0"/>
+      <limit effort="0" lower="${-DEG2RAD * 125}" upper="${DEG2RAD * 125}" velocity="${DEG2RAD * 258}"/>
+    </joint>
+    <!-- joint 6 (A6) -->
+    <joint name="${prefix}joint_a6" type="revolute">
+      <origin xyz="0.215 0 0" rpy="0 1.5708 0"/>
+      <parent link="${prefix}kr90_link_5"/>
+      <child link="${prefix}kr90_link_6"/>
+      <axis xyz="0 0 -1"/>
+      <limit effort="0" lower="${-DEG2RAD * 350}" upper="${DEG2RAD * 350}" velocity="${DEG2RAD * 284}"/>
+    </joint>
+
+    <joint name="${prefix}joint_a6-tool0" type="fixed">
+      <parent link="${prefix}kr90_link_6"/>
+      <child link="${prefix}kr90_tool0"/>
+      <origin xyz="0.03046 0.033 0.43161" rpy="-${DEG2RAD * 13.5} ${DEG2RAD * 51.5} -${DEG2RAD * 5.40}"/><!--actual torch (after hits)-->
+      <axis xyz="0 0 -1"/>
+    </joint>
+
+  </xacro:macro>
+</robot>
+
+
