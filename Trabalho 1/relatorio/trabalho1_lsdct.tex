@@ -108,8 +108,8 @@ mesa posicionadora KUKA KP2 do tipo 2R.
 Ademais, a cinemática deste sistema robótico é descrito em 2 arquivos urdf, um descrevendo a
 cinemática do KR90, kr90.urdf e outro descrevendo a cinemática da mesa posicionadora
 KP2, kp2.urdf.
-Além disso, foi considerado que a transformação homogênea do sistema de coordenadas da mesa Ftb com
-respeito a base do braço Fab é dada por:
+Além disso, foi considerado que a transformação homogênea do sistema de coordenadas da mesa $F_{tb}$ com
+respeito a base do braço $F_{ab}$ é dada por:
 
 \begin{equation}
     T_{at} = \begin{bmatrix}
@@ -163,8 +163,8 @@ Fazendo a seguinte transformação homogênea da base para o eixo de coordenadas
     2 & $\theta_2$ & 0 & 1.35 & 0 & revolute & 0 \\ \hline
     3 & $\theta_3$ & 0 & 0.041 & $-\pi/2$ & revolute & $\pi/2$ \\ \hline
     4 & $\theta_4$ & -1.2 & 0 & $\pi/2$ & revolute & 0 \\ \hline
-    5 & $\theta_5$ & 0 & 0.15203 & $-\pi/2$ & revolute & $-\pi/4$ \\ \hline
-    6 & $\theta_6$ & -0.15203 & 0 & $-\pi$ & revolute & 0 \\ \hline
+    5 & $\theta_5$ & 0 & 0 & $-\pi/2$ & revolute & 0 \\ \hline
+    6 & $\theta_6$ & -0.215 & 0 & $-\pi$ & revolute & 0 \\ \hline
     \end{tabular}
     \caption{DH do braço robótico}
 \end{table}
@@ -234,18 +234,88 @@ Fazendo a seguinte transformação homogênea da base para o eixo de coordenadas
 
 \subsection{Parâmetros de Denavit-Hartenberg dos sistemas KR90-KP2}
 
+\quad Para determinar os parâmetros de Denavit-Hartenberg do sistema KR90-KP2,
+foi necessário analisar o URDF do braço robótico KP90, da mesa posicionadora KP2 e
+a transformação homogênea do sistema de coordenadas da mesa $F_{tb}$ com respeito a base do braço $F_{ab}$,
+que estão respectivamente na Tabela 1, na Tabela 2 e na fórmula (1).
+
+
+\quad Além disso, foi posicionado o eixo z do sistema de coordenadas 0 \((z_0)\) no mesmo sentido e direção do eixo de rotação da junta 1.
+Fazendo a seguinte transformação homogênea da base para o eixo de coordenadas 0:
+
+\begin{equation}
+    T_{b0} = \begin{bmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1
+        \end{bmatrix}
+\end{equation}
+
+\quad Então, foi possível obter os parâmetros do Denavit-Hartenberg Standard a seguir:
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \textbf{Elo $i$} & $\theta_i$ & $d_i$ & $a_i$ & $\alpha_i$ & \textbf{type} & \textbf{offset} \\ \hline
+    1 & $\theta_1$ & -0.22 & 0 & $\pi/2$ & revolute & $-\pi/2$ \\ \hline
+    2 & $\theta_2$ & -1.73923 & -0.39198 & $\pi/2$ & revolute & 0 \\ \hline
+    3 & $\theta_3$ & -0.27360 & 0.35 & $\pi/2$ & revolute & 0 \\ \hline
+    4 & $\theta_4$ & 0 & 1.35 & 0 & revolute & 0 \\ \hline
+    5 & $\theta_5$ & 0 & 0.041 & $-\pi/2$ & revolute & $\pi/2$ \\ \hline
+    6 & $\theta_6$ & -1.2 & 0 & $\pi/2$ & revolute & 0 \\ \hline
+    7 & $\theta_7$ & 0 & 0 & $-\pi/2$ & revolute & 0 \\ \hline
+    8 & $\theta_8$ & -0.215 & 0 & $-\pi$ & revolute & 0 \\ \hline
+    \end{tabular}
+    \caption{DH do sistema KP90-KP2}
+\end{table}
+
+\quad Além disso, foi necessário obter a transformação homogênea do sistema de coordenadas 8 para o efetuador a seguir:
+
+\begin{equation}
+    T_{8e} = \begin{bmatrix}
+        0.61978941 & -0.09040281 & 0.77954372 & 0.03046 \\
+        -0.05855747 & 0.98524594 & 0.16081497 & 0.033 \\
+        -0.78258041 & -0.14531952 & 0.60535125 & 0.43161 \\
+        0 & 0 & 0 & 1 
+        \end{bmatrix}
+\end{equation}
+
 \subsection{Modelos dos sistemas}
+
+\quad Utilizando o Robot Toolbox do Matlab foi construído os modelos utilizando a classe SerialLink de cada um dos 3 itens anteriores.
+Portanto, para realizar essa construção dos modelos, foi necessário utilizar a transformação homogênea da base para o eixo de coordenadas 0 \( (T_{b0}) \),
+o Denavit-Hartenberg do eixo de coordenadas 0 até o eixo de coordenadas do número de juntas \( (T_{0n}) \) e
+a transformação homogênea do último eixo de coordenadas do Denavit-Hartenberg até o eixo de coordenadas do efetuador \( (T_{ne}) \).
+
+% Imagem modelo 1
+
+% Imagem modelo 2
+
+% Imagem modelo 3
 
 \subsection{Validação dos parâmetros de Denavit-Hartenberg}
 
+\quad Para realizar a validação dos parâmetros de Denavit-Hartenberg dos três modelos,
+foi feita a visualização de 4 configurações diferentes para cada modelo utilizando o Robot Toolbox do Matlab.
+
+% 4 Imagens das configurações do modelo 1
+
+% 4 Imagens das configurações do modelo 2
+
+% 4 Imagens das configurações do modelo 3
+
 \subsection{Verificação dos resultados da cinemática inversa}
 
-\subsection{Determine o Jacobiano de Ft com respeito a Fde}
+\subsection{Determinação do Jacobiano de Ft com respeito a Fde}
 
-\subsection{Validação do Jacobiano}
+\subsection{Validação do Jacobiano  de Ft com respeito a Fde}
 
 \subsection{Implementação da solução da cinemática inversa pelo método iterativo}
 
 \section{Conclusão}
+
+\section*{Apêndice}
 
 \end{document}

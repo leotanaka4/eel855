@@ -1,6 +1,6 @@
-PWD c:\Users\Lucas\OneDrive\Área de Trabalho\Período 24.2\Robôtica e Automação\Trabalhos\Trabalho 1\relatorio
+PWD c:\Users\Lucas\OneDrive\Área de Trabalho\Período 24.2\Robôtica e Automação\Trabalhos\eel855\Trabalho 1\relatorio
 INPUT C:\Users\Lucas\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\Lucas\OneDrive\Área de Trabalho\Período 24.2\Robôtica e Automação\Trabalhos\Trabalho 1\relatorio\trabalho1_lsdct.tex
+INPUT c:\Users\Lucas\OneDrive\Área de Trabalho\Período 24.2\Robôtica e Automação\Trabalhos\eel855\Trabalho 1\relatorio\trabalho1_lsdct.tex
 OUTPUT trabalho1_lsdct.log
 INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
@@ -594,7 +594,6 @@ OUTPUT trabalho1_lsdct.pdf
 INPUT .\images\\figura1.png
 INPUT .\images\\figura1.png
 INPUT .\images\\figura1.png
-INPUT C:\Users\Lucas\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
@@ -603,6 +602,7 @@ INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\sym
 INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
+INPUT C:\Users\Lucas\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
 INPUT trabalho1_lsdct.aux
