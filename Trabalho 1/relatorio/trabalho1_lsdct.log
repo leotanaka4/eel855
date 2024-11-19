@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  17 NOV 2024 23:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  18 NOV 2024 22:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -205,6 +205,30 @@ Package: appendix 2020/02/08 v1.2c extra appendix facilities
 \c@@pps=\count286
 \c@@ppsavesec=\count287
 \c@@ppsaveapp=\count288
+) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
+Package: subcaption 2023/02/19 v1.6 Sub-captions (AR)
+ (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/03/12 v3.6j Customizing captions (AR)
+ (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
+\caption@tempdima=\dimen164
+\captionmargin=\dimen165
+\caption@leftmargin=\dimen166
+\caption@rightmargin=\dimen167
+\caption@width=\dimen168
+\caption@indent=\dimen169
+\caption@parindent=\dimen170
+\caption@hangindent=\dimen171
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count289
+\c@continuedfloat=\count290
+Package caption Info: listings package is loaded.
+)
+Package caption Info: New subtype `subfigure' on input line 239.
+\c@subfigure=\count291
+Package caption Info: New subtype `subtable' on input line 239.
+\c@subtable=\count292
 ) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
  (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
@@ -227,8 +251,8 @@ File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
 \pgfutil@everybye=\toks27
-\pgfutil@tempdima=\dimen164
-\pgfutil@tempdimb=\dimen165
+\pgfutil@tempdima=\dimen172
+\pgfutil@tempdimb=\dimen173
  (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common-lists.tex)) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
 \pgfutil@abb=\box56
 ) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
@@ -243,26 +267,26 @@ Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
  (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeysfiltered.code.tex
 \pgfkeys@tmptoks=\toks30
 ))
-\pgf@x=\dimen166
-\pgf@y=\dimen167
-\pgf@xa=\dimen168
-\pgf@ya=\dimen169
-\pgf@xb=\dimen170
-\pgf@yb=\dimen171
-\pgf@xc=\dimen172
-\pgf@yc=\dimen173
-\pgf@xd=\dimen174
-\pgf@yd=\dimen175
+\pgf@x=\dimen174
+\pgf@y=\dimen175
+\pgf@xa=\dimen176
+\pgf@ya=\dimen177
+\pgf@xb=\dimen178
+\pgf@yb=\dimen179
+\pgf@xc=\dimen180
+\pgf@yc=\dimen181
+\pgf@xd=\dimen182
+\pgf@yd=\dimen183
 \w@pgf@writea=\write3
 \r@pgf@reada=\read3
-\c@pgf@counta=\count289
-\c@pgf@countb=\count290
-\c@pgf@countc=\count291
-\c@pgf@countd=\count292
+\c@pgf@counta=\count293
+\c@pgf@countb=\count294
+\c@pgf@countc=\count295
+\c@pgf@countd=\count296
 \t@pgf@toka=\toks31
 \t@pgf@tokb=\toks32
 \t@pgf@tokc=\toks33
-\pgf@sys@id@count=\count293
+\pgf@sys@id@count=\count297
  (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
 File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
 )
@@ -273,59 +297,59 @@ File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
 File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
 ))) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfsyssoftpath@smallbuffer@items=\count294
-\pgfsyssoftpath@bigbuffer@items=\count295
+\pgfsyssoftpath@smallbuffer@items=\count298
+\pgfsyssoftpath@bigbuffer@items=\count299
 ) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.code.tex
 Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
  (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex
-\pgfmath@dimen=\dimen176
-\pgfmath@count=\count296
+\pgfmath@dimen=\dimen184
+\pgfmath@count=\count300
 \pgfmath@box=\box57
 \pgfmath@toks=\toks34
 \pgfmath@stack@operand=\toks35
 \pgfmath@stack@operation=\toks36
 ) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.random.code.tex) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.base.code.tex) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.round.code.tex) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.tex))) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count297
+\c@pgfmathroundto@lastzeros=\count301
 )) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.tex) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@picminx=\dimen177
-\pgf@picmaxx=\dimen178
-\pgf@picminy=\dimen179
-\pgf@picmaxy=\dimen180
-\pgf@pathminx=\dimen181
-\pgf@pathmaxx=\dimen182
-\pgf@pathminy=\dimen183
-\pgf@pathmaxy=\dimen184
-\pgf@xx=\dimen185
-\pgf@xy=\dimen186
-\pgf@yx=\dimen187
-\pgf@yy=\dimen188
-\pgf@zx=\dimen189
-\pgf@zy=\dimen190
+\pgf@picminx=\dimen185
+\pgf@picmaxx=\dimen186
+\pgf@picminy=\dimen187
+\pgf@picmaxy=\dimen188
+\pgf@pathminx=\dimen189
+\pgf@pathmaxx=\dimen190
+\pgf@pathminy=\dimen191
+\pgf@pathmaxy=\dimen192
+\pgf@xx=\dimen193
+\pgf@xy=\dimen194
+\pgf@yx=\dimen195
+\pgf@yy=\dimen196
+\pgf@zx=\dimen197
+\pgf@zy=\dimen198
 ) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@path@lastx=\dimen191
-\pgf@path@lasty=\dimen192
+\pgf@path@lastx=\dimen199
+\pgf@path@lasty=\dimen256
 ) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@shorten@end@additional=\dimen193
-\pgf@shorten@start@additional=\dimen194
+\pgf@shorten@end@additional=\dimen257
+\pgf@shorten@start@additional=\dimen258
 ) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfpic=\box58
 \pgf@hbox=\box59
 \pgf@layerbox@main=\box60
-\pgf@picture@serial@count=\count298
+\pgf@picture@serial@count=\count302
 ) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgflinewidth=\dimen195
+\pgflinewidth=\dimen259
 ) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@pt@x=\dimen196
-\pgf@pt@y=\dimen197
-\pgf@pt@temp=\dimen198
+\pgf@pt@x=\dimen260
+\pgf@pt@y=\dimen261
+\pgf@pt@temp=\dimen262
 ) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex
@@ -334,12 +358,12 @@ File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfarrowsep=\dimen199
+\pgfarrowsep=\dimen263
 ) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@max=\dimen256
-\pgf@sys@shading@range@num=\count299
-\pgf@shadingcount=\count300
+\pgf@max=\dimen264
+\pgf@sys@shading@range@num=\count303
+\pgf@shadingcount=\count304
 ) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
  (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
@@ -360,72 +384,72 @@ File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@nodesepstart=\dimen257
-\pgf@nodesepend=\dimen258
+\pgf@nodesepstart=\dimen265
+\pgf@nodesepend=\dimen266
 ) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
 )) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.sty (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex)) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex)) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.code.tex
 Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
  (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex)
-\pgffor@iter=\dimen259
-\pgffor@skip=\dimen260
+\pgffor@iter=\dimen267
+\pgffor@skip=\dimen268
 \pgffor@stack=\toks37
 \pgffor@toks=\toks38
 )) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
 Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
  (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@plot@mark@count=\count301
-\pgfplotmarksize=\dimen261
+\pgf@plot@mark@count=\count305
+\pgfplotmarksize=\dimen269
 )
-\tikz@lastx=\dimen262
-\tikz@lasty=\dimen263
-\tikz@lastxsaved=\dimen264
-\tikz@lastysaved=\dimen265
-\tikz@lastmovetox=\dimen266
-\tikz@lastmovetoy=\dimen267
-\tikzleveldistance=\dimen268
-\tikzsiblingdistance=\dimen269
+\tikz@lastx=\dimen270
+\tikz@lasty=\dimen271
+\tikz@lastxsaved=\dimen272
+\tikz@lastysaved=\dimen273
+\tikz@lastmovetox=\dimen274
+\tikz@lastmovetoy=\dimen275
+\tikzleveldistance=\dimen276
+\tikzsiblingdistance=\dimen277
 \tikz@figbox=\box63
 \tikz@figbox@bg=\box64
 \tikz@tempbox=\box65
 \tikz@tempbox@bg=\box66
-\tikztreelevel=\count302
-\tikznumberofchildren=\count303
-\tikznumberofcurrentchild=\count304
-\tikz@fig@count=\count305
+\tikztreelevel=\count306
+\tikznumberofchildren=\count307
+\tikznumberofcurrentchild=\count308
+\tikz@fig@count=\count309
  (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfmatrixcurrentrow=\count306
-\pgfmatrixcurrentcolumn=\count307
-\pgf@matrix@numberofcolumns=\count308
+\pgfmatrixcurrentrow=\count310
+\pgfmatrixcurrentcolumn=\count311
+\pgf@matrix@numberofcolumns=\count312
 )
-\tikz@expandcount=\count309
+\tikz@expandcount=\count313
  (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ))) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-07-01 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count310
+\l__color_backend_stack_int=\count314
 \l__pdf_internal_box=\box67
 ) (trabalho1_lsdct.aux)
 \openout1 = `trabalho1_lsdct.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -463,16 +487,16 @@ LaTeX Font Info:    ... okay on input line 85.
 
 (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count311
-\scratchdimen=\dimen270
+\scratchcounter=\count315
+\scratchdimen=\dimen278
 \scratchbox=\box68
-\nofMPsegments=\count312
-\nofMParguments=\count313
+\nofMPsegments=\count316
+\nofMParguments=\count317
 \everyMPshowfont=\toks39
-\MPscratchCnt=\count314
-\MPscratchDim=\dimen271
-\MPnumerator=\count315
-\makeMPintoPDFobject=\count316
+\MPscratchCnt=\count318
+\MPscratchDim=\dimen279
+\MPnumerator=\count319
+\makeMPintoPDFobject=\count320
 \everyMPtoPDFconversion=\toks40
 ) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -480,35 +504,132 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-\c@lstlisting=\count317
-LaTeX Font Info:    Trying to load font information for U+msa on input line 86.
+\c@lstlisting=\count321
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 87.
  (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 86.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 87.
  (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 <./images//figura1.png, id=4, 328.22626pt x 246.1697pt>
 File: ./images//figura1.png Graphic file (type png)
 <use ./images//figura1.png>
-Package pdftex.def Info: ./images//figura1.png  used on input line 103.
+Package pdftex.def Info: ./images//figura1.png  used on input line 104.
 (pdftex.def)             Requested size: 213.34453pt x 160.00839pt.
  [1
 
-{C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./images//figura1.png>] [2] [3] [4] [5] (trabalho1_lsdct.aux) ) 
+{C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./images//figura1.png>] [2]
+<./images//dh_modelo1.jpeg, id=25, 1606.0pt x 1204.5pt>
+File: ./images//dh_modelo1.jpeg Graphic file (type jpg)
+<use ./images//dh_modelo1.jpeg>
+Package pdftex.def Info: ./images//dh_modelo1.jpeg  used on input line 189.
+(pdftex.def)             Requested size: 281.05421pt x 210.79065pt.
+ [3 <./images//dh_modelo1.jpeg>]
+<./images//dh_modelo2.jpeg, id=29, 1606.0pt x 1204.5pt>
+File: ./images//dh_modelo2.jpeg Graphic file (type jpg)
+<use ./images//dh_modelo2.jpeg>
+Package pdftex.def Info: ./images//dh_modelo2.jpeg  used on input line 250.
+(pdftex.def)             Requested size: 281.05421pt x 210.79065pt.
+ [4 <./images//dh_modelo2.jpeg>] [5]
+<./images//figura2_modelo_braço.png, id=36, 437.9562pt x 454.3374pt>
+File: ./images//figura2_modelo_braço.png Graphic file (type png)
+<use ./images//figura2_modelo_braço.png>
+Package pdftex.def Info: ./images//figura2_modelo_braço.png  used on input line 328.
+(pdftex.def)             Requested size: 135.50624pt x 140.57275pt.
+<./images//figura3_modelo_mesa.png, id=37, 317.988pt x 452.4102pt>
+File: ./images//figura3_modelo_mesa.png Graphic file (type png)
+<use ./images//figura3_modelo_mesa.png>
+Package pdftex.def Info: ./images//figura3_modelo_mesa.png  used on input line 336.
+(pdftex.def)             Requested size: 135.50624pt x 192.78607pt.
+<./images//figura4_modelo_kr90kp2.png, id=38, 437.4744pt x 475.0548pt>
+File: ./images//figura4_modelo_kr90kp2.png Graphic file (type png)
+<use ./images//figura4_modelo_kr90kp2.png>
+Package pdftex.def Info: ./images//figura4_modelo_kr90kp2.png  used on input line 344.
+(pdftex.def)             Requested size: 135.50624pt x 147.14223pt.
+<./images//figura5_modelo1_theta2_minus90.png, id=39, 437.4744pt x 465.4188pt>
+File: ./images//figura5_modelo1_theta2_minus90.png Graphic file (type png)
+<use ./images//figura5_modelo1_theta2_minus90.png>
+Package pdftex.def Info: ./images//figura5_modelo1_theta2_minus90.png  used on input line 363.
+(pdftex.def)             Requested size: 108.40334pt x 115.32466pt.
+<./images//figura5_modelo1_theta2_minus90_theta3_90.png, id=40, 437.4744pt x 465.4188pt>
+File: ./images//figura5_modelo1_theta2_minus90_theta3_90.png Graphic file (type png)
+<use ./images//figura5_modelo1_theta2_minus90_theta3_90.png>
+Package pdftex.def Info: ./images//figura5_modelo1_theta2_minus90_theta3_90.png  used on input line 370.
+(pdftex.def)             Requested size: 108.40334pt x 115.32466pt.
+<./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30.png, id=41, 437.4744pt x 465.4188pt>
+File: ./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30.png Graphic file (type png)
+<use ./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30.png>
+Package pdftex.def Info: ./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30.png  used on input line 377.
+(pdftex.def)             Requested size: 108.40334pt x 115.32466pt.
+<./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30_theta5_30.png, id=42, 437.4744pt x 465.4188pt>
+File: ./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30_theta5_30.png Graphic file (type png)
+<use ./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30_theta5_30.png>
+Package pdftex.def Info: ./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30_theta5_30.png  used on input line 384.
+(pdftex.def)             Requested size: 108.40334pt x 115.32466pt.
+<./images//figura6_modelo2_theta1_30.png, id=43, 316.5426pt x 451.4466pt>
+File: ./images//figura6_modelo2_theta1_30.png Graphic file (type png)
+<use ./images//figura6_modelo2_theta1_30.png>
+Package pdftex.def Info: ./images//figura6_modelo2_theta1_30.png  used on input line 399.
+(pdftex.def)             Requested size: 108.40334pt x 154.59885pt.
+<./images//figura6_modelo2_theta1_minus30.png, id=44, 316.5426pt x 451.4466pt>
+File: ./images//figura6_modelo2_theta1_minus30.png Graphic file (type png)
+<use ./images//figura6_modelo2_theta1_minus30.png>
+Package pdftex.def Info: ./images//figura6_modelo2_theta1_minus30.png  used on input line 406.
+(pdftex.def)             Requested size: 108.40334pt x 154.59885pt.
+<./images//figura6_modelo2_theta2_45.png, id=45, 316.5426pt x 451.4466pt>
+File: ./images//figura6_modelo2_theta2_45.png Graphic file (type png)
+<use ./images//figura6_modelo2_theta2_45.png>
+Package pdftex.def Info: ./images//figura6_modelo2_theta2_45.png  used on input line 413.
+(pdftex.def)             Requested size: 108.40334pt x 154.59885pt.
+<./images//figura6_modelo2_theta1_minus30_theta2_45.png, id=46, 316.5426pt x 451.4466pt>
+File: ./images//figura6_modelo2_theta1_minus30_theta2_45.png Graphic file (type png)
+<use ./images//figura6_modelo2_theta1_minus30_theta2_45.png>
+Package pdftex.def Info: ./images//figura6_modelo2_theta1_minus30_theta2_45.png  used on input line 420.
+(pdftex.def)             Requested size: 108.40334pt x 154.59885pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./images//figura7_modelo3_theta4_minus90.png, id=47, 438.438pt x 450.483pt>
+File: ./images//figura7_modelo3_theta4_minus90.png Graphic file (type png)
+<use ./images//figura7_modelo3_theta4_minus90.png>
+Package pdftex.def Info: ./images//figura7_modelo3_theta4_minus90.png  used on input line 434.
+(pdftex.def)             Requested size: 108.40334pt x 111.38318pt.
+<./images//figura7_modelo3_theta4_minus90_theta2_30.png, id=48, 438.438pt x 450.483pt>
+File: ./images//figura7_modelo3_theta4_minus90_theta2_30.png Graphic file (type png)
+<use ./images//figura7_modelo3_theta4_minus90_theta2_30.png>
+Package pdftex.def Info: ./images//figura7_modelo3_theta4_minus90_theta2_30.png  used on input line 441.
+(pdftex.def)             Requested size: 108.40334pt x 111.38318pt.
+<./images//figura7_modelo3_theta4_minus90_theta2_30_theta5_90.png, id=49, 437.4744pt x 460.119pt>
+File: ./images//figura7_modelo3_theta4_minus90_theta2_30_theta5_90.png Graphic file (type png)
+<use ./images//figura7_modelo3_theta4_minus90_theta2_30_theta5_90.png>
+Package pdftex.def Info: ./images//figura7_modelo3_theta4_minus90_theta2_30_theta5_90.png  used on input line 448.
+(pdftex.def)             Requested size: 108.40334pt x 114.01144pt.
+<./images//figura7_modelo3_theta4_minus90_theta2_minus30_theta5_90.png, id=50, 437.4744pt x 460.119pt>
+File: ./images//figura7_modelo3_theta4_minus90_theta2_minus30_theta5_90.png Graphic file (type png)
+<use ./images//figura7_modelo3_theta4_minus90_theta2_minus30_theta5_90.png>
+Package pdftex.def Info: ./images//figura7_modelo3_theta4_minus90_theta2_minus30_theta5_90.png  used on input line 455.
+(pdftex.def)             Requested size: 108.40334pt x 114.01144pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[6 <./images//figura2_modelo_braço.png (PNG copy)> <./images//figura3_modelo_mesa.png (PNG copy)> <./images//figura4_modelo_kr90kp2.png (PNG copy)> <./images//figura5_modelo1_theta2_minus90.png (PNG copy)> <./images//figura5_modelo1_theta2_minus90_theta3_90.png (PNG copy)> <./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30.png (PNG copy)> <./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30_theta5_30.png (PNG copy)>] [7 <./images//figura6_modelo2_theta1_30.png (PNG copy)> <./images//figura6_modelo2_theta1_minus30.png (PNG copy)> <./images//figura6_modelo2_theta2_45.png (PNG copy)> <./images//figura6_modelo2_theta1_minus30_theta2_45.png (PNG copy)> <./images//figura7_modelo3_theta4_minus90.png (PNG copy)> <./images//figura7_modelo3_theta4_minus90_theta2_30.png (PNG copy)> <./images//figura7_modelo3_theta4_minus90_theta2_30_theta5_90.png (PNG copy)> <./images//figura7_modelo3_theta4_minus90_theta2_minus30_theta5_90.png (PNG copy)>] (trabalho1_lsdct.aux) ) 
 Here is how much of TeX's memory you used:
- 16494 strings out of 478338
- 326140 string characters out of 2836700
- 650285 words of memory out of 3000000
- 34625 multiletter control sequences out of 15000+600000
- 477462 words of font info for 60 fonts, out of 8000000 for 9000
+ 18144 strings out of 478338
+ 362494 string characters out of 2836700
+ 676201 words of memory out of 3000000
+ 36244 multiletter control sequences out of 15000+600000
+ 479007 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,12n,80p,544b,284s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1728.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on trabalho1_lsdct.pdf (5 pages, 198481 bytes).
+ 84i,12n,80p,544b,534s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1728.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
+Output written on trabalho1_lsdct.pdf (7 pages, 1345388 bytes).
 PDF statistics:
- 79 PDF objects out of 1000 (max. 8388607)
+ 139 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 103 words of extra memory for PDF output out of 10000 (max. 10000000)
 

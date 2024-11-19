@@ -55,4 +55,4 @@ disp(T_be.T);
 
 % Plotar o robô na configuração inicial com controles interativos
 figure;
-robot.teach(q0, 'workspace', [-4 4 -4 4 -3 4]);
+robot.teach(q0, 'workspace', [-5 5 -5 5 -5 5]);

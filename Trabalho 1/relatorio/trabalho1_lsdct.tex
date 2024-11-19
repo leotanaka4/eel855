@@ -13,6 +13,7 @@
 \usepackage{url}
 \usepackage{enumitem}
 \usepackage{appendix} % For creating appendix sections
+\usepackage{subcaption} % Use subcaption para legendas modernas
 
 % More defined colors
 \usepackage[dvipsnames]{xcolor}
@@ -180,6 +181,15 @@ Fazendo a seguinte transformação homogênea da base para o eixo de coordenadas
         \end{bmatrix}
 \end{equation}
 
+\quad Para obter os parâmetros de Denavit-Hartenberg e as transformações homogêneas acima,
+foi seguido os seguintes diagramas:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.175]{dh_modelo1.jpeg}
+    \caption{Diagramas do URDF e DH Standard do braço robótico}
+\end{figure}
+
 \subsection{Parâmetros de Denavit-Hartenberg da mesa posicionadora KP2}
 
 \quad Para determinar os parâmetros de Denavit-Hartenberg da mesa posicionadora KP2, foi necessário analisar o URDF dessa mesa posicionadora que pode ser descrita pela seguinte tabela:
@@ -232,6 +242,15 @@ Fazendo a seguinte transformação homogênea da base para o eixo de coordenadas
         \end{bmatrix}
 \end{equation}
 
+\quad Para obter os parâmetros de Denavit-Hartenberg e as transformações homogêneas acima,
+foi seguido os seguintes diagramas:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.175]{dh_modelo2.jpeg}
+    \caption{Diagramas do URDF e DH Standard da mesa posicionadora}
+\end{figure}
+
 \subsection{Parâmetros de Denavit-Hartenberg dos sistemas KR90-KP2}
 
 \quad Para determinar os parâmetros de Denavit-Hartenberg do sistema KR90-KP2,
@@ -246,8 +265,8 @@ Fazendo a seguinte transformação homogênea da base para o eixo de coordenadas
 \begin{equation}
     T_{b0} = \begin{bmatrix}
         1 & 0 & 0 & 0 \\
-        0 & 1 & 0 & 0 \\
-        0 & 0 & 1 & 0 \\
+        0 & -1 & 0 & 0 \\
+        0 & 0 & -1 & 0 \\
         0 & 0 & 0 & 1
         \end{bmatrix}
 \end{equation}
@@ -259,9 +278,9 @@ Fazendo a seguinte transformação homogênea da base para o eixo de coordenadas
     \begin{tabular}{|c|c|c|c|c|c|c|}
     \hline
     \textbf{Elo $i$} & $\theta_i$ & $d_i$ & $a_i$ & $\alpha_i$ & \textbf{type} & \textbf{offset} \\ \hline
-    1 & $\theta_1$ & -0.22 & 0 & $\pi/2$ & revolute & $-\pi/2$ \\ \hline
-    2 & $\theta_2$ & -1.73923 & -0.39198 & $\pi/2$ & revolute & 0 \\ \hline
-    3 & $\theta_3$ & -0.27360 & 0.35 & $\pi/2$ & revolute & 0 \\ \hline
+    1 & $\theta_1$ & 0.22 & 0 & $\pi/2$ & revolute & $\pi/2$ \\ \hline
+    2 & $\theta_2$ & 1.73923 & -0.39198 & $-\pi/2$ & revolute & 0 \\ \hline
+    3 & $\theta_3$ & -0.27360 & 0.35 & $\pi/2$ & revolute & $\pi/2$ \\ \hline
     4 & $\theta_4$ & 0 & 1.35 & 0 & revolute & 0 \\ \hline
     5 & $\theta_5$ & 0 & 0.041 & $-\pi/2$ & revolute & $\pi/2$ \\ \hline
     6 & $\theta_6$ & -1.2 & 0 & $\pi/2$ & revolute & 0 \\ \hline
@@ -282,6 +301,15 @@ Fazendo a seguinte transformação homogênea da base para o eixo de coordenadas
         \end{bmatrix}
 \end{equation}
 
+\quad Para obter os parâmetros de Denavit-Hartenberg e as transformações homogêneas acima,
+foi seguido o seguinte diagrama:
+
+%\begin{figure}[h]
+%    \centering
+%    \includegraphics[scale=0.175]{dh_modelo1.jpeg}
+%    \caption{Diagrama do DH Standard do sistema KR90-KP2}
+%\end{figure}
+
 \subsection{Modelos dos sistemas}
 
 \quad Utilizando o Robot Toolbox do Matlab foi construído os modelos utilizando a classe SerialLink de cada um dos 3 itens anteriores.
@@ -289,28 +317,156 @@ Portanto, para realizar essa construção dos modelos, foi necessário utilizar 
 o Denavit-Hartenberg do eixo de coordenadas 0 até o eixo de coordenadas do número de juntas \( (T_{0n}) \) e
 a transformação homogênea do último eixo de coordenadas do Denavit-Hartenberg até o eixo de coordenadas do efetuador \( (T_{ne}) \).
 
+\newpage
+
 % Imagem modelo 1
-
-% Imagem modelo 2
-
-% Imagem modelo 3
+\begin{figure}[h!]
+    \centering
+    % Modelo 1
+    \begin{subfigure}[b]{0.25\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figura2_modelo_braço.png}
+        \caption{Modelo do sistema do braço robótico}
+        \label{fig:braço}
+    \end{subfigure}
+    \hfill
+    % Modelo 2
+    \begin{subfigure}[b]{0.25\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figura3_modelo_mesa.png}
+        \caption{Modelo do sistema da mesa posicionadora}
+        \label{fig:mesa}
+    \end{subfigure}
+    \hfill
+    % Modelo 3
+    \begin{subfigure}[b]{0.25\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figura4_modelo_kr90kp2.png}
+        \caption{Modelo do sistema KR90-KP2}
+        \label{fig:kr90kp2}
+    \end{subfigure}
+    
+    % Legenda geral
+    \caption{Modelos dos sistemas analisados. Cada subfigura apresenta um modelo específico utilizado no estudo.}
+    \label{fig:modelos}
+\end{figure}
 
 \subsection{Validação dos parâmetros de Denavit-Hartenberg}
 
-\quad Para realizar a validação dos parâmetros de Denavit-Hartenberg dos três modelos,
-foi feita a visualização de 4 configurações diferentes para cada modelo utilizando o Robot Toolbox do Matlab.
+\quad Foi feita a visualização de 4 configurações diferentes para cada modelo utilizando o Robot Toolbox do Matlab.
 
 % 4 Imagens das configurações do modelo 1
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figura5_modelo1_theta2_minus90.png}
+        \caption{$\theta_2 = -90^{\circ}$}
+        \label{fig:modelo1_1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figura5_modelo1_theta2_minus90_theta3_90.png}
+        \caption{$\theta_2 = -90^{\circ}$ e $\theta_3 = 90^{\circ}$}
+        \label{fig:modelo1_2}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figura5_modelo1_theta2_minus90_theta3_90_theta4_30.png}
+        \caption{$\theta_2 = -90^{\circ}$, $\theta_3 = 90^{\circ}$ e $\theta_4 = 30^{\circ}$}
+        \label{fig:modelo1_3}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figura5_modelo1_theta2_minus90_theta3_90_theta4_30_theta5_30.png}
+        \caption{$\theta_2 = -90^{\circ}$, $\theta_3 = 90^{\circ}$, $\theta_4 = 30^{\circ}$ e $\theta_5 = 30^{\circ}$}
+        \label{fig:modelo1_4}
+    \end{subfigure}
+    
+    % Legenda geral
+    \caption{4 configurações diferentes para o modelo do braço robótico.}
+    \label{fig:modelos_1}
+\end{figure}
 
 % 4 Imagens das configurações do modelo 2
-
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figura6_modelo2_theta1_30.png}
+        \caption{$\theta_1 = 30^{\circ}$}
+        \label{fig:modelo2_1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figura6_modelo2_theta1_minus30.png}
+        \caption{$\theta_1 = -30^{\circ}$}
+        \label{fig:modelo2_2}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figura6_modelo2_theta2_45.png}
+        \caption{$\theta_2 = 45^{\circ}$}
+        \label{fig:modelo2_3}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figura6_modelo2_theta1_minus30_theta2_45.png}
+        \caption{$\theta_1 = -30^{\circ}$ e $\theta_2 = 45^{\circ}$}
+        \label{fig:modelo2_4}
+    \end{subfigure}
+    
+    % Legenda geral
+    \caption{4 configurações diferentes para o modelo da mesa posicionadora.}
+    \label{fig:modelos_2}
+\end{figure}
 % 4 Imagens das configurações do modelo 3
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figura7_modelo3_theta4_minus90.png}
+        \caption{$\theta_4 = -90^{\circ}$}
+        \label{fig:modelo3_1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figura7_modelo3_theta4_minus90_theta2_30.png}
+        \caption{$\theta_2 = 30^{\circ}$ e $\theta_4 = -90^{\circ}$}
+        \label{fig:modelo3_2}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figura7_modelo3_theta4_minus90_theta2_30_theta5_90.png}
+        \caption{$\theta_2 = 30^{\circ}$, $\theta_4 = -90^{\circ}$ e $\theta_5 = 90^{\circ}$}
+        \label{fig:modelo3_3}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figura7_modelo3_theta4_minus90_theta2_minus30_theta5_90.png}
+        \caption{$\theta_2 = -30^{\circ}$, $\theta_4 = -90^{\circ}$ e $\theta_5 = 90^{\circ}$}
+        \label{fig:modelo3_4}
+    \end{subfigure}
+    
+    % Legenda geral
+    \caption{4 configurações diferentes para o modelo do sistema KR90-KP2.}
+    \label{fig:modelos_3}
+\end{figure}
 
 \subsection{Verificação dos resultados da cinemática inversa}
 
-\subsection{Determinação do Jacobiano de Ft com respeito a Fde}
+\subsection{Determinação do Jacobiano de $F_t$ com respeito a $F_{de}$}
 
-\subsection{Validação do Jacobiano  de Ft com respeito a Fde}
+\subsection{Validação do Jacobiano  de $F_t$ com respeito a $F_{de}$}
 
 \subsection{Implementação da solução da cinemática inversa pelo método iterativo}
 
