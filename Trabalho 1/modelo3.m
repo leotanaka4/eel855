@@ -1,6 +1,3 @@
-% Limpar o ambiente
-clear; clc;
-
 % Parâmetros DH do sistema KP90-KP2
 L1 = Revolute('d', 0.22, 'a', 0, 'alpha', pi/2, 'offset', pi/2);          % Elo 1
 L2 = Revolute('d', 1.73923, 'a', -0.39198, 'alpha', -pi/2, 'offset', 0);  % Elo 2
@@ -14,26 +11,7 @@ L8 = Revolute('d', -0.215, 'a', 0, 'alpha', -pi, 'offset', 0);            % Elo 
 % Definir o robô
 robot = SerialLink([L1 L2 L3 L4 L5 L6 L7 L8], 'name', 'KP90-KP2');
 
-% Parâmetros de posição (xyz)
-x = 0.03046;
-y = 0.033;
-z = 0.43161;
-
-% Parâmetros de orientação (rpy) em graus (convertendo para radianos)
-roll = -13.5;  % Roll
-pitch = 51.5;  % Pitch
-yaw = -5.4;    % Yaw
-
-% Matriz de translação
-T_translation = transl(x, y, z);
-
-% Matrizes de rotação para roll, pitch e yaw
-R_roll = trotx(roll);
-R_pitch = troty(pitch);
-R_yaw = trotz(yaw);
-
-% Transformação homogênea total
-T_8e = T_translation * R_yaw * R_pitch * R_roll;
+T_8e = transl(0.03046, 0.033, 0.43161) * trotz(-5.4) * troty(51.5) * trotx(-13.5);
 
 % Incorporar as transformações no robô
 robot.base = trotx(180);  % Define a base do robô

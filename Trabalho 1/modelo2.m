@@ -1,6 +1,3 @@
-% Limpar o ambiente
-clear; clc;
-
 % Parâmetros DH do robô
 L1 = Revolute('d', 0, 'a', 0, 'alpha', -pi/2, 'offset', -pi/2);   % Elo 1
 L2 = Revolute('d', 0.22, 'a', 0, 'alpha', 0, 'offset', pi/2);     % Elo 2

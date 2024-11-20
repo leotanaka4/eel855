@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  18 NOV 2024 22:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  19 NOV 2024 22:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -436,20 +436,20 @@ File: l3backend-pdftex.def 2022-07-01 L3 backend support: PDF output (pdfTeX)
 ) (trabalho1_lsdct.aux)
 \openout1 = `trabalho1_lsdct.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -507,18 +507,18 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 \c@lstlisting=\count321
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 87.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 89.
  (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 87.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 89.
  (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 <./images//figura1.png, id=4, 328.22626pt x 246.1697pt>
 File: ./images//figura1.png Graphic file (type png)
 <use ./images//figura1.png>
-Package pdftex.def Info: ./images//figura1.png  used on input line 104.
+Package pdftex.def Info: ./images//figura1.png  used on input line 106.
 (pdftex.def)             Requested size: 213.34453pt x 160.00839pt.
  [1
 
@@ -526,66 +526,72 @@ Package pdftex.def Info: ./images//figura1.png  used on input line 104.
 <./images//dh_modelo1.jpeg, id=25, 1606.0pt x 1204.5pt>
 File: ./images//dh_modelo1.jpeg Graphic file (type jpg)
 <use ./images//dh_modelo1.jpeg>
-Package pdftex.def Info: ./images//dh_modelo1.jpeg  used on input line 189.
+Package pdftex.def Info: ./images//dh_modelo1.jpeg  used on input line 191.
 (pdftex.def)             Requested size: 281.05421pt x 210.79065pt.
  [3 <./images//dh_modelo1.jpeg>]
 <./images//dh_modelo2.jpeg, id=29, 1606.0pt x 1204.5pt>
 File: ./images//dh_modelo2.jpeg Graphic file (type jpg)
 <use ./images//dh_modelo2.jpeg>
-Package pdftex.def Info: ./images//dh_modelo2.jpeg  used on input line 250.
+Package pdftex.def Info: ./images//dh_modelo2.jpeg  used on input line 252.
 (pdftex.def)             Requested size: 281.05421pt x 210.79065pt.
- [4 <./images//dh_modelo2.jpeg>] [5]
-<./images//figura2_modelo_braço.png, id=36, 437.9562pt x 454.3374pt>
+ [4 <./images//dh_modelo2.jpeg>]
+<./images//dh_modelo3.jpeg, id=33, 1606.0pt x 835.12pt>
+File: ./images//dh_modelo3.jpeg Graphic file (type jpg)
+<use ./images//dh_modelo3.jpeg>
+Package pdftex.def Info: ./images//dh_modelo3.jpeg  used on input line 311.
+(pdftex.def)             Requested size: 321.19432pt x 167.02103pt.
+ [5 <./images//dh_modelo3.jpeg>]
+<./images//figura2_modelo_braço.png, id=37, 437.9562pt x 454.3374pt>
 File: ./images//figura2_modelo_braço.png Graphic file (type png)
 <use ./images//figura2_modelo_braço.png>
 Package pdftex.def Info: ./images//figura2_modelo_braço.png  used on input line 328.
 (pdftex.def)             Requested size: 135.50624pt x 140.57275pt.
-<./images//figura3_modelo_mesa.png, id=37, 317.988pt x 452.4102pt>
+<./images//figura3_modelo_mesa.png, id=38, 317.988pt x 452.4102pt>
 File: ./images//figura3_modelo_mesa.png Graphic file (type png)
 <use ./images//figura3_modelo_mesa.png>
 Package pdftex.def Info: ./images//figura3_modelo_mesa.png  used on input line 336.
 (pdftex.def)             Requested size: 135.50624pt x 192.78607pt.
-<./images//figura4_modelo_kr90kp2.png, id=38, 437.4744pt x 475.0548pt>
+<./images//figura4_modelo_kr90kp2.png, id=39, 437.4744pt x 475.0548pt>
 File: ./images//figura4_modelo_kr90kp2.png Graphic file (type png)
 <use ./images//figura4_modelo_kr90kp2.png>
 Package pdftex.def Info: ./images//figura4_modelo_kr90kp2.png  used on input line 344.
 (pdftex.def)             Requested size: 135.50624pt x 147.14223pt.
-<./images//figura5_modelo1_theta2_minus90.png, id=39, 437.4744pt x 465.4188pt>
+<./images//figura5_modelo1_theta2_minus90.png, id=40, 437.4744pt x 465.4188pt>
 File: ./images//figura5_modelo1_theta2_minus90.png Graphic file (type png)
 <use ./images//figura5_modelo1_theta2_minus90.png>
 Package pdftex.def Info: ./images//figura5_modelo1_theta2_minus90.png  used on input line 363.
 (pdftex.def)             Requested size: 108.40334pt x 115.32466pt.
-<./images//figura5_modelo1_theta2_minus90_theta3_90.png, id=40, 437.4744pt x 465.4188pt>
+<./images//figura5_modelo1_theta2_minus90_theta3_90.png, id=41, 437.4744pt x 465.4188pt>
 File: ./images//figura5_modelo1_theta2_minus90_theta3_90.png Graphic file (type png)
 <use ./images//figura5_modelo1_theta2_minus90_theta3_90.png>
 Package pdftex.def Info: ./images//figura5_modelo1_theta2_minus90_theta3_90.png  used on input line 370.
 (pdftex.def)             Requested size: 108.40334pt x 115.32466pt.
-<./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30.png, id=41, 437.4744pt x 465.4188pt>
+<./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30.png, id=42, 437.4744pt x 465.4188pt>
 File: ./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30.png Graphic file (type png)
 <use ./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30.png>
 Package pdftex.def Info: ./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30.png  used on input line 377.
 (pdftex.def)             Requested size: 108.40334pt x 115.32466pt.
-<./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30_theta5_30.png, id=42, 437.4744pt x 465.4188pt>
+<./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30_theta5_30.png, id=43, 437.4744pt x 465.4188pt>
 File: ./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30_theta5_30.png Graphic file (type png)
 <use ./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30_theta5_30.png>
 Package pdftex.def Info: ./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30_theta5_30.png  used on input line 384.
 (pdftex.def)             Requested size: 108.40334pt x 115.32466pt.
-<./images//figura6_modelo2_theta1_30.png, id=43, 316.5426pt x 451.4466pt>
+<./images//figura6_modelo2_theta1_30.png, id=44, 316.5426pt x 451.4466pt>
 File: ./images//figura6_modelo2_theta1_30.png Graphic file (type png)
 <use ./images//figura6_modelo2_theta1_30.png>
 Package pdftex.def Info: ./images//figura6_modelo2_theta1_30.png  used on input line 399.
 (pdftex.def)             Requested size: 108.40334pt x 154.59885pt.
-<./images//figura6_modelo2_theta1_minus30.png, id=44, 316.5426pt x 451.4466pt>
+<./images//figura6_modelo2_theta1_minus30.png, id=45, 316.5426pt x 451.4466pt>
 File: ./images//figura6_modelo2_theta1_minus30.png Graphic file (type png)
 <use ./images//figura6_modelo2_theta1_minus30.png>
 Package pdftex.def Info: ./images//figura6_modelo2_theta1_minus30.png  used on input line 406.
 (pdftex.def)             Requested size: 108.40334pt x 154.59885pt.
-<./images//figura6_modelo2_theta2_45.png, id=45, 316.5426pt x 451.4466pt>
+<./images//figura6_modelo2_theta2_45.png, id=46, 316.5426pt x 451.4466pt>
 File: ./images//figura6_modelo2_theta2_45.png Graphic file (type png)
 <use ./images//figura6_modelo2_theta2_45.png>
 Package pdftex.def Info: ./images//figura6_modelo2_theta2_45.png  used on input line 413.
 (pdftex.def)             Requested size: 108.40334pt x 154.59885pt.
-<./images//figura6_modelo2_theta1_minus30_theta2_45.png, id=46, 316.5426pt x 451.4466pt>
+<./images//figura6_modelo2_theta1_minus30_theta2_45.png, id=47, 316.5426pt x 451.4466pt>
 File: ./images//figura6_modelo2_theta1_minus30_theta2_45.png Graphic file (type png)
 <use ./images//figura6_modelo2_theta1_minus30_theta2_45.png>
 Package pdftex.def Info: ./images//figura6_modelo2_theta1_minus30_theta2_45.png  used on input line 420.
@@ -594,22 +600,22 @@ Package pdftex.def Info: ./images//figura6_modelo2_theta1_minus30_theta2_45.png 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images//figura7_modelo3_theta4_minus90.png, id=47, 438.438pt x 450.483pt>
+<./images//figura7_modelo3_theta4_minus90.png, id=48, 438.438pt x 450.483pt>
 File: ./images//figura7_modelo3_theta4_minus90.png Graphic file (type png)
 <use ./images//figura7_modelo3_theta4_minus90.png>
 Package pdftex.def Info: ./images//figura7_modelo3_theta4_minus90.png  used on input line 434.
 (pdftex.def)             Requested size: 108.40334pt x 111.38318pt.
-<./images//figura7_modelo3_theta4_minus90_theta2_30.png, id=48, 438.438pt x 450.483pt>
+<./images//figura7_modelo3_theta4_minus90_theta2_30.png, id=49, 438.438pt x 450.483pt>
 File: ./images//figura7_modelo3_theta4_minus90_theta2_30.png Graphic file (type png)
 <use ./images//figura7_modelo3_theta4_minus90_theta2_30.png>
 Package pdftex.def Info: ./images//figura7_modelo3_theta4_minus90_theta2_30.png  used on input line 441.
 (pdftex.def)             Requested size: 108.40334pt x 111.38318pt.
-<./images//figura7_modelo3_theta4_minus90_theta2_30_theta5_90.png, id=49, 437.4744pt x 460.119pt>
+<./images//figura7_modelo3_theta4_minus90_theta2_30_theta5_90.png, id=50, 437.4744pt x 460.119pt>
 File: ./images//figura7_modelo3_theta4_minus90_theta2_30_theta5_90.png Graphic file (type png)
 <use ./images//figura7_modelo3_theta4_minus90_theta2_30_theta5_90.png>
 Package pdftex.def Info: ./images//figura7_modelo3_theta4_minus90_theta2_30_theta5_90.png  used on input line 448.
 (pdftex.def)             Requested size: 108.40334pt x 114.01144pt.
-<./images//figura7_modelo3_theta4_minus90_theta2_minus30_theta5_90.png, id=50, 437.4744pt x 460.119pt>
+<./images//figura7_modelo3_theta4_minus90_theta2_minus30_theta5_90.png, id=51, 437.4744pt x 460.119pt>
 File: ./images//figura7_modelo3_theta4_minus90_theta2_minus30_theta5_90.png Graphic file (type png)
 <use ./images//figura7_modelo3_theta4_minus90_theta2_minus30_theta5_90.png>
 Package pdftex.def Info: ./images//figura7_modelo3_theta4_minus90_theta2_minus30_theta5_90.png  used on input line 455.
@@ -617,19 +623,31 @@ Package pdftex.def Info: ./images//figura7_modelo3_theta4_minus90_theta2_minus30
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6 <./images//figura2_modelo_braço.png (PNG copy)> <./images//figura3_modelo_mesa.png (PNG copy)> <./images//figura4_modelo_kr90kp2.png (PNG copy)> <./images//figura5_modelo1_theta2_minus90.png (PNG copy)> <./images//figura5_modelo1_theta2_minus90_theta3_90.png (PNG copy)> <./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30.png (PNG copy)> <./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30_theta5_30.png (PNG copy)>] [7 <./images//figura6_modelo2_theta1_30.png (PNG copy)> <./images//figura6_modelo2_theta1_minus30.png (PNG copy)> <./images//figura6_modelo2_theta2_45.png (PNG copy)> <./images//figura6_modelo2_theta1_minus30_theta2_45.png (PNG copy)> <./images//figura7_modelo3_theta4_minus90.png (PNG copy)> <./images//figura7_modelo3_theta4_minus90_theta2_30.png (PNG copy)> <./images//figura7_modelo3_theta4_minus90_theta2_30_theta5_90.png (PNG copy)> <./images//figura7_modelo3_theta4_minus90_theta2_minus30_theta5_90.png (PNG copy)>] (trabalho1_lsdct.aux) ) 
+[6 <./images//figura2_modelo_braço.png (PNG copy)> <./images//figura3_modelo_mesa.png (PNG copy)> <./images//figura4_modelo_kr90kp2.png (PNG copy)> <./images//figura5_modelo1_theta2_minus90.png (PNG copy)> <./images//figura5_modelo1_theta2_minus90_theta3_90.png (PNG copy)> <./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30.png (PNG copy)> <./images//figura5_modelo1_theta2_minus90_theta3_90_theta4_30_theta5_30.png (PNG copy)>] [7 <./images//figura6_modelo2_theta1_30.png (PNG copy)> <./images//figura6_modelo2_theta1_minus30.png (PNG copy)> <./images//figura6_modelo2_theta2_45.png (PNG copy)> <./images//figura6_modelo2_theta1_minus30_theta2_45.png (PNG copy)> <./images//figura7_modelo3_theta4_minus90.png (PNG copy)> <./images//figura7_modelo3_theta4_minus90_theta2_30.png (PNG copy)> <./images//figura7_modelo3_theta4_minus90_theta2_30_theta5_90.png (PNG copy)> <./images//figura7_modelo3_theta4_minus90_theta2_minus30_theta5_90.png (PNG copy)>] [8] (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/base\latin1.def
+File: latin1.def 2021/02/14 v1.3d Input encoding file
+)
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 526.
+ (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmtt.fd
+File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+) [9] (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/base\latin1.def
+File: latin1.def 2021/02/14 v1.3d Input encoding file
+) [10] (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/base\latin1.def
+File: latin1.def 2021/02/14 v1.3d Input encoding file
+) [11] (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/base\latin1.def
+File: latin1.def 2021/02/14 v1.3d Input encoding file
+) [12] (trabalho1_lsdct.aux) ) 
 Here is how much of TeX's memory you used:
- 18144 strings out of 478338
- 362494 string characters out of 2836700
- 676201 words of memory out of 3000000
- 36244 multiletter control sequences out of 15000+600000
- 479007 words of font info for 66 fonts, out of 8000000 for 9000
+ 19091 strings out of 478338
+ 373148 string characters out of 2836700
+ 1135952 words of memory out of 3000000
+ 37166 multiletter control sequences out of 15000+600000
+ 482435 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,12n,80p,544b,534s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1728.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on trabalho1_lsdct.pdf (7 pages, 1345388 bytes).
+ 84i,14n,80p,782b,2281s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt0800.pk> <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1728.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on trabalho1_lsdct.pdf (12 pages, 1513604 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
+ 198 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 103 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 108 words of extra memory for PDF output out of 10000 (max. 10000000)
 

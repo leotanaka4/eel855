@@ -1,6 +1,3 @@
-% Limpar o ambiente
-clear; clc;
-
 % Parâmetros DH do robô
 L1 = Revolute('d', -0.675, 'a', 0.35, 'alpha', pi/2, 'offset', 0);      % Elo 1
 L2 = Revolute('d', 0, 'a', 1.35, 'alpha', 0, 'offset', 0);              % Elo 2
@@ -18,26 +15,7 @@ T_b0 = [1,  0,  0,  0;
         0,  0, -1,  0;
         0,  0,  0,  1];
 
-% Parâmetros de posição (xyz)
-x = 0.03046;
-y = 0.033;
-z = 0.43161;
-
-% Parâmetros de orientação (rpy) em graus (convertendo para radianos)
-roll = -13.5;  % Roll
-pitch = 51.5;  % Pitch
-yaw = -5.4;    % Yaw
-
-% Matriz de translação
-T_translation = transl(x, y, z);
-
-% Matrizes de rotação para roll, pitch e yaw
-R_roll = trotx(roll);
-R_pitch = troty(pitch);
-R_yaw = trotz(yaw);
-
-% Transformação homogênea total
-T_6e = T_translation * R_yaw * R_pitch * R_roll;
+T_6e = transl(0.03046, 0.033, 0.43161) * trotz(-5.4) * troty(51.5) * trotx(-13.5);
 
 % Incorporar as transformações no robô
 robot.base = SE3(T_b0);  % Define a base do robô

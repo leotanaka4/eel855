@@ -20,7 +20,9 @@
 
 % Define a custom style for the code listing
 \lstdefinestyle{mystyle}{
-    language=Octave,
+    language=Matlab,
+    inputencoding=latin1,
+    extendedchars=true,
     backgroundcolor=\color{white},   % Choose the background color
     basicstyle=\ttfamily\footnotesize, % Set the font and size for the code
     numbers=left,                    % Line numbers on the left
@@ -304,11 +306,11 @@ Fazendo a seguinte transformação homogênea da base para o eixo de coordenadas
 \quad Para obter os parâmetros de Denavit-Hartenberg e as transformações homogêneas acima,
 foi seguido o seguinte diagrama:
 
-%\begin{figure}[h]
-%    \centering
-%    \includegraphics[scale=0.175]{dh_modelo1.jpeg}
-%    \caption{Diagrama do DH Standard do sistema KR90-KP2}
-%\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.2]{dh_modelo3.jpeg}
+    \caption{Diagrama do DH Standard do sistema KR90-KP2}
+\end{figure}
 
 \subsection{Modelos dos sistemas}
 
@@ -316,8 +318,6 @@ foi seguido o seguinte diagrama:
 Portanto, para realizar essa construção dos modelos, foi necessário utilizar a transformação homogênea da base para o eixo de coordenadas 0 \( (T_{b0}) \),
 o Denavit-Hartenberg do eixo de coordenadas 0 até o eixo de coordenadas do número de juntas \( (T_{0n}) \) e
 a transformação homogênea do último eixo de coordenadas do Denavit-Hartenberg até o eixo de coordenadas do efetuador \( (T_{ne}) \).
-
-\newpage
 
 % Imagem modelo 1
 \begin{figure}[h!]
@@ -464,6 +464,52 @@ a transformação homogênea do último eixo de coordenadas do Denavit-Hartenber
 
 \subsection{Verificação dos resultados da cinemática inversa}
 
+\quad Neste estudo, foi explorado a função \texttt{ikine()} da \textit{Robotics Toolbox} para calcular a cinemática inversa do robô serial \texttt{Kr90}, considerando uma trajetória em zigue-zague para o efetuador $F_t$ em relação ao referencial $F_{de}$. Os \textit{waypoints} utilizados são apresentados na Tabela~\ref{tab:waypoints}. A orientação foi mantida constante para todos os casos, definida pelos ângulos de \textit{roll} $= \pi$, \textit{pitch} $= 0$ e \textit{yaw} $= \pi/2$. Além disso, os ângulos das juntas da mesa posicionadora foram fixados em $\boldsymbol{\theta_t} = [\pi/4, 0]$.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Waypoint} & \textbf{Posição $\boldsymbol{p_{dt}}$ (m)} \\ \hline
+    1                 & $[0.04, 0, 0]^T$                          \\ \hline
+    2                 & $[-0.04, 0, 0]^T$                         \\ \hline
+    3                 & $[-0.04, 0.01, 0]^T$                      \\ \hline
+    4                 & $[0.04, 0.01, 0]^T$                       \\ \hline
+    5                 & $[0.04, 0.02, 0]^T$                       \\ \hline
+    6                 & $[-0.04, 0.02, 0]^T$                      \\ \hline
+    7                 & $[-0.04, 0.03, 0]^T$                      \\ \hline
+    8                 & $[0.04, 0.03, 0]^T$                       \\ \hline
+    9                 & $[0.04, 0.04, 0]^T$                       \\ \hline
+    10                & $[-0.04, 0.04, 0]^T$                      \\ \hline
+    \end{tabular}
+    \caption{\textit{Waypoints} da trajetória em zigue-zague.}
+    \label{tab:waypoints}
+\end{table}
+
+
+\quad Os parâmetros da função \texttt{ikine()} foram explorados para cada \textit{waypoint}, ajustando-se tolerância (\texttt{tol}), ângulos iniciais (\texttt{q0}), fator de amortecimento (\texttt{lambda}) e máscara de restrições (\texttt{mask}). Os resultados obtidos são apresentados a seguir:
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \textbf{Waypoint} & $\boldsymbol{\theta_1}$ & $\boldsymbol{\theta_2}$ & $\boldsymbol{\theta_3}$ & $\boldsymbol{\theta_4}$ & $\boldsymbol{\theta_5}$ & $\boldsymbol{\theta_6}$ \\ \hline
+    1 & 0.2438 & -0.7993 & 2.0019 & 1.6157 & -1.7229 & -0.2979 \\ \hline
+    2 & 0.2329 & -0.7770 & 1.9295 & 1.5979 & -1.7205 & -0.3488 \\ \hline
+    3 & 0.2368 & -0.7713 & 1.9271 & 1.6020 & -1.7219 & -0.3453 \\ \hline
+    4 & 0.2479 & -0.7933 & 1.9995 & 1.6200 & -1.7241 & -0.2942 \\ \hline
+    5 & 0.2519 & -0.7873 & 1.9971 & 1.6244 & -1.7254 & -0.2906 \\ \hline
+    6 & 0.2406 & -0.7655 & 1.9247 & 1.6061 & -1.7234 & -0.3419 \\ \hline
+    7 & 0.2445 & -0.7598 & 1.9222 & 1.6102 & -1.7248 & -0.3385 \\ \hline
+    8 & 0.2560 & -0.7813 & 1.9945 & 1.6287 & -1.7266 & -0.2870 \\ \hline
+    9 & 0.2600 & -0.7753 & 1.9919 & 1.6331 & -1.7278 & -0.2835 \\ \hline
+    10 & 0.2484 & -0.7540 & 1.9197 & 1.6142 & -1.7262 & -0.3352 \\ \hline
+    \end{tabular}
+    \caption{Valores dos ângulos das juntas ($\theta_1$ a $\theta_6$) para cada \textit{waypoint}.}
+    \label{tab:theta_values}
+\end{table}
+    
+
 \subsection{Determinação do Jacobiano de $F_t$ com respeito a $F_{de}$}
 
 \subsection{Validação do Jacobiano  de $F_t$ com respeito a $F_{de}$}
@@ -472,6 +518,170 @@ a transformação homogênea do último eixo de coordenadas do Denavit-Hartenber
 
 \section{Conclusão}
 
+\newpage
+
 \section*{Apêndice}
+
+\begin{lstlisting}[caption={Código do braço robótico (KR90)}, label={code:kr90}]
+% Parâmetros DH do robô
+L1 = Revolute('d', -0.675, 'a', 0.35, 'alpha', pi/2, 'offset', 0);      % Elo 1
+L2 = Revolute('d', 0, 'a', 1.35, 'alpha', 0, 'offset', 0);              % Elo 2
+L3 = Revolute('d', 0, 'a', 0.041, 'alpha', -pi/2, 'offset', pi/2);      % Elo 3
+L4 = Revolute('d', -1.2, 'a', 0, 'alpha', pi/2, 'offset', 0);           % Elo 4
+L5 = Revolute('d', 0, 'a', 0, 'alpha', -pi/2, 'offset', 0);             % Elo 5
+L6 = Revolute('d', -0.215, 'a', 0, 'alpha', -pi, 'offset', 0);          % Elo 6
+
+% Definir o robô
+robot = SerialLink([L1 L2 L3 L4 L5 L6], 'name', 'Braço Robotico');
+
+% Transformação homogênea da base para o eixo 0 (T_b0)
+T_b0 = [1,  0,  0,  0;
+        0, -1,  0,  0;
+        0,  0, -1,  0;
+        0,  0,  0,  1];
+
+T_6e = transl(0.03046, 0.033, 0.43161) * trotz(-5.4) * troty(51.5) * trotx(-13.5);
+
+% Incorporar as transformaçoes no robô
+robot.base = SE3(T_b0);  % Define a base do robô
+robot.tool = T_6e;  % Define a ferramenta (tool) do robô
+
+% Configuração inicial das juntas (todas em zero)
+q0 = zeros(1, 6);
+
+% Calcular a transformação homogênea do efetuador em relação à base (T_be)
+T_be = robot.fkine(q0);
+
+% Exibir a transformação final do efetuador
+disp('Transformação do efetuador em relação à base (T_be):');
+disp(T_be.T);
+
+% Plotar o robô na configuração inicial com controles interativos
+figure;
+robot.teach(q0, 'workspace', [-5 5 -5 5 -5 5]);
+\end{lstlisting}
+
+\newpage
+
+\begin{lstlisting}[caption={Código da mesa poscionadora (KP2)}, label={code:kp2}]
+% Parâmetros DH do robô
+L1 = Revolute('d', 0, 'a', 0, 'alpha', -pi/2, 'offset', -pi/2);   % Elo 1
+L2 = Revolute('d', 0.22, 'a', 0, 'alpha', 0, 'offset', pi/2);     % Elo 2
+
+% Definir o robô
+robot = SerialLink([L1 L2], 'name', 'Mesa Posicionadora');
+
+% Transformação homogênea da base para o eixo 0 (T_b0)
+T_b0 = [0,  0, -1,  0;
+        0,  1,  0,  0;
+        1,  0,  0,  0.865;
+        0,  0,  0,  1];
+
+% Transformação homogênea do eixo 2 para o efetuador (T_2e)
+T_2e = eye(4); % Matriz identidade, conforme especificado
+
+% Incorporar as transformaçoes no robô
+robot.base = SE3(T_b0);  % Define a base do robô
+robot.tool = SE3(T_2e);  % Define a ferramenta (tool) do robô
+
+% Configuração inicial das juntas (todas em zero)
+q0 = zeros(1, 2);
+
+% Calcular a transformação homogênea do efetuador em relação à base (T_be)
+T_be = robot.fkine(q0);
+
+% Exibir as transformaçoes
+disp('Transformação da base para o efetuador (T_be):');
+disp(T_be.T);
+
+% Plotar o robô na configuração inicial com controles interativos
+figure;
+robot.teach(q0, 'workspace', [-0.5 0.5 -0.5 0.5 -0.5 1.5]);    
+\end{lstlisting}
+
+\newpage
+
+\begin{lstlisting}[caption={Código do sistema (KR90-KP2)}, label={code:kr90kp2}]
+% Parâmetros DH do sistema KP90-KP2
+L1 = Revolute('d', 0.22, 'a', 0, 'alpha', pi/2, 'offset', pi/2);          % Elo 1
+L2 = Revolute('d', 1.73923, 'a', -0.39198, 'alpha', -pi/2, 'offset', 0);  % Elo 2
+L3 = Revolute('d', -0.27360, 'a', 0.35, 'alpha', pi/2, 'offset', pi/2);   % Elo 3
+L4 = Revolute('d', 0, 'a', 1.35, 'alpha', 0, 'offset', 0);                % Elo 4
+L5 = Revolute('d', 0, 'a', 0.041, 'alpha', -pi/2, 'offset', pi/2);        % Elo 5
+L6 = Revolute('d', -1.2, 'a', 0, 'alpha', pi/2, 'offset', 0);             % Elo 6
+L7 = Revolute('d', 0, 'a', 0, 'alpha', -pi/2, 'offset', 0);               % Elo 5
+L8 = Revolute('d', -0.215, 'a', 0, 'alpha', -pi, 'offset', 0);            % Elo 6
+
+% Definir o robô
+robot = SerialLink([L1 L2 L3 L4 L5 L6 L7 L8], 'name', 'KP90-KP2');
+
+T_8e = transl(0.03046, 0.033, 0.43161) * trotz(-5.4) * troty(51.5) * trotx(-13.5);
+
+% Incorporar as transformaçoes no robô
+robot.base = trotx(180);  % Define a base do robô
+robot.tool = T_8e;  % Define a ferramenta (tool) do robô
+
+% Configuração inicial das juntas (todas em zero)
+q0 = zeros(1, 8);
+
+% Calcular a transformação homogênea do efetuador em relação à base (T_be)
+T_be = robot.fkine(q0);
+
+% Exibir as transformaçoes
+disp('Transformação da base para o efetuador (T_be):');
+disp(T_be.T);
+
+% Plotar o robô na configuração inicial com controles interativos
+figure;
+robot.teach(q0, 'workspace', [-4 4 -4 4 -4 4]);
+\end{lstlisting}
+
+\newpage
+
+\begin{lstlisting}[caption={Código da subseção 2.6}, label={code:subsecao26}]
+% Configuração dos Waypoints
+waypoints = [ 0.04,  0.00, 0.0; -0.04,  0.00, 0.0; -0.04,  0.01, 0.0; 0.04,  0.01, 0.0; 0.04,  0.02, 0.0;
+    -0.04,  0.02, 0.0; -0.04,  0.03, 0.0; 0.04,  0.03, 0.0; 0.04,  0.04, 0.0; -0.04,  0.04, 0.0;];
+% ------------------ Configuração do Robô Kuka KR90 ------------------------
+% ---------------- Configuração do Robô Kuka KP2 (Mesa Posicionadora) -----------------
+% ------------------ Configuração da Transformação entre Robôs -----------------------
+% Transformação entre as bases dos robôs
+T_Fab_Ftb = SE3;
+T_Fab_Ftb.t = [1.73923, 0.39198, -0.46360]; % Translação
+T_Fab_Ftb = T_Fab_Ftb * SE3.Rz(180);       % Rotação de 180 graus em Z
+
+% Angulos conhecidos da mesa posicionadora
+theta_t = [pi/4, 0]; 
+T_Ftb_Fde = robot_kukaKp2.fkine(theta_t); % Cinemática direta do KP2
+% ------------------ Cálculo da Cinemática Inversa e Trajetoria -----------------------
+% Configuraçoes iniciais
+q0 = zeros(1, robot_kukaKr90.n); % Angulos iniciais das juntas
+tol = 1e-6;                % Tolerância para solução da cinemática inversa
+lambda = 0.1;              % Taxa de regularização
+
+% Matriz para armazenar as soluçoes das juntas
+q_solutions = zeros(size(waypoints, 1), robot_kukaKr90.n);
+
+% Iteração para cada waypoint
+for i = 1:size(waypoints, 1)
+    % Define a transformação desejada para o waypoint atual
+    T_Fde_Ft = SE3.Rz(90) * SE3.Rx(180); % Orientação fixa
+    T_Fde_Ft.t = waypoints(i, :);        % Posição do waypoint
+    
+    % Transformação total em relação a base absoluta
+    T_Fab_Ft = T_Fab_Ftb * T_Ftb_Fde * T_Fde_Ft;
+    
+    % Calcula a cinemática inversa
+    q_solutions(i, :) = robot_kukaKr90.ikine(T_Fab_Ft, q0, 'tol', tol, 'lambda', lambda, 'mask', [1 1 1 1 1 1]);
+    
+    % Valida a solução obtida com a cinemática direta
+    T_check = robot_kukaKr90.fkine(q_solutions(i, :));
+    disp(['Waypoint ', num2str(i)]);
+    disp('Transformação homogênea obtida:');
+    disp(robot_kukakr90kp2.fkine([0, pi/4, q_solutions(i,:)]));
+    disp('Angulos das juntas:');
+    disp(q_solutions(i, :));
+end
+\end{lstlisting}
 
 \end{document}
