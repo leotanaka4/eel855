@@ -14,6 +14,8 @@ waypoints = [
 
 % ------------------ Configuração do Robô Kuka KR90 ------------------------
 
+clear L; % Limpar variáveis anteriores de elos
+
 % Definição dos elos
 L(1) = Revolute('d', -0.675, 'a', 0.35, 'alpha', pi/2, 'offset', 0);      
 L(2) = Revolute('d', 0, 'a', 1.35, 'alpha', 0, 'offset', 0);              
@@ -46,6 +48,29 @@ T_tool_kp2 = eye(4); % Matriz identidade para a ferramenta
 
 % Criação do robô Kuka KP2
 kukaKp2 = SerialLink(L, 'name', 'Kp2', 'base', T_base_kp2, 'tool', T_tool_kp2);
+
+% ---------------- Configuração do Sistema KR90-KP2 -----------------------
+
+clear L; % Limpar variáveis anteriores de elos
+
+% Parâmetros DH do sistema KP90-KP2
+L(1) = Revolute('d', 0.22, 'a', 0, 'alpha', pi/2, 'offset', pi/2);          % Elo 1
+L(2) = Revolute('d', 1.73923, 'a', -0.39198, 'alpha', -pi/2, 'offset', 0);  % Elo 2
+L(3) = Revolute('d', -0.27360, 'a', 0.35, 'alpha', pi/2, 'offset', pi/2);   % Elo 3
+L(4) = Revolute('d', 0, 'a', 1.35, 'alpha', 0, 'offset', 0);                % Elo 4
+L(5) = Revolute('d', 0, 'a', 0.041, 'alpha', -pi/2, 'offset', pi/2);        % Elo 5
+L(6) = Revolute('d', -1.2, 'a', 0, 'alpha', pi/2, 'offset', 0);             % Elo 6
+L(7) = Revolute('d', 0, 'a', 0, 'alpha', -pi/2, 'offset', 0);               % Elo 5
+L(8) = Revolute('d', -0.215, 'a', 0, 'alpha', -pi, 'offset', 0);            % Elo 6
+
+% Definir o robô
+kukakr90kp2 = SerialLink(L, 'name', 'KP90-KP2');
+
+T_8e = transl(0.03046, 0.033, 0.43161) * trotz(-5.4) * troty(51.5) * trotx(-13.5);
+
+% Incorporar as transformações no robô
+kukakr90kp2.base = trotx(180);  % Define a base do robô
+kukakr90kp2.tool = T_8e;  % Define a ferramenta (tool) do robô
 
 % ------------------ Configuração da Transformação entre Robôs -----------------------
 
@@ -84,7 +109,7 @@ for i = 1:size(waypoints, 1)
     T_check = kukaKr90.fkine(q_solutions(i, :));
     disp(['Waypoint ', num2str(i)]);
     disp('Transformação homogênea obtida:');
-    disp(robot.fkine([0, pi/4, q_solutions(i,:)]).T);
+    disp(kukakr90kp2.fkine([0, pi/4, q_solutions(i,:)]).T);
     disp('Angulos das juntas:');
     disp(q_solutions(i, :));
 end
