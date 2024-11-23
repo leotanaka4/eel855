@@ -69,26 +69,63 @@ kukakr90kp2.tool = T_8e;  % Define a ferramenta (tool) do robô
 % ------------------ Configuração da Transformação entre Robôs -----------------------
 
 % Transformação entre as bases dos robôs
-T_Fab_Ftb = SE3;
-T_Fab_Ftb.t = [1.73923, 0.39198, -0.46360]; % Translação
-T_Fab_Ftb = T_Fab_Ftb * SE3.Rz(180);       % Rotação de 180 graus em Z
+T_Fab_Ftb = SE3; % Inicializa uma transformação homogênea (SE3)
+T_Fab_Ftb.t = [1.73923, 0.39198, -0.46360]; % Define a translação
+T_Fab_Ftb = T_Fab_Ftb * SE3.Rz(180); % Aplica uma rotação de 180 graus em torno do eixo Z
 
-% Ângulos conhecidos da mesa posicionadora
+% Ângulos conhecidos da mesa posicionadora (KP2)
 theta_t = [pi/4, 0]; 
-T_Ftb_Fde = kukaKp2.fkine(theta_t); % Cinemática direta do KP2
+T_Ftb_Fde = kukaKp2.fkine(theta_t); % Calcula a cinemática direta da mesa posicionadora (KP2)
 
-% Ângulos fornecidos (em radianos)
+% Ângulos fornecidos para o robô KUKA KR90 (em radianos)
 theta = [0, pi/4, 0.2438, -0.7993, 2.0019, 1.6157, -1.7229, -0.2979];
 
-% Calcula o Jacobiano em relação à base (0)
-J_base = kukakr90kp2.jacob0(theta);
+% Calcula o Jacobiano do robô KUKA KR90 em relação à ferramenta
+J_tool = kukakr90kp2.jacobe(theta);
 
-% Calcula o Jacobiano em relação à ferramenta (n)
-J_tool = kukakr90kp2.jacobn(theta);
+disp('Jacobiano em relação à ferramenta (J_tool):');
+disp(J_tool);
 
-% Exibir os resultados
-disp('Jacobiano em relação à base (J_base):');
-disp(J_base);
+% Matriz de permutação P para ajustar a ordem de colunas
+P = [
+    0 1;
+    1 0
+];
 
+% Vetor p_ne (vetor posição da ferramenta no espaço cartesiano)
+p_dt = [0.04; 0; 0];
+
+% Matriz identidade 3x3
+I = eye(3);
+
+% Matriz anti-simétrica associada ao vetor p_dt
+p_dt_cross = [
+    0     -p_dt(3)  p_dt(2);
+    p_dt(3)  0     -p_dt(1);
+   -p_dt(2)  p_dt(1)  0
+];
+
+% Construção da matriz adjunta (adj_matrix)
+adj_matrix = [
+    I,        -p_dt_cross; % Parte superior: identidade e anti-simétrica
+    zeros(3), I            % Parte inferior: identidade
+];
+
+% Jacobiano do robô KUKA KR90 em relação à ferramenta (considerando apenas seus ângulos)
+J_kukakr90_tool = kukakr90.jacobe(theta(3:8));
+
+% Jacobiano da mesa posicionadora (KP2) em relação à base
+J_kukaKp2_base = kukaKp2.jacobe(theta_t);
+
+% Jacobiano transformado para o sistema T_Fde_Ft
+J_T_Fde_Ft = tr2jac(inv(T_Ftb_Fde.T) * T_Fab_Ftb.T * kukakr90.fkine(theta(3:8)).T); 
+
+% Ajusta o Jacobiano da base com a matriz adjunta e a matriz de permutação P
+jacobian_base_adjusted = J_T_Fde_Ft * adj_matrix * -J_kukaKp2_base * P;
+
+% Concatenação final do Jacobiano ajustado
+J_tool = [jacobian_base_adjusted, J_kukakr90_tool];
+
+% Exibe o Jacobiano em relação à ferramenta
 disp('Jacobiano em relação à ferramenta (J_tool):');
 disp(J_tool);

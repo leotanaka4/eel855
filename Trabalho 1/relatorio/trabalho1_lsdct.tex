@@ -511,10 +511,59 @@ a transformação homogênea do último eixo de coordenadas do Denavit-Hartenber
 
 \subsection{Determinação do Jacobiano de $F_t$ com respeito a $F_{de}$}
 
-Foi determinado o Jacobiano de $F_t$ com respeito a $F_{de}$, em termos do Jacobiano do braço
-robótico KR90, e do Jacobiano da mesa posicionadora KP2.
+\quad Para determinar o Jacobiano de $F_t$ com respeito a $F_{de}$, em termos do Jacobiano do braço
+robótico KR90 \((J_a)\) e do Jacobiano da mesa posicionadora KP2 \((J_t)\),
+foi levado em consideração que o jacobiano no ponto E $(J_E)$, em função de $J_n$ é dado por:
 
-\subsection{Validação do Jacobiano  de $F_t$ com respeito a $F_{de}$}
+\begin{equation}
+    J_E =
+    \begin{bmatrix}
+        \mathcal{I} & -\vec{p}_{nE} \times \\
+        0 & \mathcal{I}
+    \end{bmatrix}
+    J_n
+\end{equation}
+e outras propriedades de troca do sentido do jacobiano e
+da independência da parte do jacobiano das juntas posteriores em relação às juntas anteriores.
+Além disso, teve que ser usado uma matriz permutação $(P)$ já que o $\theta_1$ e $\theta_2$ da mesa posicionadora
+são, respectivamente, o $\theta_2$ e $\theta_1$ do sistema KR90-KP2.
+Assim obtendo o Jacobiano de $F_t$ com respeito a $F_{de}$:
+
+\begin{equation}
+    J_{dt} =
+    \begin{bmatrix}
+        -
+        \begin{bmatrix}
+            \mathcal{I} & -\vec{p}_{dt} \times \\
+            0 & \mathcal{I}
+        \end{bmatrix}
+        J_t P  & J_a
+    \end{bmatrix}
+\end{equation}
+
+\subsection{Validação do Jacobiano de $F_t$ com respeito a $F_{de}$}
+
+\quad Para validar o Jacobiano de $F_t$ com respeito a $F_{de}$ foi feito um código em Matlab que
+obtém o Jacobiano do sistema KR90-KP2 em relação ao eixo de coordenadas do efetuador pelo método jacobe do SerialLink do DH desse sistema.
+Além disso, foi feito nesse mesmo código esse jacobiano usando a implementação da equação obtida acima com
+o Jacobiano do braço robótico KR90 em relação ao eixo de coordenadas do efetuador,
+o Jacobiano da mesa posicionadora KP2 em relação ao eixo de coordenadas do topo do mesa e
+o jacobiano geométrico associado a transformação homogênea do topo da mesa até o efetuador com a função tr2jac.
+Isso foi feito dessa forma, porque a equação obtida acima está no abstrato e teve que ser passado para ser relacionado ao eixo de coordenadas do efetuador.
+Assim, tendo o resultado do Jacobiano do sistema KR90-KP2 em relação ao eixo de coordenadas do efetuador em ambos os métodos sendo:
+
+\[
+(J_{dt})_{F_t} =
+\begin{bmatrix}
+-0.0400 & -0.2200 &  1.2015 &  0.8580 &  0.0272 &  0.1084 &  0.4094 &  0.0222 \\
+-0.0000 & -0.0000 & -0.2364 &  0.1146 &  1.0537 &  0.5958 & -0.2400 & -0.0330 \\
+ 0.0000 &  0.0000 & -1.2016 &  0.8983 &  0.3979 &  0.2171 &  0.4396 &  0.0208 \\
+ 0.0000 & -0.0001 &  0.7071 & -0.6862 & -0.6862 & -0.7212 &  0.1259 &  0.7826 \\
+ 0.0000 &  1.0000 &  0.0001 & -0.2414 & -0.2414 &  0.3492 &  0.9153 &  0.1453 \\
+ 1.0000 & -0.0000 &  0.7071 &  0.6862 &  0.6862 & -0.5983 &  0.3825 & -0.6053
+\end{bmatrix}
+\]
+
 
 \subsection{Implementação da solução da cinemática inversa pelo método iterativo}
 
@@ -684,6 +733,54 @@ for i = 1:size(waypoints, 1)
     disp('Angulos das juntas:');
     disp(q_solutions(i, :));
 end
+\end{lstlisting}
+
+\newpage
+
+\begin{lstlisting}[caption={Código da subseção 2.8}, label={code:subsecao28}]
+% ------------------ Configuração do Robô Kuka KR90 ------------------------
+% ---------------- Configuração do Robô Kuka KP2 (Mesa Posicionadora) -----------------
+% ---------------- Configuração do Sistema KR90-KP2 -----------------------
+% ------------------ Configuração da Transformação entre Robôs -----------------------
+% Angulos conhecidos da mesa posicionadora (KP2)
+theta_t = [pi/4, 0]; 
+T_Ftb_Fde = kukaKp2.fkine(theta_t); % Calcula a cinemática direta da mesa posicionadora (KP2)
+% Angulos fornecidos para o robô KUKA KR90 (em radianos)
+theta = [0, pi/4, 0.2438, -0.7993, 2.0019, 1.6157, -1.7229, -0.2979];
+% Calcula o Jacobiano do robô KUKA KR90 em relação à ferramenta
+J_tool = kukakr90kp2.jacobe(theta);
+disp(J_tool);
+
+% Matriz de permutação P para ajustar a ordem de colunas
+P = [0 1; 1 0];
+
+% Vetor p_ne (vetor posição da ferramenta no espaço cartesiano)
+p_dt = [0.04; 0; 0];
+% Matriz anti-simétrica associada ao vetor p_dt
+p_dt_cross = [
+    0     -p_dt(3)  p_dt(2);
+    p_dt(3)  0     -p_dt(1);
+    -p_dt(2)  p_dt(1)  0];
+% Construção da matriz adjunta (adj_matrix)
+adj_matrix = [
+    eye(3),        -p_dt_cross; % Parte superior: identidade e anti-simétrica
+    zeros(3), eye(3)         ]; % Parte inferior: identidade
+
+% Jacobiano do robô KUKA KR90 em relação à ferramenta (considerando apenas seus ângulos)
+J_kukakr90_tool = kukakr90.jacobe(theta(3:8));
+
+% Jacobiano da mesa posicionadora (KP2) em relação à base
+J_kukaKp2_base = kukaKp2.jacobe(theta_t);
+
+% Jacobiano transformado para o sistema T_Fde_Ft
+J_T_Fde_Ft = tr2jac(inv(T_Ftb_Fde.T) * T_Fab_Ftb.T * kukakr90.fkine(theta(3:8)).T); 
+
+% Ajusta o Jacobiano da base com a matriz adjunta e a matriz de permutação P
+jacobian_base_adjusted = J_T_Fde_Ft * adj_matrix * -J_kukaKp2_base * P;
+
+% Concatenação final do Jacobiano ajustado
+J_tool = [jacobian_base_adjusted, J_kukakr90_tool];
+disp(J_tool);
 \end{lstlisting}
 
 \end{document}
