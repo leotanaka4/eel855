@@ -548,8 +548,9 @@ obtém o Jacobiano do sistema KR90-KP2 em relação ao eixo de coordenadas do ef
 em relação ao eixo de coordenadas do topo da mesa pelo método jacob0 do SerialLink do DH desse sistema.
 Além disso, foi feito nesse mesmo código esse jacobiano usando a implementação da equação obtida acima com
 o Jacobiano do braço robótico KR90 em relação ao eixo de coordenadas do efetuador,
-o Jacobiano da mesa posicionadora KP2 em relação ao eixo de coordenadas do topo do mesa e
-o jacobiano geométrico associado a transformação homogênea do topo da mesa até o efetuador com a função tr2jac.
+o Jacobiano da mesa posicionadora KP2 em relação ao eixo de coordenadas do topo do mesa,
+o Jacobiano geométrico associado a transformação homogênea do topo da mesa até o efetuador e
+o Jacobiano geométrico associado a transformação homogênea do efetuador até o topo da mesa com a função tr2jac.
 Isso foi feito dessa forma, porque a equação obtida acima está no abstrato e teve que ser passado para ser relacionado ao eixo de coordenadas do efetuador ou ao eixo de coordenadas do topo da mesa.
 Assim, tendo o resultado do Jacobiano do sistema KR90-KP2 em relação ao eixo de coordenadas do efetuador e em relação ao eixo de coordenadas da base
 em ambos os métodos sendo:
@@ -863,11 +864,13 @@ J_kukaKp2_base = kukaKp2.jacobe(theta_t);
 
 % Jacobiano transformado para o sistema T_Fde_Ft
 J_T_Fde_Ft = tr2jac(inv(T_Ftb_Fde.T) * inv(T_Fab_Ftb.T) * kukakr90.fkine(theta(3:8)).T); 
+% Jacobiano transformado para o sistema T_Ft_Fde
+J_T_Ft_Fde = tr2jac(inv(kukakr90.fkine(theta(3:8)).T)*T_Fab_Ftb.T*T_Ftb_Fde.T);
 
 % Concatenação final do Jacobiano em relação à ferramenta
 J_tool = [J_T_Fde_Ft * adj_matrix * -J_kukaKp2_base * P, J_kukakr90_tool]; disp(J_tool);
 % Concatenação final do jacobiano em relação à ferramenta
-J_base = [adj_matrix * -J_kukaKp2_base * P, J_T_Fde_Ft * J_kukakr90_tool]; disp(J_base);
+J_base = [adj_matrix * -J_kukaKp2_base * P, J_T_Ft_Fde * J_kukakr90_tool]; disp(J_base);
 \end{lstlisting}
 
 \newpage

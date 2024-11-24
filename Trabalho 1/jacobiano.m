@@ -124,7 +124,10 @@ J_kukakr90_tool = kukakr90.jacobe(theta(3:8));
 J_kukaKp2_base = kukaKp2.jacobe(theta_t);
 
 % Jacobiano transformado para o sistema T_Fde_Ft
-J_T_Fde_Ft = tr2jac(inv(T_Ftb_Fde.T) * inv(T_Fab_Ftb.T) * kukakr90.fkine(theta(3:8)).T); 
+J_T_Fde_Ft = tr2jac(inv(T_Ftb_Fde.T) * inv(T_Fab_Ftb.T) * kukakr90.fkine(theta(3:8)).T);
+
+% Jacobiano transformado para o sistema T_Ft_Fde
+J_T_Ft_Fde = tr2jac(inv(kukakr90.fkine(theta(3:8)).T)*T_Fab_Ftb.T*T_Ftb_Fde.T);
 
 % Concatenação final do Jacobiano ajustado
 J_tool = [J_T_Fde_Ft * adj_matrix * -J_kukaKp2_base * P, J_kukakr90_tool];
@@ -134,7 +137,7 @@ disp('Jacobiano em relação à ferramenta (J_tool):');
 disp(J_tool);
 
 % Concatenação final do jacobiano ajustado
-J_base = [adj_matrix * -J_kukaKp2_base * P, J_T_Fde_Ft * J_kukakr90_tool];
+J_base = [adj_matrix * -J_kukaKp2_base * P, J_T_Ft_Fde * J_kukakr90_tool];
 
 % Exibe o Jacobiano em relação à base
 disp('Jacobiano em relação à base (J_base):');
