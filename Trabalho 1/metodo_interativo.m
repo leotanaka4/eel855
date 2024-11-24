@@ -1,11 +1,11 @@
 % Parâmetros iniciais
 xd = [0.04; 0; 0];  % Posição desejada do efetuador
-q0 = [0; 0; 0; pi/2; 0; 0; 0; 0];  % Ângulos iniciais das juntas em radianos
+q0 = [0; 0; 0; pi/2; -pi/2; 0; 0; 0];  % Ângulos iniciais das juntas em radianos
 qk = q0;  % Inicializando qk
 Q = [qk];  % Armazenar a evolução dos ângulos
 
 ganho = 0.4;  % Ganho do algoritmo
-precisao = 1e-4;  % Critério de parada
+precisao = 1e-6;  % Critério de parada
 max_iter = 100;  % Máximo de iterações
 
 clear L; % Limpar variáveis anteriores de elos
@@ -21,7 +21,7 @@ L(7) = Revolute('d', 0, 'a', 0, 'alpha', -pi/2, 'offset', 0);               % El
 L(8) = Revolute('d', -0.215, 'a', 0, 'alpha', -pi, 'offset', 0);            % Elo 8
 
 % Definir o robô
-kukakr90kp2 = SerialLink(L, 'name', 'KP90-KP2');
+kukakr90kp2 = SerialLink(L, 'name', 'KR90-KP2');
 
 % Transformação da ferramenta
 T_8e = transl(0.03046, 0.033, 0.43161) * trotz(deg2rad(-5.4)) * ...
@@ -61,6 +61,16 @@ end
 if i == max_iter
     disp('Número máximo de iterações atingido sem convergência.');
 end
+
+% Exibir os valores finais dos ângulos
+disp('Valores finais dos ângulos (rad):');
+disp(qk);
+
+% Calcular e exibir a posição final do efetuador
+Tk_final = kukakr90kp2.fkine(qk);  % Calcular a transformação final
+xk_final = Tk_final.t;  % Posição final (x, y, z)
+disp('Posição final do efetuador (m):');
+disp(xk_final);
 
 % Plot da evolução
 kukakr90kp2.plot(Q', 'delay', 0.5, 'trail', '*');

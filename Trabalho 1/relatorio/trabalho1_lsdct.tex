@@ -544,12 +544,13 @@ Assim obtendo o Jacobiano de $F_t$ com respeito a $F_{de}$:
 \subsection{Validação do Jacobiano de $F_t$ com respeito a $F_{de}$}
 
 \quad Para validar o Jacobiano de $F_t$ com respeito a $F_{de}$ foi feito um código em Matlab que
-obtém o Jacobiano do sistema KR90-KP2 em relação ao eixo de coordenadas do efetuador pelo método jacobe do SerialLink do DH desse sistema.
+obtém o Jacobiano do sistema KR90-KP2 em relação ao eixo de coordenadas do efetuador pelo método jacobe e
+em relação ao eixo de coordenadas do topo da mesa pelo método jacob0 do SerialLink do DH desse sistema.
 Além disso, foi feito nesse mesmo código esse jacobiano usando a implementação da equação obtida acima com
 o Jacobiano do braço robótico KR90 em relação ao eixo de coordenadas do efetuador,
 o Jacobiano da mesa posicionadora KP2 em relação ao eixo de coordenadas do topo do mesa e
 o jacobiano geométrico associado a transformação homogênea do topo da mesa até o efetuador com a função tr2jac.
-Isso foi feito dessa forma, porque a equação obtida acima está no abstrato e teve que ser passado para ser relacionado ao eixo de coordenadas do efetuador.
+Isso foi feito dessa forma, porque a equação obtida acima está no abstrato e teve que ser passado para ser relacionado ao eixo de coordenadas do efetuador ou ao eixo de coordenadas do topo da mesa.
 Assim, tendo o resultado do Jacobiano do sistema KR90-KP2 em relação ao eixo de coordenadas do efetuador e em relação ao eixo de coordenadas da base
 em ambos os métodos sendo:
 
@@ -568,11 +569,11 @@ em ambos os métodos sendo:
 \begin{equation}
     (J_{dt})_{F_{de}} =
     \begin{bmatrix}
-    0      &  0.0000  & -0.2364  &  0.1145  &  1.0537  &  0.5958  & -0.2401  & -0.0330 \\
+    0.0000 &  0.0000  & -0.2364  &  0.1145  &  1.0537  &  0.5958  & -0.2401  & -0.0330 \\
     -0.0400 & -0.2200  &  1.2015  &  0.8580  &  0.0273  &  0.1085  &  0.4094  &  0.0222 \\
-    0      & -0.0000  &  1.2016  & -0.8983  & -0.3980  & -0.2171  & -0.4396  & -0.0208 \\
-    0      &  1.0000  & -0.0000  & -0.2414  & -0.2414  &  0.3493  &  0.9153  &  0.1453 \\
-    0      &  0.0000  &  0.7071  & -0.6862  & -0.6862  & -0.7212  &  0.1260  &  0.7826 \\
+    0.0000 & -0.0000  &  1.2016  & -0.8983  & -0.3980  & -0.2171  & -0.4396  & -0.0208 \\
+    0.0000 &  1.0000  & -0.0000  & -0.2414  & -0.2414  &  0.3493  &  0.9153  &  0.1453 \\
+    0.0000 &  0.0000  &  0.7071  & -0.6862  & -0.6862  & -0.7212  &  0.1260  &  0.7826 \\
     -1.0000 & -0.0000  & -0.7071  & -0.6862  & -0.6862  &  0.5983  & -0.3825  &  0.6053
     \end{bmatrix}
 \end{equation}
@@ -581,9 +582,80 @@ em ambos os métodos sendo:
 
 \subsection{Implementação da solução da cinemática inversa pelo método iterativo}
 
-Foi implementado no Matlab a solução da cinemática inversa pelo método iterativo
+\quad Para resolver a cinemática inversa do robô KR90-KP2, utilizou-se um método iterativo baseado na Jacobiana do manipulador.
+A seguir, são descritos os principais passos do algoritmo desenvolvido e as ferramentas empregadas.
+Os parâmetros iniciais do algoritmo incluem a configuração inicial das juntas ($\mathbf{q_0}$),
+a posição desejada do efetuador ($\mathbf{x_d}$), um ganho para o ajuste do vetor de deslocamento ($\gamma$),
+a precisão do critério de parada ($\epsilon$) e o número máximo de iterações permitido ($n_{\text{max}}$).
+Esses parâmetros garantem que o método seja robusto e ajustável às condições do problema.
+O método iterativo baseia-se na seguinte formulação:
+
+\begin{equation}
+    \mathbf{q}_{k+1} = \mathbf{q}_k + \gamma \cdot \mathbf{J}_k^\dagger (\mathbf{x}_d - \mathbf{x}_k),
+\end{equation}
+
+onde:
+\begin{itemize}
+    \item $\mathbf{q}_k$ é o vetor de ângulos das juntas na iteração $k$;
+    \item $\gamma$ é o ganho escalar;
+    \item $\mathbf{J}_k^\dagger$ é a pseudo-inversa da Jacobiana $\mathbf{J}_k$;
+    \item $\mathbf{x}_d$ é a posição desejada do efetuador;
+    \item $\mathbf{x}_k$ é a posição do efetuador calculada a partir da configuração $\mathbf{q}_k$.
+\end{itemize}
+
+\quad A cada iteração, a Jacobiana no espaço cartesiano é obtida com a função \texttt{jacob0}, sendo considerada apenas sua submatriz de posição ($\mathbf{J}_{\text{pos}}$). A pose atual do efetuador é calculada com a função \texttt{fkine}, que retorna a matriz de transformação homogênea correspondente à configuração atual das juntas.
+
+\quad O critério de parada é baseado na norma do vetor de erro entre a posição desejada e a posição atual, dada por:
+
+\begin{equation}
+    \|\mathbf{x}_d - \mathbf{x}_k\| < \epsilon,
+\end{equation}
+
+onde $\epsilon$ é o valor de precisão especificado. Caso o erro seja inferior ao limite estabelecido, considera-se que o algoritmo convergiu.
+
+\quad A seguir, foi preenchida a tabela com os resultados obtidos após a execução do algoritmo para o waypoint 1 do item 6 $(p_{dt} = [0.04, 0, 0]^T m)$:
+
+\begin{itemize}
+    \item \textbf{Ângulos finais das juntas ($\mathbf{q}_k$)}:
+    $\begin{bmatrix}
+        -0.2503 &
+         0.0244 &
+         1.6124 &
+         0.9254 &
+        -1.7375 &
+        -0.0813 &
+        -0.0147 &
+         0.0416
+    \end{bmatrix}^T \text{ rad.}$
+    \item \textbf{Número de iterações}: 31.
+    \item \textbf{Erro final alcançado}: $1 \times 10^{-6}$ m.
+\end{itemize}
+
+\quad A convergência do algoritmo foi analisada a partir da evolução do erro entre a posição desejada ($\mathbf{x}_d$) e a posição calculada ($\mathbf{x}_k$) ao longo das iterações.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.6]{figura_metodo_iterativo.png}
+    \caption{Solução da cinemática inversa pelo método iterativo}
+\end{figure}
+
+\quad Esses resultados validam o algoritmo e demonstram sua eficácia na resolução da cinemática inversa do robô KR90-KP2, alcançando a posição desejada com alta precisão.
+
+\newpage
 
 \section{Conclusão}
+
+\quad Este trabalho apresentou uma análise completa do sistema robótico composto pelo braço KUKA KR90 e a mesa posicionadora KUKA KP2, integrando conceitos teóricos e práticos de modelagem cinemática. Os principais resultados incluem:
+
+\begin{itemize}
+    \item Determinação e validação dos parâmetros Denavit-Hartenberg para os subsistemas KR90, KP2 e o sistema combinado.
+    \item Simulações com a \textit{Robot Toolbox} no MATLAB, utilizando a classe \texttt{SerialLink}.
+    \item Solução da cinemática inversa com a função \texttt{ikine()}.
+    \item Cálculo e validação do Jacobiano composto.
+    \item Implementação de um algoritmo iterativo de cinemática inversa.
+\end{itemize}
+
+\quad Assim, o trabalho consolidou conhecimentos teóricos e computacionais aplicados à modelagem de sistemas robóticos multijuntas.
 
 \newpage
 
@@ -705,7 +777,7 @@ kukakr90kp2.teach(q0, 'workspace', [-4 4 -4 4 -4 4]);
 
 \newpage
 
-\begin{lstlisting}[caption={Código da subseção 2.6}, label={code:subsecao26}]
+\begin{lstlisting}[caption={Código da Cinemática Inversa}, label={code:subsecao26}]
 % Configuração dos Waypoints
 waypoints = [ 0.04,  0.00, 0.0; -0.04,  0.00, 0.0; -0.04,  0.01, 0.0; 0.04,  0.01, 0.0; 0.04,  0.02, 0.0;
     -0.04,  0.02, 0.0; -0.04,  0.03, 0.0; 0.04,  0.03, 0.0; 0.04,  0.04, 0.0; -0.04,  0.04, 0.0;];
@@ -753,7 +825,7 @@ end
 
 \newpage
 
-\begin{lstlisting}[caption={Código da subseção 2.8}, label={code:subsecao28}]
+\begin{lstlisting}[caption={Código do Jacobiano de $F_t$ com respeito a $F_{de}$}, label={code:subsecao28}]
 % ------------------ Configuração do Robô Kuka KR90 ------------------------
 % ---------------- Configuração do Robô Kuka KP2 (Mesa Posicionadora) -----------------
 % ---------------- Configuração do Sistema KR90-KP2 -----------------------
@@ -790,12 +862,57 @@ J_kukakr90_tool = kukakr90.jacobe(theta(3:8));
 J_kukaKp2_base = kukaKp2.jacobe(theta_t);
 
 % Jacobiano transformado para o sistema T_Fde_Ft
-J_T_Fde_Ft = tr2jac(inv(T_Ftb_Fde.T) * T_Fab_Ftb.T * kukakr90.fkine(theta(3:8)).T); 
+J_T_Fde_Ft = tr2jac(inv(T_Ftb_Fde.T) * inv(T_Fab_Ftb.T) * kukakr90.fkine(theta(3:8)).T); 
 
 % Concatenação final do Jacobiano em relação à ferramenta
 J_tool = [J_T_Fde_Ft * adj_matrix * -J_kukaKp2_base * P, J_kukakr90_tool]; disp(J_tool);
 % Concatenação final do jacobiano em relação à ferramenta
 J_base = [adj_matrix * -J_kukaKp2_base * P, J_T_Fde_Ft * J_kukakr90_tool]; disp(J_base);
+\end{lstlisting}
+
+\newpage
+
+\begin{lstlisting}[caption={Código do método iterativo da solução da cinemática inversa}, label={code:subsecao29}]
+% Parâmetros iniciais
+xd = [0.04; 0; 0];  % Posição desejada do efetuador
+q0 = [0; 0; 0; pi/2; -pi/2; 0; 0; 0];  % Angulos iniciais das juntas em radianos
+qk = q0;  % Inicializando qk
+Q = [qk];  % Armazenar a evolução dos ângulos
+ganho = 0.4;  % Ganho do algoritmo
+precisao = 1e-6;  % Critério de parada
+max_iter = 100;  % Máximo de iteraçoes
+% ---------------- Configuração do Sistema KR90-KP2 -----------------------
+% Loop para resolver a cinemática inversa iterativamente
+for i = 1:max_iter
+    % Calcula a pose atual (transformação homogênea)
+    Tk = kukakr90kp2.fkine(qk);  % Transformação homogênea atual
+    xk = Tk.t;                   % Extraindo a posição atual (x, y, z)
+    % Verificando o critério de parada
+    erro = norm(xd - xk);
+    fprintf('Iteração %d: Erro = %.6f\n', i, erro);
+    if erro < precisao
+        disp('Convergência alcançada!');
+        break;
+    end
+    % Jacobiana no espaço cartesiano
+    Jk = kukakr90kp2.jacob0(qk);  % Jacobiana 6x8 no espaço cartesiano
+    Jk = Jk(1:3, :);             % Extraindo as linhas de posição (3x8)
+    % Atualização dos ângulos das juntas
+    dqk = ganho * pinv(Jk) * (xd - xk);  % Usando pseudo-inversa para evitar singularidades
+    qk = qk + dqk;  % Atualização dos ângulos
+    % Armazenar a solução
+    Q = [Q qk];
+end
+
+% Exibir os valores finais dos ângulos
+disp('Valores finais dos ângulos (rad):');
+disp(qk);
+% Calcular e exibir a posição final do efetuador
+Tk_final = kukakr90kp2.fkine(qk);  % Calcular a transformação final
+xk_final = Tk_final.t;  % Posição final (x, y, z)
+disp('Posição final do efetuador (m):'); disp(xk_final);
+% Plot da evolução
+kukakr90kp2.plot(Q', 'delay', 0.5, 'trail', '*');
 \end{lstlisting}
 
 \end{document}
