@@ -83,8 +83,14 @@ theta = [0, pi/4, 0.2438, -0.7993, 2.0019, 1.6157, -1.7229, -0.2979];
 % Calcula o Jacobiano do robô KUKA KR90 em relação à ferramenta
 J_tool = kukakr90kp2.jacobe(theta);
 
+% Calcula o Jacobiano do robô KUKA KR90 em relação à base
+J_base = kukakr90kp2.jacob0(theta);
+
 disp('Jacobiano em relação à ferramenta (J_tool):');
 disp(J_tool);
+
+disp('Jacobiano em relação à base (J_base):');
+disp(J_base);
 
 % Matriz de permutação P para ajustar a ordem de colunas
 P = [
@@ -120,12 +126,16 @@ J_kukaKp2_base = kukaKp2.jacobe(theta_t);
 % Jacobiano transformado para o sistema T_Fde_Ft
 J_T_Fde_Ft = tr2jac(inv(T_Ftb_Fde.T) * T_Fab_Ftb.T * kukakr90.fkine(theta(3:8)).T); 
 
-% Ajusta o Jacobiano da base com a matriz adjunta e a matriz de permutação P
-jacobian_base_adjusted = J_T_Fde_Ft * adj_matrix * -J_kukaKp2_base * P;
-
 % Concatenação final do Jacobiano ajustado
-J_tool = [jacobian_base_adjusted, J_kukakr90_tool];
+J_tool = [J_T_Fde_Ft * adj_matrix * -J_kukaKp2_base * P, J_kukakr90_tool];
 
 % Exibe o Jacobiano em relação à ferramenta
 disp('Jacobiano em relação à ferramenta (J_tool):');
 disp(J_tool);
+
+% Concatenação final do jacobiano ajustado
+J_base = [adj_matrix * -J_kukaKp2_base * P, J_T_Fde_Ft * J_kukakr90_tool];
+
+% Exibe o Jacobiano em relação à base
+disp('Jacobiano em relação à base (J_base):');
+disp(J_base);

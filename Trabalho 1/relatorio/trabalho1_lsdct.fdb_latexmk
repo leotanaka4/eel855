@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1732369204 "c:/Users/Lucas/OneDrive/Área de Trabalho/Período 24.2/Robôtica e Automação/Trabalhos/eel855/Trabalho 1/relatorio/trabalho1_lsdct.tex" "trabalho1_lsdct.pdf" "trabalho1_lsdct" 1732369206
+["pdflatex"] 1732406300 "c:/Users/Lucas/OneDrive/Área de Trabalho/Período 24.2/Robôtica e Automação/Trabalhos/eel855/Trabalho 1/relatorio/trabalho1_lsdct.tex" "trabalho1_lsdct.pdf" "trabalho1_lsdct" 1732406303
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1732065002 82705 9cc9f144eacd499bc23a611703921467 ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1728.pk" 1683389622 20624 b5ef9de7fe9a614af111cda132cc174a ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tctt0800.pk" 1732065450 7416 09cb7a9d49331e6632717a04ed0e693c ""
@@ -180,7 +180,7 @@
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/setspace/setspace.sty" 1324294077 22913 a27d7908fc6f0385466454a966a316eb ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "c:/Users/Lucas/OneDrive/Área de Trabalho/Período 24.2/Robôtica e Automação/Trabalhos/eel855/Trabalho 1/relatorio/trabalho1_lsdct.tex" 1732369201 33557 0679aad42e05bfc8ff60d162e0e88b9d ""
+  "c:/Users/Lucas/OneDrive/Área de Trabalho/Período 24.2/Robôtica e Automação/Trabalhos/eel855/Trabalho 1/relatorio/trabalho1_lsdct.tex" 1732406300 34550 29666170b58597bb71d97756a6182be6 ""
   "images//dh_modelo1.jpeg" 1731977567 61446 61fcd3bee8d010da38979fc408305fac ""
   "images//dh_modelo2.jpeg" 1731977572 77360 a6f16dab7458ac688ef8a2e0a637f95a ""
   "images//dh_modelo3.jpeg" 1732058590 61886 9ccba0f572618457596241f48001f484 ""
@@ -200,8 +200,8 @@
   "images//figura7_modelo3_theta4_minus90_theta2_30.png" 1731971644 74862 dcde22e4e1eed64fe6a6ff08ba6c3bcc ""
   "images//figura7_modelo3_theta4_minus90_theta2_30_theta5_90.png" 1731971691 81173 03b806fbb2c87f1bcc98366d9fd12b52 ""
   "images//figura7_modelo3_theta4_minus90_theta2_minus30_theta5_90.png" 1731971723 75112 07504e103fd4e86e764281bf59bd943f ""
-  "trabalho1_lsdct.aux" 1732369206 6300 3b2c0d5a961cb24e66205f54faca2575 "pdflatex"
-  "trabalho1_lsdct.tex" 1732369201 33557 0679aad42e05bfc8ff60d162e0e88b9d ""
+  "trabalho1_lsdct.aux" 1732406302 6300 3b2c0d5a961cb24e66205f54faca2575 "pdflatex"
+  "trabalho1_lsdct.tex" 1732406300 34550 29666170b58597bb71d97756a6182be6 ""
   (generated)
   "trabalho1_lsdct.aux"
   "trabalho1_lsdct.log"
