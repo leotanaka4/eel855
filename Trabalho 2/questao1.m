@@ -1,0 +1,124 @@
+clear all;
+
+% Definição dos parâmetros DH com juntas revolutas
+L(1) = Revolute('d', -0.2848, 'a', 0, 'alpha', pi/2, 'offset', 0);
+L(2) = Revolute('d', -0.0118, 'a', 0, 'alpha', pi/2, 'offset', pi);
+L(3) = Revolute('d', -0.4208, 'a', 0, 'alpha', pi/2, 'offset', pi);
+L(4) = Revolute('d', -0.0128, 'a', 0, 'alpha', pi/2, 'offset', pi);
+L(5) = Revolute('d', -0.3143, 'a', 0, 'alpha', pi/2, 'offset', pi);
+L(6) = Revolute('d', 0,       'a', 0, 'alpha', pi/2, 'offset', pi);
+L(7) = Revolute('d', 0,       'a', 0, 'alpha', pi,   'offset', pi);
+
+% Criação do manipulador
+kinova = SerialLink(L, 'name', 'Kinova');
+kinova.base = trotx(180);  % Define a base do robô
+
+% Condições iniciais
+q0 = deg2rad([0, 15, 180, -130, 0, 55, 90]);
+
+% Inicialização de variáveis
+qi = q0;
+xd_prev = kinova.fkine(qi).t;
+h = 0.01; % Passo de tempo
+tmax = 10; % Tempo máximo (s)
+wmax = 1; % Velocidade máxima das juntas (rad/s)
+wn = pi/2; % Frequência natural
+K = 10; % Ganho do controlador
+
+% Vetores para armazenamento dos dados
+t_vec = 0:h:tmax;
+x_ref = zeros(3, length(t_vec));
+x_out = zeros(3, length(t_vec));
+
+% Simulação
+for k = 1:length(t_vec)
+    t = t_vec(k);
+    
+    % Jacobiano e cinemática direta
+    J = kinova.jacob0(qi); % Jacobiano do robô
+    Jp = J(1:3,1:4);
+    x = kinova.fkine(qi).t; % Posição atual do fim do braço
+    
+    % Selecionar a trajetória desejada:
+    % Trajetória (a)
+    xd = routeGen1(t, wn);
+    
+    % Trajetória (b)
+    % xd = routeGen2(t, wn);
+    
+    % Trajetória (c)
+    % xd = routeGen3(t, wn);
+    
+    % Erro de posição e velocidade desejada
+    err = xd - x; % Erro de posição
+    xdd = (xd - xd_prev) / h; % Velocidade desejada 
+    xd_prev = xd; % Atualiza posição anterior
+    
+    % Controlador
+    u = pinv(Jp) * (xdd + K * err); % Cálculo das velocidades para as primeiras 4 juntas
+    u = max(min(u, wmax), -wmax); % Limitação de velocidades
+    
+    % Integração (Euler) para as primeiras 4 juntas
+    qk = qi; % Copia o vetor atual de juntas
+    qk = qi + h * [u(1), u(2), u(3), u(4), 0, 0, 0]; % Atualiza apenas as primeiras 4 juntas
+    qi = qk; % Atualiza o estado
+    
+    % Armazenar dados
+    x_ref(:, k) = xd; % Trajetória de referência
+    x_out(:, k) = x;  % Trajetória saída
+end
+
+% Plotagem dos resultados
+figure;
+subplot(3, 1, 1);
+plot(t_vec, x_ref(1, :), 'r', 'LineWidth', 1.5); hold on;
+plot(t_vec, x_out(1, :), 'b--', 'LineWidth', 1.5);
+xlabel('Tempo (s)');
+ylabel('Posição X (m)');
+legend('Referência', 'Saída');
+title('Trajetória no eixo X');
+grid on;
+
+subplot(3, 1, 2);
+plot(t_vec, x_ref(2, :), 'r', 'LineWidth', 1.5); hold on;
+plot(t_vec, x_out(2, :), 'b--', 'LineWidth', 1.5);
+xlabel('Tempo (s)');
+ylabel('Posição Y (m)');
+legend('Referência', 'Saída');
+title('Trajetória no eixo Y');
+grid on;
+
+subplot(3, 1, 3);
+plot(t_vec, x_ref(3, :), 'r', 'LineWidth', 1.5); hold on;
+plot(t_vec, x_out(3, :), 'b--', 'LineWidth', 1.5);
+xlabel('Tempo (s)');
+ylabel('Posição Z (m)');
+legend('Referência', 'Saída');
+title('Trajetória no eixo Z');
+grid on;
+
+% Funções de geração de trajetória
+function xd = routeGen1(t, wn)
+    % Trajetória (a): Circunferência no plano X-Z
+    r = 0.1; % Raio da circunferência
+    x0 = [0.4; 0; 0.4]; % Centro da circunferência
+    xd = x0 + [r * cos(wn * t); 0; r * sin(wn * t)];
+end
+
+function xd = routeGen2(t, wn)
+    % Trajetória (b): Projeção no plano (x - 0.4) - y + (z - 0.4) = 0
+    r = 0.1; % Raio da circunferência
+    x0 = [0.4; 0; 0.4]; % Centro da circunferência
+    xz = x0 + [r * cos(wn * t); 0; r * sin(wn * t)]; % Trajetória no plano X-Z
+    x = xz(1);
+    z = xz(3);
+    y = (x - 0.4) + (z - 0.4); % Ajuste para satisfazer o plano
+    xd = [x; y; z];
+end
+
+function xd = routeGen3(t, wn)
+    % Trajetória (c): Oscilação complexa no plano X-Z
+    xd = [0.08 * (sin(wn * t) + sin(4 * wn * t)) + 0.4;
+          0;
+          0.08 * (cos(wn * t) + cos(4 * wn * t)) + 0.4];
+end
