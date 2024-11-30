@@ -23,7 +23,14 @@ h = 0.01; % Passo de tempo
 tmax = 10; % Tempo máximo (s)
 wmax = 1; % Velocidade máxima das juntas (rad/s)
 wn = pi/2; % Frequência natural
-K = 10; % Ganho do controlador
+wn3 = pi/8; % Frequência natutal - Terceira Trajetória
+K = 1.99; % Ganho do controlador
+% K1_1 = 1.81
+% K2_1 = 1.79
+% K3_1 = 1.99
+% K1_2 = ?
+% K2_2 = ?
+% K3_2 = ?
 
 % Vetores para armazenamento dos dados
 t_vec = 0:h:tmax;
@@ -36,31 +43,36 @@ for k = 1:length(t_vec)
     
     % Jacobiano e cinemática direta
     J = kinova.jacob0(qi); % Jacobiano do robô
-    Jp = J(1:3,1:4);
+    Jp = J(1:3,1:7);
     x = kinova.fkine(qi).t; % Posição atual do fim do braço
     
     % Selecionar a trajetória desejada:
     % Trajetória (a)
-    xd = routeGen1(t, wn);
+    % xd = routeGen1(t, wn);
     
     % Trajetória (b)
     % xd = routeGen2(t, wn);
     
     % Trajetória (c)
-    % xd = routeGen3(t, wn);
+    % xd = routeGen3(t, wn3);
     
     % Erro de posição e velocidade desejada
     err = xd - x; % Erro de posição
-    xdd = (xd - xd_prev) / h; % Velocidade desejada 
+    xdd = 0; % Velocidade desejada (xd - xd_prev) / h ou 0
     xd_prev = xd; % Atualiza posição anterior
     
     % Controlador
     u = pinv(Jp) * (xdd + K * err); % Cálculo das velocidades para as primeiras 4 juntas
-    u = max(min(u, wmax), -wmax); % Limitação de velocidades
+    % Verificar se algum valor de u ultrapassa os limites e imprimir
+    if any(abs(u) > 1)
+        fprintf('Aviso: O valor de u ultrapassou o limite! u = [');
+        fprintf('%g ', u); % Imprime os valores de u
+        fprintf(']\n');
+    end
     
     % Integração (Euler) para as primeiras 4 juntas
     qk = qi; % Copia o vetor atual de juntas
-    qk = qi + h * [u(1), u(2), u(3), u(4), 0, 0, 0]; % Atualiza apenas as primeiras 4 juntas
+    qk = qi + h * u'; % Atualiza apenas as primeiras 4 juntas
     qi = qk; % Atualiza o estado
     
     % Armazenar dados
