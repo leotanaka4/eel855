@@ -23,7 +23,8 @@ tmax = 10; % Tempo máximo (s)
 wmax = 1; % Velocidade máxima das juntas (rad/s)
 wn = pi/2; % Frequência natural
 wn3 = pi/8; % Frequência natutal - Terceira Trajetória
-K = 2.05; % Ganho do controlador
+K = 1.1; % Ganho do controlador
+
 % K1_1 = 1.81
 % K2_1 = 2.05
 % K3_1 = 1.99
@@ -40,10 +41,10 @@ x_out = zeros(3, length(t_vec));
 % xd_prev = routeGen1(0, wn);
     
 % Trajetória (b)
-xd_prev = routeGen2(0, wn);
+% xd_prev = routeGen2(0, wn);
     
 % Trajetória (c)
-% xd_prev = routeGen3(0, wn3);
+xd_prev = routeGen3(0, wn3);
 
 % Simulação
 for k = 1:length(t_vec)
@@ -59,14 +60,14 @@ for k = 1:length(t_vec)
     % xd = routeGen1(t, wn);
     
     % Trajetória (b)
-    xd = routeGen2(t, wn);
+    % xd = routeGen2(t, wn);
     
     % Trajetória (c)
-    % xd = routeGen3(t, wn3);
+    xd = routeGen3(t, wn3);
     
     % Erro de posição e velocidade desejada
     err = xd - x; % Erro de posição
-    xdd = 0; % Velocidade desejada (xd - xd_prev) / h ou 0
+    xdd = (xd - xd_prev) / h; % Velocidade desejada (xd - xd_prev) / h ou 0
     xd_prev = xd; % Atualiza posição anterior
     
     % Controlador
