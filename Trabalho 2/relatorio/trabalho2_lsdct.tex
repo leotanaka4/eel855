@@ -123,13 +123,37 @@ $R_{b0}=R_x(\pi)$ onde $R_x(\cdot)$ é uma rotação elementar ao redor do eixo 
 
 Para a primeira parte do trabalho, foi considerado a posição inicial do manipulador é definida pelos ângulo das juntas:
 $\theta = \begin{bmatrix} 0 & 15 & 180 & -130 & 0 & 55 & 90 \end{bmatrix}$ (graus). Porém, para a segunda parte do trabalho,
-foi considerado a posição inicial do manipulador é definida pelos ângulos das juntas: $\theta_h = \begin{bmatrix} 90 & 15 & 180 & -130 & 0 & 55 & 0 \end{bmatrix}$.
+foi considerado a posição inicial do manipulador é definida pelos ângulos das juntas: $\theta_h = \begin{bmatrix} 90 & 15 & 180 & -130 & 0 & 55 & 0 \end{bmatrix}$ (graus).
 Além disso, foi considerado que na tabela de Denavit-Hartenberg da primeira parte do trabalho tem o $d_7 = -0.3574 m$.
-
 
 \section{Desenvolvimento}
 
 \subsection{Controle Cinemático de Manipuladores}
+
+Foi considerado o controle cinemático da posição do punho do manipulador
+em que somente a velocidades das 4 primeiras juntas é controlada,
+porque as 3 últimas juntas estão na mesma posição fazendo que as três últimas colunas do jacobiano sejam zero.
+Além disso, a velocidade máxima das juntas foi definida como $\dot{\theta}_{max} = 1 \ rad/s$. Foram consideradas as seguintes trajétorias (com $\omega_n = \pi/2$):
+
+\begin{enumerate}[label=(\alph*)]
+    \item \( \mathbf{x}_d \) descreve uma circunferência de \( 0.1 \, \text{m} \) de raio no plano \( X-Z \), centrada no ponto $\mathbf{x}_0 = \begin{bmatrix} 0.4 & 0 & 0.4 \end{bmatrix}^T$,
+    e percorrida com uma frequência \(\omega_n\).
+
+    \item A circunferência do item anterior projetada no plano definido pela equação: $(x - 0.4) - y + (z - 0.4) = 0$.
+
+    \item Considerando agora \(\omega_n = \frac{\pi}{8}\), temos:
+    $\mathbf{x}_d(t) = \begin{bmatrix} 0.08 \big(\sin(\omega_n t) + \sin(4\omega_n t)\big) + 0.4 \\ 0 \\ 0.08 \big(\cos(\omega_n t) + \cos(4\omega_n t)\big) + 0.4 \end{bmatrix}.$
+\end{enumerate}
+
+Foi simulado o comportamento do sistema em malha fechada para as trajetórias especificadas utilizando os seguinte controladores:
+
+\begin{enumerate}
+    \item \( \mathbf{u} = \big(J(\boldsymbol{\theta})\big)^{\dagger} \mathbf{K} (\mathbf{x}_d - \mathbf{x}) \).
+    
+    \item \( \mathbf{u} = \big(J(\boldsymbol{\theta})\big)^{\dagger} \big[\dot{\mathbf{x}}_d + \mathbf{K} (\mathbf{x}_d - \mathbf{x})\big] \), onde $J^{\dagger} = J^\top \big(J J^\top\big)^{-1}$.
+\end{enumerate}
+
+Além disso, foi sintonizado o ganho K com 6 configurações diferentes para obter o melhor desempenho possível atendendo a especificação de $|u_i| \leq 1 (i=1,2,3,4)$.
 
 \subsection{Controle Cinemático de Manipuladores por Servo Visão}
 
