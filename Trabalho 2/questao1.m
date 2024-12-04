@@ -22,15 +22,15 @@ h = 0.01; % Passo de tempo
 tmax = 10; % Tempo máximo (s)
 wmax = 1; % Velocidade máxima das juntas (rad/s)
 wn = pi/2; % Frequência natural
-wn3 = pi/8; % Frequência natutal - Terceira Trajetória
-K = 1.1; % Ganho do controlador
+wn3 = pi/8; % Frequência natural - Terceira Trajetória
+K = 1.10; % Ganho do controlador
 
-% K1_1 = 1.81
-% K2_1 = 2.05
-% K3_1 = 1.99
-% K1_2 = 1.41
-% K2_2 = 2.05
-% K3_2 = 1.10
+% Ka_1 = 1.81
+% Kb_1 = 2.05
+% Kc_1 = 1.99
+% Ka_2 = 1.41
+% Kb_2 = 2.05
+% Kc_2 = 1.10
 
 % Vetores para armazenamento dos dados
 t_vec = 0:h:tmax;
@@ -72,12 +72,6 @@ for k = 1:length(t_vec)
     
     % Controlador
     u = pinv(Jp) * (xdd + K * err); % Cálculo das velocidades para as primeiras 4 juntas
-    % Verificar se algum valor de u ultrapassa os limites e imprimir
-    if any(abs(u) > 1)
-        fprintf('Aviso: O valor de u ultrapassou o limite! u = [');
-        fprintf('%g ', u); % Imprime os valores de u
-        fprintf(']\n');
-    end
     
     % Integração (Euler) para as primeiras 4 juntas
     qk = qi; % Copia o vetor atual de juntas
@@ -116,6 +110,16 @@ xlabel('Tempo (s)');
 ylabel('Posição Z (m)');
 legend('Referência', 'Saída');
 title('Trajetória no eixo Z');
+grid on;
+
+% Gráfico 3D da trajetória real e desejada
+figure;
+plot3(x_ref(1, :), x_ref(2, :), x_ref(3, :), 'r-', 'LineWidth', 1.5); hold on;
+plot3(x_out(1, :), x_out(2, :), x_out(3, :), 'b--', 'LineWidth', 1.5);
+xlabel('X (m)');
+ylabel('Y (m)');
+zlabel('Z (m)');
+legend('Referência', 'Saída');
 grid on;
 
 % Funções de geração de trajetória
