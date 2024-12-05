@@ -153,15 +153,394 @@ Foi simulado o comportamento do sistema em malha fechada para as trajetórias es
     \item \( \mathbf{u} = \big(J(\boldsymbol{\theta})\big)^{\dagger} \big[\dot{\mathbf{x}}_d + \mathbf{K} (\mathbf{x}_d - \mathbf{x})\big] \), onde $J^{\dagger} = J^\top \big(J J^\top\big)^{-1}$.
 \end{enumerate}
 
+Para implementar o segundo controlador, foi feita a derivação algébrica das três trajétórias consideradas no problema.
+Portanto, não foi utilizado derivação numérica para definir o $\dot{x_d}$ no segundo controlador.
 Além disso, foi sintonizado o ganho K com 6 configurações diferentes para obter o melhor desempenho possível atendendo a especificação de $|u_i| \leq 1 (i=1,2,3,4)$.
+A seguir temos os gráficos utilizados para analisar as 6 configurações diferentes:
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.6\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{trajetorias_a1.png}
+        \caption{Trajetórias da posição do punho ao longo do tempo}
+        \label{fig:trajetorias_a1}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.6\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{velocidades_a1.png}
+        \caption{Velocidades das 4 primeiras juntas}
+        \label{fig:velocidades_a1}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.6\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{grafico3d_a1.png}
+        \caption{Trajetória da posição do punho no espaço}
+        \label{fig:grafico3d_a1}
+    \end{subfigure}
+    \caption{Gráficos da Trajetória (a) com Controlador 1}
+    \label{fig:a1}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.6\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{trajetorias_a2.png}
+        \caption{Trajetórias da posição do punho ao longo do tempo}
+        \label{fig:trajetorias_a2}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.6\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{velocidades_a2.png}
+        \caption{Velocidades das 4 primeiras juntas}
+        \label{fig:velocidades_a2}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.6\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{grafico3d_a2.png}
+        \caption{Trajetória da posição do punho no espaço}
+        \label{fig:grafico3d_a2}
+    \end{subfigure}
+    \caption{Gráficos da Trajetória (a) com Controlador 2}
+    \label{fig:a2}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.6\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{trajetorias_b1.png}
+        \caption{Trajetórias da posição do punho ao longo do tempo}
+        \label{fig:trajetorias_b1}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.6\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{velocidades_b1.png}
+        \caption{Velocidades das 4 primeiras juntas}
+        \label{fig:velocidades_b1}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.6\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{grafico3d_b1.png}
+        \caption{Trajetória da posição do punho no espaço}
+        \label{fig:grafico3d_b1}
+    \end{subfigure}
+    \caption{Gráficos da Trajetória (b) com Controlador 1}
+    \label{fig:b1}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.6\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{trajetorias_b2.png}
+        \caption{Trajetórias da posição do punho ao longo do tempo}
+        \label{fig:trajetorias_b2}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.6\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{velocidades_b2.png}
+        \caption{Velocidades das 4 primeiras juntas}
+        \label{fig:velocidades_b2}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.6\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{grafico3d_b2.png}
+        \caption{Trajetória da posição do punho no espaço}
+        \label{fig:grafico3d_b2}
+    \end{subfigure}
+    \caption{Gráficos da Trajetória (b) com Controlador 2}
+    \label{fig:b2}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.6\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{trajetorias_c1.png}
+        \caption{Trajetórias da posição do punho ao longo do tempo}
+        \label{fig:trajetorias_c1}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.6\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{velocidades_c1.png}
+        \caption{Velocidades das 4 primeiras juntas}
+        \label{fig:velocidades_c1}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.6\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{grafico3d_c1.png}
+        \caption{Trajetória da posição do punho no espaço}
+        \label{fig:grafico3d_c1}
+    \end{subfigure}
+    \caption{Gráficos da Trajetória (c) com Controlador 1}
+    \label{fig:c1}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.6\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{trajetorias_c2.png}
+        \caption{Trajetórias da posição do punho ao longo do tempo}
+        \label{fig:trajetorias_c2}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.6\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{velocidades_c2.png}
+        \caption{Velocidades das 4 primeiras juntas}
+        \label{fig:velocidades_c2}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.6\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{grafico3d_c2.png}
+        \caption{Trajetória da posição do punho no espaço}
+        \label{fig:grafico3d_c2}
+    \end{subfigure}
+    \caption{Gráficos da Trajetória (c) com Controlador 2}
+    \label{fig:c2}
+\end{figure}
+
+\newpage
+
+Após analisar os dados obtidos das 6 configurações diferentes, é possível concluir sobre a estabilidade e desempenho de cada um dos controladores.
+Portanto, os controladores podem assegurar a estabilidade, se $J(\theta)$ tenha posto completo, garantindo a existência do pseudo-inverso $(J^{\dagger})$.
+Além disso, o controlador 1 não consegue ter a convergência ao ser respeitado as especificações do problema.
+Assim, a saída acaba tendo uma diferença de fase em relação a trajetória de referência e um desvio considerável para as três trajetórias especificadas,
+o que demonstra um desempenho ruim para seguimento de trajetórias.
+Entretanto, o controlador 2 consegue ter a convergência ao ser respeitado as especificações do problema.
+Ademais, o erro entre a saída e a trajetória de referência acaba tendendo a zero de uma forma bem rápida,
+tendo um desempenho bom para seguimento de trajetórias. 
+Isso acontece, porque o controlador 2 possui uma feedforward $(\dot{x_d})$ compensando o movimento desejado.
+
 
 \subsection{Controle Cinemático de Manipuladores por Servo Visão}
 
 \section{Conclusão}
 
-
+\newpage
 
 \section*{Apêndice}
+
+\begin{lstlisting}[caption={Código da primeira parte do trabalho}, label={code:subsecao21}]
+clear all;
+
+% Definição dos parâmetros DH com juntas revolutas
+L(1) = Revolute('d', -0.2848, 'a', 0, 'alpha', pi/2, 'offset', 0);
+L(2) = Revolute('d', -0.0118, 'a', 0, 'alpha', pi/2, 'offset', pi);
+L(3) = Revolute('d', -0.4208, 'a', 0, 'alpha', pi/2, 'offset', pi);
+L(4) = Revolute('d', -0.0128, 'a', 0, 'alpha', pi/2, 'offset', pi);
+L(5) = Revolute('d', -0.3143, 'a', 0, 'alpha', pi/2, 'offset', pi);
+L(6) = Revolute('d', 0,       'a', 0, 'alpha', pi/2, 'offset', pi);
+L(7) = Revolute('d', 0,       'a', 0, 'alpha', pi,   'offset', pi);
+
+% Criação do manipulador
+kinova = SerialLink(L, 'name', 'Kinova');
+kinova.base = trotx(180);  % Define a base do robô
+
+% Condiçoes iniciais
+q0 = deg2rad([0, 15, 180, -130, 0, 55, 90]);
+
+% Inicialização de variáveis
+qi = q0;
+h = 0.01; % Passo de tempo
+tmax = 10; % Tempo máximo (s)
+wmax = 1; % Velocidade máxima das juntas (rad/s)
+wn = pi/2; % Frequência natural
+wn3 = pi/8; % Frequência natural - Terceira Trajetoria
+
+K = 1.81; % Ganho do controlador 1 da trajetoria (a)
+% K = 2.05; % Ganho do controlador 1 da trajetoria (b)
+% K = 1.99; % Ganho do controlador 1 da trajetoria (c)
+% K = 1.39; % Ganho do controlador 2 da trajetoria (a)
+% K = 2.42; % Ganho do controlador 2 da trajetoria (b)
+% K = 1.10; % Ganho do controlador 2 da trajetoria (c)
+
+% Vetores para armazenamento dos dados
+t_vec = 0:h:tmax;
+x_ref = zeros(3, length(t_vec));
+x_out = zeros(3, length(t_vec));
+u_vec = zeros(4, length(t_vec)); % Para armazenar os 4 primeiros valores de u
+
+% Simulação
+for k = 1:length(t_vec)
+    t = t_vec(k);
+    
+    % Jacobiano e cinemática direta
+    J = kinova.jacob0(qi); % Jacobiano do robô
+    Jp = J(1:3,1:7);
+    x = kinova.fkine(qi).t; % Posição atual do fim do braço
+    
+    % Selecionar a trajetoria desejada:
+    xdd=0;
+    
+    % Trajetoria (a)
+    xd = routeGen1(t, wn);
+    % xdd = routeGen1Deriv(t, wn);
+    
+    % Trajetoria (b)
+    % xd = routeGen2(t, wn);
+    % xdd = routeGen2Deriv(t, wn);
+    
+    % Trajetoria (c)
+    % xd = routeGen3(t, wn3);
+    % xdd = routeGen3Deriv(t, wn3);
+    
+    % Erro de posição e velocidade desejada
+    err = xd - x; % Erro de posição
+    
+    % Controlador
+    u = pinv(Jp) * (xdd + K * err); % Cálculo das velocidades para as primeiras 4 juntas
+    
+    % Verificar se algum valor de u é maior que 1
+    if any(abs(u) > 1)
+        disp('Alerta: Um ou mais valores de u excedem 1.');
+        disp('Valores de u:');
+        disp(u);
+    end
+    
+    % Integração (Euler) para as primeiras 4 juntas
+    qk = qi; % Copia o vetor atual de juntas
+    qk = qi + h * u'; % Atualiza apenas as primeiras 4 juntas
+    qi = qk; % Atualiza o estado
+    
+    % Armazenar dados
+    x_ref(:, k) = xd; % Trajetoria de referência
+    x_out(:, k) = x;  % Trajetoria saída
+    u_vec(:, k) = u(1:4); % Armazena os 4 primeiros valores de u
+end
+
+% Plotagem dos resultados
+figure;
+subplot(3, 1, 1);
+plot(t_vec, x_ref(1, :), 'r', 'LineWidth', 1.5); hold on;
+plot(t_vec, x_out(1, :), 'b--', 'LineWidth', 1.5);
+xlabel('Tempo (s)');
+ylabel('Posição X (m)');
+legend('Referência', 'Saída');
+title('Trajetoria no eixo X');
+grid on;
+
+subplot(3, 1, 2);
+plot(t_vec, x_ref(2, :), 'r', 'LineWidth', 1.5); hold on;
+plot(t_vec, x_out(2, :), 'b--', 'LineWidth', 1.5);
+xlabel('Tempo (s)');
+ylabel('Posição Y (m)');
+legend('Referência', 'Saída');
+title('Trajetoria no eixo Y');
+grid on;
+
+subplot(3, 1, 3);
+plot(t_vec, x_ref(3, :), 'r', 'LineWidth', 1.5); hold on;
+plot(t_vec, x_out(3, :), 'b--', 'LineWidth', 1.5);
+xlabel('Tempo (s)');
+ylabel('Posição Z (m)');
+legend('Referência', 'Saída');
+title('Trajetoria no eixo Z');
+grid on;
+
+% Gráfico 3D da trajetoria real e desejada
+figure;
+plot3(x_ref(1, :), x_ref(2, :), x_ref(3, :), 'r-', 'LineWidth', 1.5); hold on;
+plot3(x_out(1, :), x_out(2, :), x_out(3, :), 'b--', 'LineWidth', 1.5);
+xlabel('X (m)');
+ylabel('Y (m)');
+zlabel('Z (m)');
+legend('Referência', 'Saída');
+grid on;
+
+% Gráficos das velocidades das 4 primeiras juntas
+figure;
+
+subplot(4, 1, 1);
+plot(t_vec, u_vec(1, :), 'r', 'LineWidth', 1.5);
+xlabel('Tempo (s)');
+ylabel('u_1 (rad/s)');
+title('Velocidade da Junta 1');
+grid on;
+
+subplot(4, 1, 2);
+plot(t_vec, u_vec(2, :), 'b', 'LineWidth', 1.5);
+xlabel('Tempo (s)');
+ylabel('u_2 (rad/s)');
+title('Velocidade da Junta 2');
+grid on;
+
+subplot(4, 1, 3);
+plot(t_vec, u_vec(3, :), 'g', 'LineWidth', 1.5);
+xlabel('Tempo (s)');
+ylabel('u_3 (rad/s)');
+title('Velocidade da Junta 3');
+grid on;
+
+subplot(4, 1, 4);
+plot(t_vec, u_vec(4, :), 'm', 'LineWidth', 1.5);
+xlabel('Tempo (s)');
+ylabel('u_4 (rad/s)');
+title('Velocidade da Junta 4');
+grid on;
+
+% Funçoes de geraçao de trajetoria
+function xd = routeGen1(t, wn)
+    % Trajetoria (a): Circunferência no plano X-Z
+    r = 0.1; % Raio da circunferência
+    x0 = [0.4; 0; 0.4]; % Centro da circunferência
+    xd = x0 + [r * cos(wn * t); 0; r * sin(wn * t)];
+end
+
+function xdot = routeGen1Deriv(t, wn)
+    % Derivada da trajetoria (a): Velocidade da circunferência no plano X-Z
+    r = 0.1; % Raio da circunferência
+    xdot = [-r * wn * sin(wn * t); 0; r * wn * cos(wn * t)];
+end
+
+function xd = routeGen2(t, wn)
+    % Trajetoria (b): projeçao de (a) no plano (x - 0.4) - y + (z - 0.4) = 0
+    r = 0.1; % Raio da circunferência
+    x0 = [0.4; 0; 0.4]; % Centro da circunferência
+    n = [1;-1;1]*1/sqrt(3); % Normal do plano
+    P = eye(3) - n*n'; % Operador de projeção no plano
+    xd = x0 + P*[r * cos(wn * t); 0; r * sin(wn * t)]; % Trajetoria projetada no plano
+end
+
+function xdot = routeGen2Deriv(t, wn)
+    % Derivada da trajetoria (b): Velocidade projetada no plano inclinado
+    r = 0.1; % Raio da circunferência
+    n = [1; -1; 1] * 1 / sqrt(3); % Normal do plano
+    P = eye(3) - n * n'; % Operador de projeção no plano
+    
+    % Derivada dos componentes
+    vel = [-r * wn * sin(wn * t); 0; r * wn * cos(wn * t)];
+    xdot = P * vel; % Projeção da velocidade no plano
+end
+
+function xd = routeGen3(t, wn)
+    % Trajetoria (c): Oscilação complexa no plano X-Z
+    xd = [0.08 * (sin(wn * t) + sin(4 * wn * t)) + 0.4;
+            0;
+            0.08 * (cos(wn * t) + cos(4 * wn * t)) + 0.4];
+end
+
+function xdot = routeGen3Deriv(t, wn)
+    % Derivada da trajetoria (c): Velocidade da oscilação no plano X-Z
+    xdot = [0.08 * (wn * cos(wn * t) + 4 * wn * cos(4 * wn * t));
+            0;
+            -0.08 * (wn * sin(wn * t) + 4 * wn * sin(4 * wn * t))];
+end    
+\end{lstlisting}
 
 
 \end{document}
