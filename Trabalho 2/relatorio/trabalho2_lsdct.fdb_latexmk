@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1733358716 "c:/Users/Lucas/OneDrive/Área de Trabalho/Período 24.2/Robôtica e Automação/Trabalhos/eel855/Trabalho 2/relatorio/trabalho2_lsdct.tex" "trabalho2_lsdct.pdf" "trabalho2_lsdct" 1733358720
+["pdflatex"] 1733362173 "c:/Users/Lucas/OneDrive/Área de Trabalho/Período 24.2/Robôtica e Automação/Trabalhos/eel855/Trabalho 2/relatorio/trabalho2_lsdct.tex" "trabalho2_lsdct.pdf" "trabalho2_lsdct" 1733362177
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1732065002 82705 9cc9f144eacd499bc23a611703921467 ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1728.pk" 1683389622 20624 b5ef9de7fe9a614af111cda132cc174a ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tctt0800.pk" 1732065450 7416 09cb7a9d49331e6632717a04ed0e693c ""
@@ -166,7 +166,7 @@
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/setspace/setspace.sty" 1324294077 22913 a27d7908fc6f0385466454a966a316eb ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "c:/Users/Lucas/OneDrive/Área de Trabalho/Período 24.2/Robôtica e Automação/Trabalhos/eel855/Trabalho 2/relatorio/trabalho2_lsdct.tex" 1733358715 20195 9b66bc5750a8441dc7ba2e305aee69a4 ""
+  "c:/Users/Lucas/OneDrive/Área de Trabalho/Período 24.2/Robôtica e Automação/Trabalhos/eel855/Trabalho 2/relatorio/trabalho2_lsdct.tex" 1733362168 20261 e4eff254102129e19ceb64a99f9b5a4c ""
   "images//grafico3d_a1.png" 1733272961 38347 a2352fd71775665f3d2057cea1fe14b9 ""
   "images//grafico3d_a2.png" 1733353824 40621 f58fbbd05e29293918406f200c1c261f ""
   "images//grafico3d_b1.png" 1733353996 37530 c9202428a2940d9d4544ba33271dbae8 ""
@@ -186,8 +186,8 @@
   "images//velocidades_b2.png" 1733354087 78096 b93b5addfeee51fa96ea42b79ec34cca ""
   "images//velocidades_c1.png" 1733354232 83781 1811d2dc4ebb0c45e598050534c644bf ""
   "images//velocidades_c2.png" 1733354384 82671 c13c6c68799d3985bc07c6c688e1f504 ""
-  "trabalho2_lsdct.aux" 1733358720 3835 6d7c43b2883495d3436edf8f94f0f72b "pdflatex"
-  "trabalho2_lsdct.tex" 1733358715 20195 9b66bc5750a8441dc7ba2e305aee69a4 ""
+  "trabalho2_lsdct.aux" 1733362176 3901 82e14810809c112f7bea262461782035 "pdflatex"
+  "trabalho2_lsdct.tex" 1733362168 20261 e4eff254102129e19ceb64a99f9b5a4c ""
   (generated)
   "trabalho2_lsdct.aux"
   "trabalho2_lsdct.log"

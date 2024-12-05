@@ -1,101 +1,77 @@
-clear all;
+clear L;
 
-% Parâmetros do manipulador Kinova Gen3
-L(1) = Revolute('d', -0.2848, 'a', 0, 'alpha', pi/2, 'offset', 0);
-L(2) = Revolute('d', -0.0118, 'a', 0, 'alpha', pi/2, 'offset', pi);
-L(3) = Revolute('d', -0.4208, 'a', 0, 'alpha', pi/2, 'offset', pi);
-L(4) = Revolute('d', -0.0128, 'a', 0, 'alpha', pi/2, 'offset', pi);
-L(5) = Revolute('d', -0.3143, 'a', 0, 'alpha', pi/2, 'offset', pi);
-L(6) = Revolute('d', 0,       'a', 0, 'alpha', pi/2, 'offset', pi);
-L(7) = Revolute('d', -0.3574, 'a', 0, 'alpha', pi,   'offset', pi);
+% theta da alpha type offset
+L(1) = Link([ 0 -0.2848 0 pi/2 0 0 ]);
+L(2) = Link([ 0 -0.0118 0 pi/2 0 pi ]);
+L(3) = Link([ 0 -0.4208 0 pi/2 0 pi ]);
+L(4) = Link([ 0 -0.0128 0 pi/2 0 pi ]);
+L(5) = Link([ 0 -0.3143 0 pi/2 0 pi ]);
+L(6) = Link([ 0 0 0 pi/2 0 pi ]);
+L(7) = Link([ 0-0.3574 0 pi 0 pi ]);
 
-% Criação do manipulador
-kinova = SerialLink(L, 'name', 'Kinova');
+base = [1  0 0  0;
+        0 -1 0  0;
+        0  0 -1 0;
+        0  0 0  1;];
 
-% Parâmetros da câmera
-f = 4e-3; % Distância focal em metros
-z0 = 0.4338; % Distância da câmera ao plano de trabalho
-alpha = 200000; % Fator de escala em pixels/m
-Oc = [320; 240]; % Origem do plano de imagem
-Pbc = [0; -0.603]; % Posição da câmera em relação à base
-Rbc = eye(2); % Orientação da câmera
-Kp = f/z0 * diag([alpha alpha]) * Rbc;
+kinova = SerialLink(L, 'name', 'Kinova', 'base', base);
+q0 = deg2rad([90 15 180 -130 0 55 0]);
+h = 0.01;
+tmax = 30; %s
+wn = 0.5;
+qi = q0';
+xda = [0 0]';
+K = 5;
+beta = [50 10];
+phi = 0;
+z0 = 0.4338;
+f = 0.0004;
+alpha = 200000;
+Oc = [320 240]';
+pbc = [0 -0.603]';
+R = [cos(phi) sin(phi);
+    sin(phi) -cos(phi);];
+Kp = f/z0 * diag([alpha alpha]) * R;
+xc0 = Oc - Kp * pbc;
+Kstar = [Kp zeros(2); zeros(2) diag(beta)];
+inactive = [1 1 0 1 0 1 0];
 
-% Configuração inicial do manipulador
-q0 = deg2rad([90, 15, 180, -130, 0, 55, 0]);
-qi = q0;
-
-% Condições da simulação
-h = 0.01; % Passo de tempo
-tmax = 10; % Tempo máximo
-t_vec = 0:h:tmax;
-
-% Parâmetros do controlador
-K = 10; % Ganho do controlador
-wmax = 1; % Velocidade máxima das juntas (rad/s)
-
-% Trajetória de referência no plano da imagem
-wn = 0.5; % Frequência natural
-xcd_func = @(t) [360 - 30*cos(wn*t) - 30*cos(1.5*wn*t) - 10*cos(2*wn*t); ...
-                 150 - 20*cos(wn*t + 1.6) - 20*cos(1.5*wn*t + 1.6) - 10*cos(2*wn*t + 1.6)];
-
-% Variáveis para armazenar dados
-x_ref = zeros(2, length(t_vec));
-x_out = zeros(2, length(t_vec));
-xd = [0 0]';
-
-% Simulação
-for k = 1:length(t_vec)
-    t = t_vec(k);
+for t = 0:h:tmax
+    J = kinova.jacob0(qi);
+    Jc = J(1:2,1:end);
+    Jz = J(3,1:end);
+    Jp = [0 1 0 -1 0 -1 0];
+    Jstar = [Jc; Jz; Jp];
     
-    % Trajetória desejada no plano da imagem
-    xcd = xcd_func(t);
-    x_ref(:, k) = xcd;
-
-    % Cinemática direta para obter posição do efetuador
-    T = kinova.fkine(qi);
-    Pe = T.t; % Posição do efetuador na base do robô
-    
-    % Posição no plano da imagem
-    xi = Kp * [Pe(1) Pe(2)]' + Oc
-    x_out(:, k) = xi;
-
-    % Erro de posição no plano da imagem
-    err = xcd - xi;
-
-    % Jacobiano geométrico
-    J = kinova.jacob0(qi); % Jacobiano na base
-    % Jacobiano original
-    Jp = J(1:2, 1:end); 
-
-    % Definir as colunas 3, 5 e 7 como zeros
-    Jp(:, [3, 5, 7]) = 0; 
-    
-    % Controle cinemático
-    xdd = (xd - xi) / h;
-    u = pinv(Jp) * (xdd + K * err); % Cálculo das velocidades
-    u = max(min(u, wmax), -wmax); % Limitação de velocidades
-
-    % Integração (Euler)
-    qi = qi + h * u';
+    [xcd, xdd] = calculate_xcd_and_derivative(t, wn);
+    xp = kinova.fkine(qi);
+    rpy = rotm2eul(xp.R);
+    xc = Kp * [xp.t(1); xp.t(2)] + xc0;
+    x = [xc; xp.t(3); rpy(2)];
+    xd = [xcd; 0; 0];
+    err = xd - x;
+    Jdag = pinv(J);
+    u = Jdag*(xdd+K*err);
+    u(logical(inactive)) = 0;
+    qk = qi + h * u;
+    qi = qk;
+    xda = xd;
 end
 
-% Plotagem dos resultados
-figure;
-subplot(2, 1, 1);
-plot(t_vec, x_ref(1, :), 'r', 'LineWidth', 1.5); hold on;
-plot(t_vec, x_out(1, :), 'b--', 'LineWidth', 1.5);
-xlabel('Tempo (s)');
-ylabel('Pixels');
-legend('Referência', 'Saída');
-title('Trajetória no eixo X (pixels)');
-grid on;
-
-subplot(2, 1, 2);
-plot(t_vec, x_ref(2, :), 'r', 'LineWidth', 1.5); hold on;
-plot(t_vec, x_out(2, :), 'b--', 'LineWidth', 1.5);
-xlabel('Tempo (s)');
-ylabel('Pixels');
-legend('Referência', 'Saída');
-title('Trajetória no eixo Y (pixels)');
-grid on;
+function [xcd, d_xcd] = calculate_xcd_and_derivative(t, wn)
+    % Função para calcular xcd(t) e sua derivada d_xcd(t)
+    % t: vetor de tempo
+    % wn: frequência angular natural
+    
+    % Componentes de xcd(t)
+    x1 = 360 - 30*cos(wn*t) - 30*cos(1.5*wn*t) - 10*cos(2*wn*t);
+    x2 = 150 - 20*cos(wn*t + 1.6) - 20*cos(1.5*wn*t + 1.6) - 10*cos(2*wn*t + 1.6);
+    
+    xcd = [x1; x2];
+    
+    % Derivada de xcd(t)
+    dx1 = wn*30*sin(wn*t) + 1.5*wn*30*sin(1.5*wn*t) + 2*wn*10*sin(2*wn*t);
+    dx2 = wn*20*sin(wn*t + 1.6) + 1.5*wn*20*sin(1.5*wn*t + 1.6) + 2*wn*10*sin(2*wn*t + 1.6);
+    
+    d_xcd = [dx1; dx2];
+end
