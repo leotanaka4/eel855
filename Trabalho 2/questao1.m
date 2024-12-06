@@ -24,12 +24,12 @@ wmax = 1; % Velocidade máxima das juntas (rad/s)
 wn = pi/2; % Frequência natural
 wn3 = pi/8; % Frequência natural - Terceira Trajetória
 
-% K = 1.81; % Ganho do controlador 1 da trajetória (a)
+K = 1.81; % Ganho do controlador 1 da trajetória (a)
 % K = 2.05; % Ganho do controlador 1 da trajetória (b)
 % K = 1.99; % Ganho do controlador 1 da trajetória (c)
 % K = 1.39; % Ganho do controlador 2 da trajetória (a)
 % K = 2.42; % Ganho do controlador 2 da trajetória (b)
-K = 1.10; % Ganho do controlador 2 da trajetória (c)
+% K = 1.10; % Ganho do controlador 2 da trajetória (c)
 
 % Vetores para armazenamento dos dados
 t_vec = 0:h:tmax;
@@ -50,7 +50,7 @@ for k = 1:length(t_vec)
     xdd=0;
     
     % Trajetória (a)
-    % xd = routeGen1(t, wn);
+    xd = routeGen1(t, wn);
     % xdd = routeGen1Deriv(t, wn);
     
     % Trajetória (b)
@@ -58,8 +58,8 @@ for k = 1:length(t_vec)
     % xdd = routeGen2Deriv(t, wn);
     
     % Trajetória (c)
-    xd = routeGen3(t, wn3);
-    xdd = routeGen3Deriv(t, wn3);
+    % xd = routeGen3(t, wn3);
+    % xdd = routeGen3Deriv(t, wn3);
     
     % Erro de posição e velocidade desejada
     err = xd - x; % Erro de posição

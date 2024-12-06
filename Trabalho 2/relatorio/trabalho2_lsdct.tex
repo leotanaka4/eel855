@@ -517,34 +517,34 @@ Então, foi feito a sintonização do ganho do controlador satisfazendo a expres
 
 \begin{figure}[h!]
     \centering
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.27\textwidth}
         \centering
         \includegraphics[width=\linewidth]{parte2_trajetorias_2.png}
         \caption{Trajetórias nos eixos X e Y}
         \label{fig:parte2_trajetorias_2}
     \end{subfigure}%
     \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.27\textwidth}
         \centering
         \includegraphics[width=\linewidth]{parte2_trajetoriaxy_2.png}
         \caption{Trajetória no plano X-Y}
         \label{fig:parte2_trajetoriaxy_2}
     \end{subfigure}%
     \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.27\textwidth}
         \centering
         \includegraphics[width=\linewidth]{parte2_trajetoriaxyz_2.png}
         \caption{Trajetória no espaço XYZ}
         \label{fig:parte2_trajetoriaxyz_2}
     \end{subfigure}
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.27\textwidth}
         \centering
         \includegraphics[width=\linewidth]{parte2_erro_2.png}
         \caption{Erro de posição nos eixos X e Y}
         \label{fig:parte2_erro_2}
     \end{subfigure}
-    \hspace{1cm}
-    \begin{subfigure}[b]{0.3\textwidth}
+    \hspace{2cm}
+    \begin{subfigure}[b]{0.27\textwidth}
         \centering
         \includegraphics[width=\linewidth]{parte2_u_2.png}
         \caption{Sinais de controle das juntas}
@@ -557,8 +557,100 @@ Então, foi feito a sintonização do ganho do controlador satisfazendo a expres
 
 É possível notar que o erro vai muito mais rápido para zero,
 mas possui um sinal de controle das juntas muito maior no começo do seguimento da trajetória.
+Além disso, foi feita outra verificação de desempenho do controlador projetado se a câmera é rotacionada em $\phi = \pi/3$
+mas esta rotação não é considerada na lei de controle u, i.e. em u tem-se $K_p(\phi = 0)$. Foi obtido o seguinte resultado:
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.27\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{parte2_trajetorias_3.png}
+        \caption{Trajetórias nos eixos X e Y}
+        \label{fig:parte2_trajetorias_3}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.27\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{parte2_trajetoriaxy_3.png}
+        \caption{Trajetória no plano X-Y}
+        \label{fig:parte2_trajetoriaxy_3}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.27\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{parte2_trajetoriaxyz_3.png}
+        \caption{Trajetória no espaço XYZ}
+        \label{fig:parte2_trajetoriaxyz_3}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.27\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{parte2_erro_3.png}
+        \caption{Erro de posição nos eixos X e Y}
+        \label{fig:parte2_erro_3}
+    \end{subfigure}
+    \hspace{2cm}
+    \begin{subfigure}[b]{0.27\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{parte2_u_3.png}
+        \caption{Sinais de controle das juntas}
+        \label{fig:parte2_u_3}
+    \end{subfigure}
+    \hfill
+    \caption{Gráficos do controle por servo-visão (K = 1, $\phi = \pi/3$ e $K_p(\phi = 0)$)}
+    \label{fig:parte2_3}
+\end{figure}
+
+Ao analisar os gráficos de trajetórios nos eixos X e Y ao longo tempo e do erro posição nos eixos X e Y dá uma falsa impressão de que o controle funcionou da forma correta.
+Porém, fica claro pelos outros gráficos que a trajetória do efetuador divergiu da trajetória da referência.
+Porque uma mudança na orientação da câmera sem alterar o controle acaba gerando uma total não conformidade com controle.
+Sendo que deveria ter o seguinte comportamento ao alterar a lei de controle para $\phi = \pi/3$.
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.27\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{parte2_trajetorias_4.png}
+        \caption{Trajetórias nos eixos X e Y}
+        \label{fig:parte2_trajetorias_4}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.27\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{parte2_trajetoriaxy_4.png}
+        \caption{Trajetória no plano X-Y}
+        \label{fig:parte2_trajetoriaxy_4}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.27\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{parte2_trajetoriaxyz_4.png}
+        \caption{Trajetória no espaço XYZ}
+        \label{fig:parte2_trajetoriaxyz_4}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.27\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{parte2_erro_4.png}
+        \caption{Erro de posição nos eixos X e Y}
+        \label{fig:parte2_erro_4}
+    \end{subfigure}
+    \hspace{2cm}
+    \begin{subfigure}[b]{0.27\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{parte2_u_4.png}
+        \caption{Sinais de controle das juntas}
+        \label{fig:parte2_u_4}
+    \end{subfigure}
+    \hfill
+    \caption{Gráficos do controle por servo-visão (K = 1, $\phi = \pi/3$ e $K_p(\phi = \pi/3)$)}
+    \label{fig:parte2_4}
+\end{figure}
 
 \section{Conclusão}
+
+Em resumo, os dois problemas abordados envolvem o controle cinemático de manipuladores com diferentes abordagens.
+No primeiro caso, foi possível simular o manipulador Kinova Gen3 e avaliar o desempenho dos controladores, destacando a importância da sintonia dos ganhos para garantir estabilidade e precisão nas trajetórias.
+No segundo caso, o controle por servo-visão foi ajustado para garantir que o manipulador seguisse a trajetória desejada, considerando as limitações da câmera e a rotação não considerada na lei de controle.
+Ambos os casos ressaltam a importância do planejamento e da sintonia dos controladores para um desempenho estável e preciso.
 
 \newpage
 
@@ -567,7 +659,7 @@ mas possui um sinal de controle das juntas muito maior no começo do seguimento 
 \begin{lstlisting}[caption={Código da primeira parte do trabalho}, label={code:subsecao21}]
 clear all;
 
-% Definição dos parâmetros DH com juntas revolutas
+% Definicao dos parametros DH com juntas revolutas
 L(1) = Revolute('d', -0.2848, 'a', 0, 'alpha', pi/2, 'offset', 0);
 L(2) = Revolute('d', -0.0118, 'a', 0, 'alpha', pi/2, 'offset', pi);
 L(3) = Revolute('d', -0.4208, 'a', 0, 'alpha', pi/2, 'offset', pi);
@@ -576,20 +668,20 @@ L(5) = Revolute('d', -0.3143, 'a', 0, 'alpha', pi/2, 'offset', pi);
 L(6) = Revolute('d', 0,       'a', 0, 'alpha', pi/2, 'offset', pi);
 L(7) = Revolute('d', 0,       'a', 0, 'alpha', pi,   'offset', pi);
 
-% Criação do manipulador
+% Criacao do manipulador
 kinova = SerialLink(L, 'name', 'Kinova');
-kinova.base = trotx(180);  % Define a base do robô
+kinova.base = trotx(180);  % Define a base do robo
 
-% Condiçoes iniciais
+% Condicoes iniciais
 q0 = deg2rad([0, 15, 180, -130, 0, 55, 90]);
 
-% Inicialização de variáveis
+% Inicializacao de variaveis
 qi = q0;
 h = 0.01; % Passo de tempo
-tmax = 10; % Tempo máximo (s)
-wmax = 1; % Velocidade máxima das juntas (rad/s)
-wn = pi/2; % Frequência natural
-wn3 = pi/8; % Frequência natural - Terceira Trajetoria
+tmax = 20; % Tempo maximo (s)
+wmax = 1; % Velocidade maxima das juntas (rad/s)
+wn = pi/2; % Frequencia natural
+wn3 = pi/8; % Frequencia natural - Terceira Trajetoria
 
 K = 1.81; % Ganho do controlador 1 da trajetoria (a)
 % K = 2.05; % Ganho do controlador 1 da trajetoria (b)
@@ -604,14 +696,14 @@ x_ref = zeros(3, length(t_vec));
 x_out = zeros(3, length(t_vec));
 u_vec = zeros(4, length(t_vec)); % Para armazenar os 4 primeiros valores de u
 
-% Simulação
+% Simulacao
 for k = 1:length(t_vec)
     t = t_vec(k);
     
-    % Jacobiano e cinemática direta
-    J = kinova.jacob0(qi); % Jacobiano do robô
+    % Jacobiano e cinematica direta
+    J = kinova.jacob0(qi); % Jacobiano do robo
     Jp = J(1:3,1:7);
-    x = kinova.fkine(qi).t; % Posição atual do fim do braço
+    x = kinova.fkine(qi).t; % Posicao atual do fim do braco
     
     % Selecionar a trajetoria desejada:
     xdd=0;
@@ -628,27 +720,27 @@ for k = 1:length(t_vec)
     % xd = routeGen3(t, wn3);
     % xdd = routeGen3Deriv(t, wn3);
     
-    % Erro de posição e velocidade desejada
-    err = xd - x; % Erro de posição
+    % Erro de posicao e velocidade desejada
+    err = xd - x; % Erro de posicao
     
     % Controlador
-    u = pinv(Jp) * (xdd + K * err); % Cálculo das velocidades para as primeiras 4 juntas
+    u = pinv(Jp) * (xdd + K * err); % Calculo das velocidades para as primeiras 4 juntas
     
-    % Verificar se algum valor de u é maior que 1
+    % Verificar se algum valor de u e maior que 1
     if any(abs(u) > 1)
         disp('Alerta: Um ou mais valores de u excedem 1.');
         disp('Valores de u:');
         disp(u);
     end
     
-    % Integração (Euler) para as primeiras 4 juntas
+    % Integracao (Euler) para as primeiras 4 juntas
     qk = qi; % Copia o vetor atual de juntas
     qk = qi + h * u'; % Atualiza apenas as primeiras 4 juntas
     qi = qk; % Atualiza o estado
     
     % Armazenar dados
-    x_ref(:, k) = xd; % Trajetoria de referência
-    x_out(:, k) = x;  % Trajetoria saída
+    x_ref(:, k) = xd; % Trajetoria de referencia
+    x_out(:, k) = x;  % Trajetoria saida
     u_vec(:, k) = u(1:4); % Armazena os 4 primeiros valores de u
 end
 
@@ -658,118 +750,273 @@ subplot(3, 1, 1);
 plot(t_vec, x_ref(1, :), 'r', 'LineWidth', 1.5); hold on;
 plot(t_vec, x_out(1, :), 'b--', 'LineWidth', 1.5);
 xlabel('Tempo (s)');
-ylabel('Posição X (m)');
-legend('Referência', 'Saída');
-title('Trajetoria no eixo X');
+ylabel('Posicao X (m)');
+legend('Referencia', 'Saida');
 grid on;
 
 subplot(3, 1, 2);
 plot(t_vec, x_ref(2, :), 'r', 'LineWidth', 1.5); hold on;
 plot(t_vec, x_out(2, :), 'b--', 'LineWidth', 1.5);
 xlabel('Tempo (s)');
-ylabel('Posição Y (m)');
-legend('Referência', 'Saída');
-title('Trajetoria no eixo Y');
+ylabel('Posicao Y (m)');
+legend('Referencia', 'Saida');
 grid on;
 
 subplot(3, 1, 3);
 plot(t_vec, x_ref(3, :), 'r', 'LineWidth', 1.5); hold on;
 plot(t_vec, x_out(3, :), 'b--', 'LineWidth', 1.5);
 xlabel('Tempo (s)');
-ylabel('Posição Z (m)');
-legend('Referência', 'Saída');
-title('Trajetoria no eixo Z');
+ylabel('Posicao Z (m)');
+legend('Referencia', 'Saida');
 grid on;
 
-% Gráfico 3D da trajetoria real e desejada
+% Grafico 3D da trajetoria real e desejada
 figure;
 plot3(x_ref(1, :), x_ref(2, :), x_ref(3, :), 'r-', 'LineWidth', 1.5); hold on;
 plot3(x_out(1, :), x_out(2, :), x_out(3, :), 'b--', 'LineWidth', 1.5);
 xlabel('X (m)');
 ylabel('Y (m)');
 zlabel('Z (m)');
-legend('Referência', 'Saída');
+legend('Referencia', 'Saida');
 grid on;
 
-% Gráficos das Sinais de controle
+% Graficos das velocidades das 4 primeiras juntas
 figure;
 
 subplot(4, 1, 1);
 plot(t_vec, u_vec(1, :), 'r', 'LineWidth', 1.5);
 xlabel('Tempo (s)');
 ylabel('u_1 (rad/s)');
-title('Velocidade da Junta 1');
 grid on;
 
 subplot(4, 1, 2);
 plot(t_vec, u_vec(2, :), 'b', 'LineWidth', 1.5);
 xlabel('Tempo (s)');
 ylabel('u_2 (rad/s)');
-title('Velocidade da Junta 2');
 grid on;
 
 subplot(4, 1, 3);
 plot(t_vec, u_vec(3, :), 'g', 'LineWidth', 1.5);
 xlabel('Tempo (s)');
 ylabel('u_3 (rad/s)');
-title('Velocidade da Junta 3');
 grid on;
 
 subplot(4, 1, 4);
 plot(t_vec, u_vec(4, :), 'm', 'LineWidth', 1.5);
 xlabel('Tempo (s)');
 ylabel('u_4 (rad/s)');
-title('Velocidade da Junta 4');
 grid on;
 
-% Funçoes de geraçao de trajetoria
+% Calculo do erro ao longo do tempo
+error_x = x_ref(1, :) - x_out(1, :); % Erro no eixo X
+error_y = x_ref(2, :) - x_out(2, :); % Erro no eixo Y
+error_z = x_ref(3, :) - x_out(3, :); % Erro no eixo Z
+
+% Graficos do erro em subplots
+figure;
+
+subplot(3, 1, 1);
+plot(t_vec, error_x, 'r', 'LineWidth', 1.5);
+xlabel('Tempo (s)');
+ylabel('Erro X (m)');
+grid on;
+
+subplot(3, 1, 2);
+plot(t_vec, error_y, 'g', 'LineWidth', 1.5);
+xlabel('Tempo (s)');
+ylabel('Erro Y (m)');
+grid on;
+
+subplot(3, 1, 3);
+plot(t_vec, error_z, 'b', 'LineWidth', 1.5);
+xlabel('Tempo (s)');
+ylabel('Erro Z (m)');
+grid on;
+
+% Funcoes de geracao de trajetoria
 function xd = routeGen1(t, wn)
-    % Trajetoria (a): Circunferência no plano X-Z
-    r = 0.1; % Raio da circunferência
-    x0 = [0.4; 0; 0.4]; % Centro da circunferência
+    % Trajetoria (a): Circunferencia no plano X-Z
+    r = 0.1; % Raio da circunferencia
+    x0 = [0.4; 0; 0.4]; % Centro da circunferencia
     xd = x0 + [r * cos(wn * t); 0; r * sin(wn * t)];
 end
 
 function xdot = routeGen1Deriv(t, wn)
-    % Derivada da trajetoria (a): Velocidade da circunferência no plano X-Z
-    r = 0.1; % Raio da circunferência
+    % Derivada da trajetoria (a): Velocidade da circunferencia no plano X-Z
+    r = 0.1; % Raio da circunferencia
     xdot = [-r * wn * sin(wn * t); 0; r * wn * cos(wn * t)];
 end
 
 function xd = routeGen2(t, wn)
-    % Trajetoria (b): projeçao de (a) no plano (x - 0.4) - y + (z - 0.4) = 0
-    r = 0.1; % Raio da circunferência
-    x0 = [0.4; 0; 0.4]; % Centro da circunferência
-    n = [1;-1;1]*1/sqrt(3); % Normal do plano
-    P = eye(3) - n*n'; % Operador de projeção no plano
-    xd = x0 + P*[r * cos(wn * t); 0; r * sin(wn * t)]; % Trajetoria projetada no plano
+    % Trajetoria (b): Espiral no plano X-Z
+    r = 0.1; % Raio inicial
+    x0 = [0.4; 0; 0.4]; % Centro da espiral
+    xd = x0 + [r * cos(wn * t); 0; r * sin(wn * t)];
 end
 
 function xdot = routeGen2Deriv(t, wn)
-    % Derivada da trajetoria (b): Velocidade projetada no plano inclinado
-    r = 0.1; % Raio da circunferência
-    n = [1; -1; 1] * 1 / sqrt(3); % Normal do plano
-    P = eye(3) - n * n'; % Operador de projeção no plano
-    
-    % Derivada dos componentes
-    vel = [-r * wn * sin(wn * t); 0; r * wn * cos(wn * t)];
-    xdot = P * vel; % Projeção da velocidade no plano
+    % Derivada da trajetoria (b): Velocidade da espiral no plano X-Z
+    r = 0.1; % Raio inicial
+    xdot = [-r * wn * sin(wn * t); 0; r * wn * cos(wn * t)];
 end
 
 function xd = routeGen3(t, wn)
-    % Trajetoria (c): Oscilação complexa no plano X-Z
-    xd = [0.08 * (sin(wn * t) + sin(4 * wn * t)) + 0.4;
-            0;
-            0.08 * (cos(wn * t) + cos(4 * wn * t)) + 0.4];
+    % Trajetoria (c): Linha reta no eixo X
+    x0 = [0.4; 0; 0.4]; % Ponto inicial
+    xf = [0.5; 0; 0.5]; % Ponto final
+    xd = x0 + (xf - x0) * sin(wn * t);
 end
 
 function xdot = routeGen3Deriv(t, wn)
-    % Derivada da trajetoria (c): Velocidade da oscilação no plano X-Z
-    xdot = [0.08 * (wn * cos(wn * t) + 4 * wn * cos(4 * wn * t));
-            0;
-            -0.08 * (wn * sin(wn * t) + 4 * wn * sin(4 * wn * t))];
-end    
+    % Derivada da trajetoria (c): Velocidade da linha reta no eixo X
+    x0 = [0.4; 0; 0.4]; % Ponto inicial
+    xf = [0.5; 0; 0.5]; % Ponto final
+    xdot = (xf - x0) * cos(wn * t) * wn;
+end      
 \end{lstlisting}
 
+\newpage
+
+\begin{lstlisting}[caption={Código da segunda parte do trabalho}, label={code:subsecao22}]
+clear all; close all;
+
+% Definicao dos parametros DH com juntas revolutas
+L(1) = Revolute('d', -0.2848, 'a', 0, 'alpha', pi/2, 'offset', 0); % Parametro da junta 1
+L(2) = Revolute('d', -0.0118, 'a', 0, 'alpha', pi/2, 'offset', pi); % Parametro da junta 2
+L(3) = Revolute('d', -0.4208, 'a', 0, 'alpha', pi/2, 'offset', pi); % Parametro da junta 3
+L(4) = Revolute('d', -0.0128, 'a', 0, 'alpha', pi/2, 'offset', pi); % Parametro da junta 4
+L(5) = Revolute('d', -0.3143, 'a', 0, 'alpha', pi/2, 'offset', pi); % Parametro da junta 5
+L(6) = Revolute('d', 0,       'a', 0, 'alpha', pi/2, 'offset', pi); % Parametro da junta 6
+L(7) = Revolute('d', -0.3574, 'a', 0, 'alpha', pi,   'offset', pi); % Parametro da junta 7
+
+% Criacao do manipulador
+kinova_gen3 = SerialLink(L, 'name', 'Kinova'); % Criacao do modelo do manipulador
+kinova_gen3.base = trotx(180);  % Define a base do robo (rotacao em torno do eixo X)
+
+% Parametros do sistema
+f = 4e-3; % Distancia focal da camera (m)
+z0 = 0.4338; % Profundidade inicial (m)
+alpha = 200000; % Fator de escala (pixels/m)
+Oc = [320; 240]; % Origem do plano da imagem (pixels)
+Pbc = [0;-0.603; 0]; % Posicao da camera em relacao a base (m)
+phi = 0; % Angulo de orientacao da camera (rad)
+phi_trocado = pi/3; % Angulo de orientacao da camera trocado (rad)
+wn = 0.5; % Frequencia angular (rad/s)
+
+% Ganho do controlador
+K = 1; % Ajuste o ganho conforme necessario para o controlador
+
+% Trajetoria desejada no plano da imagem
+h = 0.01; % Passo de tempo
+tmax = 20; % Tempo maximo (s)
+t = 0:h:tmax; % Vetor de tempo para simulacao
+xcd = [
+    360- 30*cos(wn*t)- 30*cos(1.5*wn*t)- 10*cos(2*wn*t); % Trajetoria no eixo X
+    150- 20*cos(wn*t + 1.6)- 20*cos(1.5*wn*t + 1.6)- 10*cos(2*wn*t + 1.6) % Trajetoria no eixo Y
+];
+xcdd = [
+    30*sin(wn*t)*wn + 30*sin(1.5*wn*t)*1.5*wn + 10*sin(2*wn*t)*2*wn; % Derivada da trajetoria no eixo X
+    20*sin(wn*t + 1.6)*wn + 20*sin(1.5*wn*t + 1.6)*1.5*wn + 10*sin(2*wn*t + 1.6)*2*wn % Derivada da trajetoria no eixo Y
+];
+
+% Transformacao camera/espaco de trabalho
+Kp = (f / z0) * diag([alpha,-alpha]) * [cos(phi), sin(phi); sin(phi),-cos(phi)]; 
+% Kp = (f / z0) * diag([alpha,-alpha]) * [cos(phi_trocado), sin(phi_trocado); sin(phi_trocado),-cos(phi_trocado)];
+% Matriz de projecao da camera no plano da imagem
+xc0 = (f / z0) * diag([alpha,-alpha]) * [-cos(phi),-sin(phi);-sin(phi), cos(phi)]*Pbc(1:2) + Oc;
+% xc0 = (f / z0) * diag([alpha,-alpha]) * [-cos(phi_trocado),-sin(phi_trocado);-sin(phi_trocado), cos(phi_trocado)]*Pbc(1:2) + Oc;
+% Posiçao inicial da camera no plano da imagem
+
+% Inicializacao de variaveis
+xc = zeros(2, length(t)-1); % Posicao no plano da imagem
+theta = deg2rad([90; 15; 180;-130; 0; 55; 0]); % Angulos iniciais das juntas (rad)
+theta_log = zeros(length(theta), length(t)-1); % Log para salvar os valores de theta
+xyz = zeros(3, length(t)-1); % Posicao no espaco do efetuador (x, y, z)
+
+% Erros
+ex = zeros(1, length(t)-1); % Erro no eixo X
+ey = zeros(1, length(t)-1); % Erro no eixo Y
+u_log = zeros(4, length(t)-1); % Log para salvar os valores de u
+
+% Simulacao do movimento
+for k = 1:length(t)-1
+    % Cinematica direta (posicao no espaco de trabalho)
+    x = kinova_gen3.fkine(theta).t; % Calcula a posicao do efetuador
+    xyz(:, k) = x; % Salva a posicao do efetuador no espaco (x, y, z)
+    
+    % Projecao no plano da imagem
+    xc(:, k) = Kp * x(1:2) + xc0; % Calcula a posicao projetada no plano da imagem
+    
+    % Erro na imagem (diferenca entre a trajetoria desejada e a atual)
+    ecd = xcd(:, k)- xc(:, k);
+    ex(k) = ecd(1); % Erro no eixo X
+    ey(k) = ecd(2); % Erro no eixo Y
+    
+    % Jacobiano do manipulador (somente juntas controladas)
+    J = kinova_gen3.jacob0(theta); % Jacobiano completo
+    J_reduced = J(1:2, [1, 2, 4, 6]); % Considera apenas as colunas das juntas 1, 2, 4 e 6
+    
+    % Controle cinemático
+    Jv = Kp * J_reduced; % Controle baseado no Jacobiano reduzido
+    xcd_dot = xcdd(:, k); % Derivada da trajetoria desejada
+    u = pinv(Jv) * (xcd_dot + K * ecd); % Calcula o comando de controle
+    
+    % Verificar se algum valor de u é maior que 1
+    if any(abs(u) > 1)
+        disp('Alerta: Um ou mais valores de u excedem 1.');
+        disp('Valores de u:');
+        disp(u);
+    end
+    
+    % Atualizacao dos angulos das juntas
+    theta_log(:, k) = theta; % Salva os angulos das juntas
+    theta([1, 2, 4, 6]) = theta([1, 2, 4, 6]) + u * h; % Atualiza os angulos com o controle
+    
+    % Log de u
+    u_log(:, k) = u;
+end
+
+% Graficos para visualizacao dos resultados
+figure;
+subplot(2, 1, 1);
+plot(t(1:end-1), xcd(1, 1:end-1), 'r', t(1:end-1), xc(1, :), 'b--');
+xlabel('Tempo (s)'); ylabel('Pixel X');
+legend('Trajetoria de referencia', 'Trajetoria do efetuador');
+grid on;
+
+subplot(2, 1, 2);
+plot(t(1:end-1), xcd(2, 1:end-1), 'r', t(1:end-1), xc(2, :), 'b--');
+xlabel('Tempo (s)'); ylabel('Pixel Y');
+legend('Trajetoria de referencia', 'Trajetoria do efetuador');
+grid on;
+
+figure; % Grafico XY (trajetoria no plano da tela)
+plot(xcd(1, :), xcd(2, :), 'r', 'LineWidth', 1.5); hold on;
+plot(xc(1, :), xc(2, :), 'b--', 'LineWidth', 1.5);
+xlabel('Pixel X'); ylabel('Pixel Y');
+legend('Trajetoria de referencia', 'Trajetoria do efetuador');
+grid on;
+
+% Grafico XYZ (trajetoria no espaco do efetuador)
+xdr = pinv(Kp)*(xcd-xc0);
+zdr = z0*ones(size(xcd(1,:)));
+figure;
+plot3(xdr(1, :), xdr(2, :), zdr, 'r-', 'LineWidth', 1.5); hold on;
+plot3(xyz(1, :), xyz(2, :), xyz(3, :), 'b--', 'LineWidth', 1.5);
+xlabel('X (m)'); ylabel('Y (m)'); zlabel('Z (m)');
+grid on; axis equal;
+
+% Grafico de erro
+figure;
+subplot(2, 1, 1);
+plot(t(1:end-1), ex, 'r', 'LineWidth', 1.5);
+xlabel('Tempo (s)'); ylabel('Erro no X');
+grid on;
+
+subplot(2, 1, 2);
+plot(t(1:end-1), ey, 'r', 'LineWidth', 1.5);
+xlabel('Tempo (s)'); ylabel('Erro no Y');
+grid on;
+\end{lstlisting}
 
 \end{document}

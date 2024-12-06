@@ -42,9 +42,12 @@ xcdd = [
 % Transformacao camera/espaco de trabalho
 Kp = (f / z0) * diag([alpha,-alpha]) * [cos(phi), sin(phi); sin(phi),-cos(phi)]; 
 % Kp = (f / z0) * diag([alpha,-alpha]) * [cos(phi_trocado), sin(phi_trocado); sin(phi_trocado),-cos(phi_trocado)];
+% Transformacao camera/espaco de trabalho
+
+xc0 = (f / z0) * diag([alpha,-alpha]) * [-cos(phi),-sin(phi);-sin(phi), cos(phi)]*Pbc(1:2) + Oc;
+
 % Matriz de projecao da camera no plano da imagem
 xc0 = (f / z0) * diag([alpha,-alpha]) * [-cos(phi),-sin(phi);-sin(phi), cos(phi)]*Pbc(1:2) + Oc;
-% xc0 = (f / z0) * diag([alpha,-alpha]) * [-cos(phi_trocado),-sin(phi_trocado);-sin(phi_trocado), cos(phi_trocado)]*Pbc(1:2) + Oc;
 % Posiçao inicial da camera no plano da imagem
 
 % Inicializacao de variaveis
@@ -137,3 +140,4 @@ subplot(2, 1, 2);
 plot(t(1:end-1), ey, 'r', 'LineWidth', 1.5);
 xlabel('Tempo (s)'); ylabel('Erro no Y');
 grid on;
+

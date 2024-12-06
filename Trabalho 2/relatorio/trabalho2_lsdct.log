@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  6 DEC 2024 18:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  6 DEC 2024 19:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -679,46 +679,99 @@ Package pdftex.def Info: ./images//parte2_u_1.png  used on input line 504.
 File: ./images//parte2_trajetorias_2.png Graphic file (type png)
 <use ./images//parte2_trajetorias_2.png>
 Package pdftex.def Info: ./images//parte2_trajetorias_2.png  used on input line 522.
-(pdftex.def)             Requested size: 162.60915pt x 120.55615pt.
+(pdftex.def)             Requested size: 146.34906pt x 108.4977pt.
 <./images//parte2_trajetoriaxy_2.png, id=101, 419.166pt x 311.36325pt>
 File: ./images//parte2_trajetoriaxy_2.png Graphic file (type png)
 <use ./images//parte2_trajetoriaxy_2.png>
 Package pdftex.def Info: ./images//parte2_trajetoriaxy_2.png  used on input line 529.
-(pdftex.def)             Requested size: 162.60915pt x 120.78978pt.
+(pdftex.def)             Requested size: 146.34906pt x 108.70796pt.
 <./images//parte2_trajetoriaxyz_2.png, id=102, 419.166pt x 304.7385pt>
 File: ./images//parte2_trajetoriaxyz_2.png Graphic file (type png)
 <use ./images//parte2_trajetoriaxyz_2.png>
 Package pdftex.def Info: ./images//parte2_trajetoriaxyz_2.png  used on input line 536.
-(pdftex.def)             Requested size: 162.60915pt x 118.21979pt.
+(pdftex.def)             Requested size: 146.34906pt x 106.39502pt.
 <./images//parte2_erro_2.png, id=103, 417.35925pt x 308.95425pt>
 File: ./images//parte2_erro_2.png Graphic file (type png)
 <use ./images//parte2_erro_2.png>
 Package pdftex.def Info: ./images//parte2_erro_2.png  used on input line 542.
-(pdftex.def)             Requested size: 162.60915pt x 120.37381pt.
+(pdftex.def)             Requested size: 146.34906pt x 108.33832pt.
 <./images//parte2_u_2.png, id=104, 419.166pt x 307.74976pt>
 File: ./images//parte2_u_2.png Graphic file (type png)
 <use ./images//parte2_u_2.png>
 Package pdftex.def Info: ./images//parte2_u_2.png  used on input line 549.
-(pdftex.def)             Requested size: 162.60915pt x 119.38797pt.
- [7 <./images//parte2_trajetorias_2.png> <./images//parte2_trajetoriaxy_2.png> <./images//parte2_trajetoriaxyz_2.png> <./images//parte2_erro_2.png> <./images//parte2_u_2.png>] (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/base\latin1.def
+(pdftex.def)             Requested size: 146.34906pt x 107.44635pt.
+<./images//parte2_trajetorias_3.png, id=105, 418.56375pt x 310.761pt>
+File: ./images//parte2_trajetorias_3.png Graphic file (type png)
+<use ./images//parte2_trajetorias_3.png>
+Package pdftex.def Info: ./images//parte2_trajetorias_3.png  used on input line 567.
+(pdftex.def)             Requested size: 146.34906pt x 108.65417pt.
+<./images//parte2_trajetoriaxy_3.png, id=106, 419.76825pt x 311.36325pt>
+File: ./images//parte2_trajetoriaxy_3.png Graphic file (type png)
+<use ./images//parte2_trajetoriaxy_3.png>
+Package pdftex.def Info: ./images//parte2_trajetoriaxy_3.png  used on input line 574.
+(pdftex.def)             Requested size: 146.34906pt x 108.55118pt.
+<./images//parte2_trajetoriaxyz_3.png, id=107, 418.56375pt x 304.13625pt>
+File: ./images//parte2_trajetoriaxyz_3.png Graphic file (type png)
+<use ./images//parte2_trajetoriaxyz_3.png>
+Package pdftex.def Info: ./images//parte2_trajetoriaxyz_3.png  used on input line 581.
+(pdftex.def)             Requested size: 146.34906pt x 106.33789pt.
+<./images//parte2_erro_3.png, id=108, 417.35925pt x 308.352pt>
+File: ./images//parte2_erro_3.png Graphic file (type png)
+<use ./images//parte2_erro_3.png>
+Package pdftex.def Info: ./images//parte2_erro_3.png  used on input line 587.
+(pdftex.def)             Requested size: 146.34906pt x 108.12712pt.
+<./images//parte2_u_3.png, id=109, 418.56375pt x 307.74976pt>
+File: ./images//parte2_u_3.png Graphic file (type png)
+<use ./images//parte2_u_3.png>
+Package pdftex.def Info: ./images//parte2_u_3.png  used on input line 594.
+(pdftex.def)             Requested size: 146.34906pt x 107.60132pt.
+ [7 <./images//parte2_trajetorias_2.png> <./images//parte2_trajetoriaxy_2.png> <./images//parte2_trajetoriaxyz_2.png> <./images//parte2_erro_2.png> <./images//parte2_u_2.png> <./images//parte2_trajetorias_3.png> <./images//parte2_trajetoriaxy_3.png> <./images//parte2_trajetoriaxyz_3.png> <./images//parte2_erro_3.png> <./images//parte2_u_3.png>]
+<./images//parte2_trajetorias_4.png, id=124, 418.56375pt x 308.352pt>
+File: ./images//parte2_trajetorias_4.png Graphic file (type png)
+<use ./images//parte2_trajetorias_4.png>
+Package pdftex.def Info: ./images//parte2_trajetorias_4.png  used on input line 612.
+(pdftex.def)             Requested size: 146.34906pt x 107.81189pt.
+<./images//parte2_trajetoriaxy_4.png, id=125, 419.76825pt x 311.9655pt>
+File: ./images//parte2_trajetoriaxy_4.png Graphic file (type png)
+<use ./images//parte2_trajetoriaxy_4.png>
+Package pdftex.def Info: ./images//parte2_trajetoriaxy_4.png  used on input line 619.
+(pdftex.def)             Requested size: 146.34906pt x 108.76114pt.
+<./images//parte2_trajetoriaxyz_4.png, id=126, 417.35925pt x 299.31825pt>
+File: ./images//parte2_trajetoriaxyz_4.png Graphic file (type png)
+<use ./images//parte2_trajetoriaxyz_4.png>
+Package pdftex.def Info: ./images//parte2_trajetoriaxyz_4.png  used on input line 626.
+(pdftex.def)             Requested size: 146.34906pt x 104.95934pt.
+<./images//parte2_erro_4.png, id=127, 416.757pt x 308.95425pt>
+File: ./images//parte2_erro_4.png Graphic file (type png)
+<use ./images//parte2_erro_4.png>
+Package pdftex.def Info: ./images//parte2_erro_4.png  used on input line 632.
+(pdftex.def)             Requested size: 146.34906pt x 108.49388pt.
+<./images//parte2_u_4.png, id=128, 419.166pt x 305.34074pt>
+File: ./images//parte2_u_4.png Graphic file (type png)
+<use ./images//parte2_u_4.png>
+Package pdftex.def Info: ./images//parte2_u_4.png  used on input line 639.
+(pdftex.def)             Requested size: 146.34906pt x 106.60529pt.
+ [8 <./images//parte2_trajetorias_4.png> <./images//parte2_trajetoriaxy_4.png> <./images//parte2_trajetoriaxyz_4.png> <./images//parte2_erro_4.png> <./images//parte2_u_4.png>] (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/base\latin1.def
 File: latin1.def 2021/02/14 v1.3d Input encoding file
-)
-LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 570.
+) [9] [10] [11] [12] [13] (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/base\latin1.def
+File: latin1.def 2021/02/14 v1.3d Input encoding file
+) [14]
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 928.
  (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmtt.fd
 File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [8] [9] [10] [11] [12] (trabalho2_lsdct.aux) ) 
+) [15] [16] [17] (trabalho2_lsdct.aux) ) 
 Here is how much of TeX's memory you used:
- 19262 strings out of 478338
- 374814 string characters out of 2836700
- 1119272 words of memory out of 3000000
- 37331 multiletter control sequences out of 15000+600000
+ 19403 strings out of 478338
+ 378674 string characters out of 2836700
+ 1302479 words of memory out of 3000000
+ 37460 multiletter control sequences out of 15000+600000
  481178 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,12n,80p,544b,2723s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 84i,12n,80p,544b,2721s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt0800.pk> <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1728.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on trabalho2_lsdct.pdf (12 pages, 1218966 bytes).
+Output written on trabalho2_lsdct.pdf (17 pages, 1444437 bytes).
 PDF statistics:
- 214 PDF objects out of 1000 (max. 8388607)
+ 247 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 188 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 238 words of extra memory for PDF output out of 10000 (max. 10000000)
 
