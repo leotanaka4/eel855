@@ -131,7 +131,7 @@ Além disso, foi considerado que na tabela de Denavit-Hartenberg da primeira par
 \subsection{Controle Cinemático de Manipuladores}
 
 Foi considerado o controle cinemático da posição do punho do manipulador
-em que somente a velocidades das 4 primeiras juntas é controlada,
+em que somente a Sinais de controle é controlada,
 porque as 3 últimas juntas estão na mesma posição fazendo que as três últimas colunas do jacobiano sejam zero.
 Além disso, a velocidade máxima das juntas foi definida como $\dot{\theta}_{max} = 1 \ rad/s$. Foram consideradas as seguintes trajétorias (com $\omega_n = \pi/2$):
 
@@ -158,27 +158,36 @@ Portanto, não foi utilizado derivação numérica para definir o $\dot{x_d}$ no
 Além disso, foi sintonizado o ganho K com 6 configurações diferentes para obter o melhor desempenho possível atendendo a especificação de $|u_i| \leq 1 (i=1,2,3,4)$.
 A seguir temos os gráficos utilizados para analisar as 6 configurações diferentes:
 
+\newpage
+
 \begin{figure}[h!]
     \centering
-    \begin{subfigure}[b]{0.6\textwidth}
+    \begin{subfigure}[b]{0.24\textwidth}
         \centering
         \includegraphics[width=\linewidth]{trajetorias_a1.png}
-        \caption{Trajetórias da posição do punho ao longo do tempo}
+        \caption{Trajetórias nos eixos}
         \label{fig:trajetorias_a1}
     \end{subfigure}%
     \hfill
-    \begin{subfigure}[b]{0.6\textwidth}
+    \begin{subfigure}[b]{0.24\textwidth}
         \centering
         \includegraphics[width=\linewidth]{velocidades_a1.png}
-        \caption{Velocidades das 4 primeiras juntas}
+        \caption{Sinais de controle}
         \label{fig:velocidades_a1}
     \end{subfigure}%
     \hfill
-    \begin{subfigure}[b]{0.6\textwidth}
+    \begin{subfigure}[b]{0.24\textwidth}
         \centering
         \includegraphics[width=\linewidth]{grafico3d_a1.png}
-        \caption{Trajetória da posição do punho no espaço}
+        \caption{Trajetória no espaço}
         \label{fig:grafico3d_a1}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{erro_a1.png}
+        \caption{Erro nas posições}
+        \label{fig:erro_a1}
     \end{subfigure}
     \caption{Gráficos da Trajetória (a) com Controlador 1 (K = 1.81)}
     \label{fig:a1}
@@ -186,25 +195,32 @@ A seguir temos os gráficos utilizados para analisar as 6 configurações difere
 
 \begin{figure}[h!]
     \centering
-    \begin{subfigure}[b]{0.6\textwidth}
+    \begin{subfigure}[b]{0.24\textwidth}
         \centering
         \includegraphics[width=\linewidth]{trajetorias_a2.png}
-        \caption{Trajetórias da posição do punho ao longo do tempo}
+        \caption{Trajetórias nos eixos}
         \label{fig:trajetorias_a2}
     \end{subfigure}%
     \hfill
-    \begin{subfigure}[b]{0.6\textwidth}
+    \begin{subfigure}[b]{0.24\textwidth}
         \centering
         \includegraphics[width=\linewidth]{velocidades_a2.png}
-        \caption{Velocidades das 4 primeiras juntas}
+        \caption{Sinais de controle}
         \label{fig:velocidades_a2}
     \end{subfigure}%
     \hfill
-    \begin{subfigure}[b]{0.6\textwidth}
+    \begin{subfigure}[b]{0.24\textwidth}
         \centering
         \includegraphics[width=\linewidth]{grafico3d_a2.png}
-        \caption{Trajetória da posição do punho no espaço}
+        \caption{Trajetória no espaço}
         \label{fig:grafico3d_a2}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{erro_a2.png}
+        \caption{Erro nas posições}
+        \label{fig:erro_a2}
     \end{subfigure}
     \caption{Gráficos da Trajetória (a) com Controlador 2 (K = 1.39)}
     \label{fig:a2}
@@ -212,25 +228,32 @@ A seguir temos os gráficos utilizados para analisar as 6 configurações difere
 
 \begin{figure}[h!]
     \centering
-    \begin{subfigure}[b]{0.6\textwidth}
+    \begin{subfigure}[b]{0.24\textwidth}
         \centering
         \includegraphics[width=\linewidth]{trajetorias_b1.png}
-        \caption{Trajetórias da posição do punho ao longo do tempo}
+        \caption{Trajetórias nos eixos}
         \label{fig:trajetorias_b1}
     \end{subfigure}%
     \hfill
-    \begin{subfigure}[b]{0.6\textwidth}
+    \begin{subfigure}[b]{0.24\textwidth}
         \centering
         \includegraphics[width=\linewidth]{velocidades_b1.png}
-        \caption{Velocidades das 4 primeiras juntas}
+        \caption{Sinais de controle}
         \label{fig:velocidades_b1}
     \end{subfigure}%
     \hfill
-    \begin{subfigure}[b]{0.6\textwidth}
+    \begin{subfigure}[b]{0.24\textwidth}
         \centering
         \includegraphics[width=\linewidth]{grafico3d_b1.png}
-        \caption{Trajetória da posição do punho no espaço}
+        \caption{Trajetória no espaço}
         \label{fig:grafico3d_b1}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{erro_b1.png}
+        \caption{Erro nas posições}
+        \label{fig:erro_b1}
     \end{subfigure}
     \caption{Gráficos da Trajetória (b) com Controlador 1 (K = 2.05)}
     \label{fig:b1}
@@ -238,51 +261,67 @@ A seguir temos os gráficos utilizados para analisar as 6 configurações difere
 
 \begin{figure}[h!]
     \centering
-    \begin{subfigure}[b]{0.6\textwidth}
+    \begin{subfigure}[b]{0.24\textwidth}
         \centering
         \includegraphics[width=\linewidth]{trajetorias_b2.png}
-        \caption{Trajetórias da posição do punho ao longo do tempo}
+        \caption{Trajetórias nos eixos}
         \label{fig:trajetorias_b2}
     \end{subfigure}%
     \hfill
-    \begin{subfigure}[b]{0.6\textwidth}
+    \begin{subfigure}[b]{0.24\textwidth}
         \centering
         \includegraphics[width=\linewidth]{velocidades_b2.png}
-        \caption{Velocidades das 4 primeiras juntas}
+        \caption{Sinais de controle}
         \label{fig:velocidades_b2}
     \end{subfigure}%
     \hfill
-    \begin{subfigure}[b]{0.6\textwidth}
+    \begin{subfigure}[b]{0.24\textwidth}
         \centering
         \includegraphics[width=\linewidth]{grafico3d_b2.png}
-        \caption{Trajetória da posição do punho no espaço}
+        \caption{Trajetória no espaço}
         \label{fig:grafico3d_b2}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{erro_b2.png}
+        \caption{Erro nas posições}
+        \label{fig:erro_b2}
     \end{subfigure}
     \caption{Gráficos da Trajetória (b) com Controlador 2 (K = 2.42)}
     \label{fig:b2}
 \end{figure}
 
+\newpage
+
 \begin{figure}[h!]
     \centering
-    \begin{subfigure}[b]{0.6\textwidth}
+    \begin{subfigure}[b]{0.24\textwidth}
         \centering
         \includegraphics[width=\linewidth]{trajetorias_c1.png}
-        \caption{Trajetórias da posição do punho ao longo do tempo}
+        \caption{Trajetórias nos eixos}
         \label{fig:trajetorias_c1}
     \end{subfigure}%
     \hfill
-    \begin{subfigure}[b]{0.6\textwidth}
+    \begin{subfigure}[b]{0.24\textwidth}
         \centering
         \includegraphics[width=\linewidth]{velocidades_c1.png}
-        \caption{Velocidades das 4 primeiras juntas}
+        \caption{Sinais de controle}
         \label{fig:velocidades_c1}
     \end{subfigure}%
     \hfill
-    \begin{subfigure}[b]{0.6\textwidth}
+    \begin{subfigure}[b]{0.24\textwidth}
         \centering
         \includegraphics[width=\linewidth]{grafico3d_c1.png}
-        \caption{Trajetória da posição do punho no espaço}
+        \caption{Trajetória no espaço}
         \label{fig:grafico3d_c1}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{erro_c1.png}
+        \caption{Erro nas posições}
+        \label{fig:erro_c1}
     \end{subfigure}
     \caption{Gráficos da Trajetória (c) com Controlador 1 (K = 1.99)}
     \label{fig:c1}
@@ -290,31 +329,36 @@ A seguir temos os gráficos utilizados para analisar as 6 configurações difere
 
 \begin{figure}[h!]
     \centering
-    \begin{subfigure}[b]{0.6\textwidth}
+    \begin{subfigure}[b]{0.24\textwidth}
         \centering
         \includegraphics[width=\linewidth]{trajetorias_c2.png}
-        \caption{Trajetórias da posição do punho ao longo do tempo}
+        \caption{Trajetórias nos eixos}
         \label{fig:trajetorias_c2}
     \end{subfigure}%
     \hfill
-    \begin{subfigure}[b]{0.6\textwidth}
+    \begin{subfigure}[b]{0.24\textwidth}
         \centering
         \includegraphics[width=\linewidth]{velocidades_c2.png}
-        \caption{Velocidades das 4 primeiras juntas}
+        \caption{Sinais de controle}
         \label{fig:velocidades_c2}
     \end{subfigure}%
     \hfill
-    \begin{subfigure}[b]{0.6\textwidth}
+    \begin{subfigure}[b]{0.24\textwidth}
         \centering
         \includegraphics[width=\linewidth]{grafico3d_c2.png}
-        \caption{Trajetória da posição do punho no espaço}
+        \caption{Trajetória no espaço}
         \label{fig:grafico3d_c2}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{erro_c2.png}
+        \caption{Erro nas posições}
+        \label{fig:erro_c2}
     \end{subfigure}
-    \caption{Gráficos da Trajetória (c) com Controlador 2 (K = 1.10)}
+    \caption{Gráficos da Trajetória (c) com Controlador 2 (K = 2.17)}
     \label{fig:c2}
 \end{figure}
-
-\newpage
 
 Após analisar os dados obtidos das 6 configurações diferentes, é possível concluir sobre a estabilidade e desempenho de cada um dos controladores.
 Portanto, os controladores podem assegurar a estabilidade, se $J(\theta)$ tenha posto completo, garantindo a existência do pseudo-inverso $(J^{\dagger})$.
@@ -326,8 +370,193 @@ Ademais, o erro entre a saída e a trajetória de referência acaba tendendo a z
 tendo um desempenho bom para seguimento de trajetórias. 
 Isso acontece, porque o controlador 2 possui uma feedforward $(\dot{x_d})$ compensando o movimento desejado.
 
-
 \subsection{Controle Cinemático de Manipuladores por Servo Visão}
+
+Para o controle cinemático da posição do efetuador utilizando servo-visão,
+foi considerado somente os comandos de velocidade das juntas {1,2,4,6}.
+Assim, considerando as juntas {3,5,7} fixas, i.e. $\dot{\theta}_3 = \dot{\theta}_5 = \dot{\theta}_7 = 0$.
+Além disso, foi utilizada uma câmera monocular com eixo ótico (x) é perpendicular ao plano de trabalho (x-y) do manipulador,
+a distância focal é $f=4mm$, posição a uma distância de $z_0=0.4338m$ do plano de trabalho do manipulador e
+o fator de escala é $\alpha = 200000$ pixels/m nas duas direções.
+Ademais, foi definido a origem do plano da imagem $O_c = \begin{bmatrix} 320 & 240 \end{bmatrix}^T$ e 
+a posição da cãmera com relação à base do manipulador é $P_{bc} = \begin{bmatrix} 0 & -0.603 & 0 \end{bmatrix}^T$
+com orientação $\phi = 0$, i.e. $R_{bc} = I$. Foi considerada seguinte trajetória em coordenada da tela (com $\omega_n = 0.5$):
+
+\begin{equation}
+    x_{cd} = \begin{bmatrix}
+        360 - 30 \cos(\omega_n t) - 30 \cos(1.5 \omega_n t) - 10 \cos(2 \omega_n t) \\
+        150 - 20 \cos(\omega_n t + 1.6) - 20 \cos(1.5 \omega_n t + 1.6) - 10 \cos(2 \omega_n t + 1.6)
+    \end{bmatrix}
+\end{equation}
+
+Também, foi feito a derivação algébrica da trajetória para utilizar o controle 2 da subseção anterior:
+
+\begin{equation}
+    \dot{x}_{cd} = \begin{bmatrix}
+        30 \sin(\omega_n t) \omega_n + 45 \sin(1.5 \omega_n t) 1.5 \omega_n + 20 \sin(2 \omega_n t) 2 \omega_n \\
+        20 \sin(\omega_n t + 1.6) \omega_n + 30 \sin(1.5 \omega_n t + 1.6) 1.5 \omega_n + 20 \sin(2 \omega_n t + 1.6) 2 \omega_n
+    \end{bmatrix}
+\end{equation}
+
+A partir das informações acima foi feita um estudo em relação ao controle por servo-visão.
+Assim, temos a seguir certos conceitos que foram necessários para fazer o código de solução do problema no Matlab.
+A transformação câmera/espaço de trabalho é dada por:
+
+\begin{equation}
+\text{x}_c = K_p \cdot \text{x} + \text{x}_{c0}
+\end{equation}
+onde
+\begin{equation}
+K_p = \frac{f}{z_0} \begin{bmatrix}
+\alpha_1 & 0 \\
+0 & \alpha_2
+\end{bmatrix}
+\end{equation}
+e
+\begin{equation}
+\text{x}_{c0} = \frac{f}{z_0} \begin{bmatrix}
+\alpha_1 & 0 \\
+0 & \alpha_2
+\end{bmatrix}
+\begin{bmatrix}
+    \cos(\phi) & \sin(\phi) \\
+    \sin(\phi) & -\cos(\phi)
+\end{bmatrix} P_{bc}
++ \begin{bmatrix}
+    O_1 \\
+    O_2
+\end{bmatrix}
+\end{equation}
+em que
+\begin{itemize}
+    \item $\text{x}_c$: posição do efetuador no sistema de coordenadas da imagem.
+    \item $\text{x}_c^0$: offset da posição do frame da câmera com respeito ao do robô.
+    \item $K_p$: orientação e escalamento da câmera com respeito ao robô.
+    \item $\phi$: ângulo de orientação da câmera com respeito ao frame do robô.
+    \item $f$: distância focal da câmera.
+    \item $z_0$: profundidade do plano da imagem ao plano de trabalho do robô.
+    \item $\alpha_i > 0$: fatores de escala (pixels/m).
+\end{itemize}
+
+No sistema de coordenadas da câmera, a cinemática diferencial é dada por:
+
+\begin{equation}
+\dot{x}_c = K_p \dot{x}, \quad \mathbf{x}^T = [x_1, x_2]
+\end{equation}
+em que \( \mathbf{x}_{cd} \in \mathbb{R}^2 \) é a trajetória desejada do efetuador no plano da câmera. Uma lei de controle cartesiano pode ser projetada para que \( \mathbf{x}_c \to \mathbf{x}_{cd} \), ou seja, \( e_{cd} \to 0 \).
+A equação dinâmica de \( e_{cd} \) é dada por:
+
+\begin{equation}
+\dot{e}_{cd} = \dot{x}_{cd} - \dot{x}_c = \dot{x}_{cd} - K_p J(\theta) u
+\end{equation}
+
+Com uma lei de controle dada por:
+
+\begin{equation}
+u = (K_p J(\theta))^{-1} \left[ \dot{x}_{cd} + K ( \mathbf{x}_{cd} - \mathbf{x}_c ) \right]
+\end{equation}
+
+O sistema em malha fechada é dado por:
+
+\begin{equation}
+\dot{e}_{cd} + K e_{cd} = 0 \quad \text{para} \quad K > 0
+\end{equation}
+
+O sistema é exponencialmente estável, com a solução:
+
+\begin{equation}
+e_{cd}(t) = e^{-Kt} e_{cd}(0)
+\end{equation}
+
+Primeiramente, foi simulado o controle por servo-visão do efetuador com $K = 1$ para avaliar a estabilidade, tendo os seguintes resultados:
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{parte2_trajetorias_1.png}
+        \caption{Trajetórias nos eixos X e Y}
+        \label{fig:parte2_trajetorias_1}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{parte2_trajetoriaxy_1.png}
+        \caption{Trajetória no plano X-Y}
+        \label{fig:parte2_trajetoriaxy_1}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{parte2_trajetoriaxyz_1.png}
+        \caption{Trajetória no espaço XYZ}
+        \label{fig:parte2_trajetoriaxyz_1}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{parte2_erro_1.png}
+        \caption{Erro de posição nos eixos X e Y}
+        \label{fig:parte2_erro_1}
+    \end{subfigure}
+    \hspace{1cm}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{parte2_u_1.png}
+        \caption{Sinais de controle das juntas}
+        \label{fig:parte2_u_1}
+    \end{subfigure}
+    \hfill
+    \caption{Gráficos do controle por servo-visão (K = 1)}
+    \label{fig:parte2_1}
+\end{figure}
+É possível notar que o efetuador consegue seguir a trajetória de referência.
+Além disso, o gráfico de erro consegue mostrar que o sistema é exponencialmente estável.
+Entretanto, para o ganho do controlador sendo K = 1, ainda tem um grande margem de aumento desse ganho para ficar mais próximos dos limites de $|u_i| \leq 1 (i=1,2,4,7)$.
+Então, foi feito a sintonização do ganho do controlador satisfazendo a expressão anterior, obtendo K = 37.25 e tendo os seguintes gráficos:
+\newpage
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{parte2_trajetorias_2.png}
+        \caption{Trajetórias nos eixos X e Y}
+        \label{fig:parte2_trajetorias_2}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{parte2_trajetoriaxy_2.png}
+        \caption{Trajetória no plano X-Y}
+        \label{fig:parte2_trajetoriaxy_2}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{parte2_trajetoriaxyz_2.png}
+        \caption{Trajetória no espaço XYZ}
+        \label{fig:parte2_trajetoriaxyz_2}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{parte2_erro_2.png}
+        \caption{Erro de posição nos eixos X e Y}
+        \label{fig:parte2_erro_2}
+    \end{subfigure}
+    \hspace{1cm}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{parte2_u_2.png}
+        \caption{Sinais de controle das juntas}
+        \label{fig:parte2_u_2}
+    \end{subfigure}
+    \hfill
+    \caption{Gráficos do controle por servo-visão (K = 37.25)}
+    \label{fig:parte2_2}
+\end{figure}
+
+É possível notar que o erro vai muito mais rápido para zero,
+mas possui um sinal de controle das juntas muito maior no começo do seguimento da trajetória.
 
 \section{Conclusão}
 
@@ -462,7 +691,7 @@ zlabel('Z (m)');
 legend('Referência', 'Saída');
 grid on;
 
-% Gráficos das velocidades das 4 primeiras juntas
+% Gráficos das Sinais de controle
 figure;
 
 subplot(4, 1, 1);

@@ -19,17 +19,17 @@ q0 = deg2rad([0, 15, 180, -130, 0, 55, 90]);
 % Inicialização de variáveis
 qi = q0;
 h = 0.01; % Passo de tempo
-tmax = 10; % Tempo máximo (s)
+tmax = 20; % Tempo máximo (s)
 wmax = 1; % Velocidade máxima das juntas (rad/s)
 wn = pi/2; % Frequência natural
 wn3 = pi/8; % Frequência natural - Terceira Trajetória
 
-K = 1.81; % Ganho do controlador 1 da trajetória (a)
+% K = 1.81; % Ganho do controlador 1 da trajetória (a)
 % K = 2.05; % Ganho do controlador 1 da trajetória (b)
 % K = 1.99; % Ganho do controlador 1 da trajetória (c)
 % K = 1.39; % Ganho do controlador 2 da trajetória (a)
 % K = 2.42; % Ganho do controlador 2 da trajetória (b)
-% K = 1.10; % Ganho do controlador 2 da trajetória (c)
+K = 1.10; % Ganho do controlador 2 da trajetória (c)
 
 % Vetores para armazenamento dos dados
 t_vec = 0:h:tmax;
@@ -50,7 +50,7 @@ for k = 1:length(t_vec)
     xdd=0;
     
     % Trajetória (a)
-    xd = routeGen1(t, wn);
+    % xd = routeGen1(t, wn);
     % xdd = routeGen1Deriv(t, wn);
     
     % Trajetória (b)
@@ -58,8 +58,8 @@ for k = 1:length(t_vec)
     % xdd = routeGen2Deriv(t, wn);
     
     % Trajetória (c)
-    % xd = routeGen3(t, wn3);
-    % xdd = routeGen3Deriv(t, wn3);
+    xd = routeGen3(t, wn3);
+    xdd = routeGen3Deriv(t, wn3);
     
     % Erro de posição e velocidade desejada
     err = xd - x; % Erro de posição
@@ -93,7 +93,6 @@ plot(t_vec, x_out(1, :), 'b--', 'LineWidth', 1.5);
 xlabel('Tempo (s)');
 ylabel('Posição X (m)');
 legend('Referência', 'Saída');
-title('Trajetória no eixo X');
 grid on;
 
 subplot(3, 1, 2);
@@ -102,7 +101,6 @@ plot(t_vec, x_out(2, :), 'b--', 'LineWidth', 1.5);
 xlabel('Tempo (s)');
 ylabel('Posição Y (m)');
 legend('Referência', 'Saída');
-title('Trajetória no eixo Y');
 grid on;
 
 subplot(3, 1, 3);
@@ -111,7 +109,6 @@ plot(t_vec, x_out(3, :), 'b--', 'LineWidth', 1.5);
 xlabel('Tempo (s)');
 ylabel('Posição Z (m)');
 legend('Referência', 'Saída');
-title('Trajetória no eixo Z');
 grid on;
 
 % Gráfico 3D da trajetória real e desejada
@@ -131,28 +128,50 @@ subplot(4, 1, 1);
 plot(t_vec, u_vec(1, :), 'r', 'LineWidth', 1.5);
 xlabel('Tempo (s)');
 ylabel('u_1 (rad/s)');
-title('Velocidade da Junta 1');
 grid on;
 
 subplot(4, 1, 2);
 plot(t_vec, u_vec(2, :), 'b', 'LineWidth', 1.5);
 xlabel('Tempo (s)');
 ylabel('u_2 (rad/s)');
-title('Velocidade da Junta 2');
 grid on;
 
 subplot(4, 1, 3);
 plot(t_vec, u_vec(3, :), 'g', 'LineWidth', 1.5);
 xlabel('Tempo (s)');
 ylabel('u_3 (rad/s)');
-title('Velocidade da Junta 3');
 grid on;
 
 subplot(4, 1, 4);
 plot(t_vec, u_vec(4, :), 'm', 'LineWidth', 1.5);
 xlabel('Tempo (s)');
 ylabel('u_4 (rad/s)');
-title('Velocidade da Junta 4');
+grid on;
+
+% Cálculo do erro ao longo do tempo
+error_x = x_ref(1, :) - x_out(1, :); % Erro no eixo X
+error_y = x_ref(2, :) - x_out(2, :); % Erro no eixo Y
+error_z = x_ref(3, :) - x_out(3, :); % Erro no eixo Z
+
+% Gráficos do erro em subplots
+figure;
+
+subplot(3, 1, 1);
+plot(t_vec, error_x, 'r', 'LineWidth', 1.5);
+xlabel('Tempo (s)');
+ylabel('Erro X (m)');
+grid on;
+
+subplot(3, 1, 2);
+plot(t_vec, error_y, 'g', 'LineWidth', 1.5);
+xlabel('Tempo (s)');
+ylabel('Erro Y (m)');
+grid on;
+
+subplot(3, 1, 3);
+plot(t_vec, error_z, 'b', 'LineWidth', 1.5);
+xlabel('Tempo (s)');
+ylabel('Erro Z (m)');
 grid on;
 
 % Funções de geração de trajetória

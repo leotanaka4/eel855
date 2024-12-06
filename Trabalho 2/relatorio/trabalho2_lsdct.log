@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  4 DEC 2024 22:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  6 DEC 2024 18:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -526,162 +526,199 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [1
 
-{C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./images//kinova.png>]
-<./images//trajetorias_a1.png, id=21, 1155.1155pt x 555.2745pt>
+{C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./images//kinova.png>] [2]
+<./images//trajetorias_a1.png, id=27, 418.56375pt x 301.125pt>
 File: ./images//trajetorias_a1.png Graphic file (type png)
 <use ./images//trajetorias_a1.png>
-Package pdftex.def Info: ./images//trajetorias_a1.png  used on input line 165.
-(pdftex.def)             Requested size: 325.2183pt x 156.33154pt.
-<./images//velocidades_a1.png, id=22, 1155.1155pt x 554.67226pt>
+Package pdftex.def Info: ./images//trajetorias_a1.png  used on input line 167.
+(pdftex.def)             Requested size: 130.08897pt x 93.5867pt.
+<./images//velocidades_a1.png, id=28, 419.76825pt x 305.943pt>
 File: ./images//velocidades_a1.png Graphic file (type png)
 <use ./images//velocidades_a1.png>
-Package pdftex.def Info: ./images//velocidades_a1.png  used on input line 172.
-(pdftex.def)             Requested size: 325.2183pt x 156.16199pt.
-<./images//grafico3d_a1.png, id=23, 416.757pt x 311.36325pt>
+Package pdftex.def Info: ./images//velocidades_a1.png  used on input line 174.
+(pdftex.def)             Requested size: 130.08897pt x 94.81332pt.
+<./images//grafico3d_a1.png, id=29, 417.35925pt x 305.34074pt>
 File: ./images//grafico3d_a1.png Graphic file (type png)
 <use ./images//grafico3d_a1.png>
-Package pdftex.def Info: ./images//grafico3d_a1.png  used on input line 179.
-(pdftex.def)             Requested size: 325.2183pt x 242.97638pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./images//trajetorias_a2.png, id=24, 1155.1155pt x 554.67226pt>
+Package pdftex.def Info: ./images//grafico3d_a1.png  used on input line 181.
+(pdftex.def)             Requested size: 130.08897pt x 95.17647pt.
+<./images//erro_a1.png, id=30, 419.166pt x 308.352pt>
+File: ./images//erro_a1.png Graphic file (type png)
+<use ./images//erro_a1.png>
+Package pdftex.def Info: ./images//erro_a1.png  used on input line 188.
+(pdftex.def)             Requested size: 130.08897pt x 95.69633pt.
+<./images//trajetorias_a2.png, id=31, 418.56375pt x 304.7385pt>
 File: ./images//trajetorias_a2.png Graphic file (type png)
 <use ./images//trajetorias_a2.png>
-Package pdftex.def Info: ./images//trajetorias_a2.png  used on input line 191.
-(pdftex.def)             Requested size: 325.2183pt x 156.16199pt.
-<./images//velocidades_a2.png, id=25, 1155.1155pt x 552.26324pt>
+Package pdftex.def Info: ./images//trajetorias_a2.png  used on input line 200.
+(pdftex.def)             Requested size: 130.08897pt x 94.70975pt.
+<./images//velocidades_a2.png, id=32, 419.166pt x 305.34074pt>
 File: ./images//velocidades_a2.png Graphic file (type png)
 <use ./images//velocidades_a2.png>
-Package pdftex.def Info: ./images//velocidades_a2.png  used on input line 198.
-(pdftex.def)             Requested size: 325.2183pt x 155.48376pt.
-<./images//grafico3d_a2.png, id=26, 418.56375pt x 305.34074pt>
+Package pdftex.def Info: ./images//velocidades_a2.png  used on input line 207.
+(pdftex.def)             Requested size: 130.08897pt x 94.76181pt.
+<./images//grafico3d_a2.png, id=33, 418.56375pt x 304.13625pt>
 File: ./images//grafico3d_a2.png Graphic file (type png)
 <use ./images//grafico3d_a2.png>
-Package pdftex.def Info: ./images//grafico3d_a2.png  used on input line 205.
-(pdftex.def)             Requested size: 325.2183pt x 237.24231pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./images//trajetorias_b1.png, id=27, 1155.1155pt x 552.26324pt>
+Package pdftex.def Info: ./images//grafico3d_a2.png  used on input line 214.
+(pdftex.def)             Requested size: 130.08897pt x 94.52257pt.
+<./images//erro_a2.png, id=34, 419.166pt x 308.352pt>
+File: ./images//erro_a2.png Graphic file (type png)
+<use ./images//erro_a2.png>
+Package pdftex.def Info: ./images//erro_a2.png  used on input line 221.
+(pdftex.def)             Requested size: 130.08897pt x 95.69633pt.
+<./images//trajetorias_b1.png, id=35, 419.166pt x 305.943pt>
 File: ./images//trajetorias_b1.png Graphic file (type png)
 <use ./images//trajetorias_b1.png>
-Package pdftex.def Info: ./images//trajetorias_b1.png  used on input line 217.
-(pdftex.def)             Requested size: 325.2183pt x 155.48376pt.
-<./images//velocidades_b1.png, id=28, 1155.1155pt x 552.8655pt>
+Package pdftex.def Info: ./images//trajetorias_b1.png  used on input line 233.
+(pdftex.def)             Requested size: 130.08897pt x 94.94872pt.
+<./images//velocidades_b1.png, id=36, 419.166pt x 305.943pt>
 File: ./images//velocidades_b1.png Graphic file (type png)
 <use ./images//velocidades_b1.png>
-Package pdftex.def Info: ./images//velocidades_b1.png  used on input line 224.
-(pdftex.def)             Requested size: 325.2183pt x 155.65332pt.
-<./images//grafico3d_b1.png, id=29, 419.166pt x 308.352pt>
+Package pdftex.def Info: ./images//velocidades_b1.png  used on input line 240.
+(pdftex.def)             Requested size: 130.08897pt x 94.94872pt.
+<./images//grafico3d_b1.png, id=37, 418.56375pt x 305.34074pt>
 File: ./images//grafico3d_b1.png Graphic file (type png)
 <use ./images//grafico3d_b1.png>
-Package pdftex.def Info: ./images//grafico3d_b1.png  used on input line 231.
-(pdftex.def)             Requested size: 325.2183pt x 239.24321pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./images//trajetorias_b2.png, id=30, 1155.1155pt x 555.2745pt>
+Package pdftex.def Info: ./images//grafico3d_b1.png  used on input line 247.
+(pdftex.def)             Requested size: 130.08897pt x 94.89693pt.
+<./images//erro_b1.png, id=38, 418.56375pt x 307.1475pt>
+File: ./images//erro_b1.png Graphic file (type png)
+<use ./images//erro_b1.png>
+Package pdftex.def Info: ./images//erro_b1.png  used on input line 254.
+(pdftex.def)             Requested size: 130.08897pt x 95.45844pt.
+<./images//trajetorias_b2.png, id=39, 418.56375pt x 305.34074pt>
 File: ./images//trajetorias_b2.png Graphic file (type png)
 <use ./images//trajetorias_b2.png>
-Package pdftex.def Info: ./images//trajetorias_b2.png  used on input line 243.
-(pdftex.def)             Requested size: 325.2183pt x 156.33154pt.
-<./images//velocidades_b2.png, id=31, 1155.1155pt x 554.67226pt>
+Package pdftex.def Info: ./images//trajetorias_b2.png  used on input line 266.
+(pdftex.def)             Requested size: 130.08897pt x 94.89693pt.
+<./images//velocidades_b2.png, id=40, 419.166pt x 305.34074pt>
 File: ./images//velocidades_b2.png Graphic file (type png)
 <use ./images//velocidades_b2.png>
-Package pdftex.def Info: ./images//velocidades_b2.png  used on input line 250.
-(pdftex.def)             Requested size: 325.2183pt x 156.16199pt.
-<./images//grafico3d_b2.png, id=32, 419.166pt x 305.943pt>
+Package pdftex.def Info: ./images//velocidades_b2.png  used on input line 273.
+(pdftex.def)             Requested size: 130.08897pt x 94.76181pt.
+<./images//grafico3d_b2.png, id=41, 416.757pt x 304.7385pt>
 File: ./images//grafico3d_b2.png Graphic file (type png)
 <use ./images//grafico3d_b2.png>
-Package pdftex.def Info: ./images//grafico3d_b2.png  used on input line 257.
-(pdftex.def)             Requested size: 325.2183pt x 237.37411pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./images//trajetorias_c1.png, id=33, 1155.1155pt x 554.67226pt>
+Package pdftex.def Info: ./images//grafico3d_b2.png  used on input line 280.
+(pdftex.def)             Requested size: 130.08897pt x 95.1236pt.
+<./images//erro_b2.png, id=42, 419.76825pt x 308.352pt>
+File: ./images//erro_b2.png Graphic file (type png)
+<use ./images//erro_b2.png>
+Package pdftex.def Info: ./images//erro_b2.png  used on input line 287.
+(pdftex.def)             Requested size: 130.08897pt x 95.55989pt.
+ [3 <./images//trajetorias_a1.png> <./images//velocidades_a1.png> <./images//grafico3d_a1.png> <./images//erro_a1.png> <./images//trajetorias_a2.png> <./images//velocidades_a2.png> <./images//grafico3d_a2.png> <./images//erro_a2.png> <./images//trajetorias_b1.png> <./images//velocidades_b1.png> <./images//grafico3d_b1.png> <./images//erro_b1.png> <./images//trajetorias_b2.png> <./images//velocidades_b2.png> <./images//grafico3d_b2.png> <./images//erro_b2.png>]
+<./images//trajetorias_c1.png, id=63, 418.56375pt x 307.1475pt>
 File: ./images//trajetorias_c1.png Graphic file (type png)
 <use ./images//trajetorias_c1.png>
-Package pdftex.def Info: ./images//trajetorias_c1.png  used on input line 269.
-(pdftex.def)             Requested size: 325.2183pt x 156.16199pt.
-<./images//velocidades_c1.png, id=34, 1155.1155pt x 554.67226pt>
+Package pdftex.def Info: ./images//trajetorias_c1.png  used on input line 301.
+(pdftex.def)             Requested size: 130.08897pt x 95.45844pt.
+<./images//velocidades_c1.png, id=64, 417.35925pt x 304.13625pt>
 File: ./images//velocidades_c1.png Graphic file (type png)
 <use ./images//velocidades_c1.png>
-Package pdftex.def Info: ./images//velocidades_c1.png  used on input line 276.
-(pdftex.def)             Requested size: 325.2183pt x 156.16199pt.
-<./images//grafico3d_c1.png, id=35, 417.35925pt x 302.93175pt>
+Package pdftex.def Info: ./images//velocidades_c1.png  used on input line 308.
+(pdftex.def)             Requested size: 130.08897pt x 94.80101pt.
+<./images//grafico3d_c1.png, id=65, 419.166pt x 305.943pt>
 File: ./images//grafico3d_c1.png Graphic file (type png)
 <use ./images//grafico3d_c1.png>
-Package pdftex.def Info: ./images//grafico3d_c1.png  used on input line 283.
-(pdftex.def)             Requested size: 325.2183pt x 236.05931pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./images//trajetorias_c2.png, id=36, 1155.1155pt x 552.26324pt>
+Package pdftex.def Info: ./images//grafico3d_c1.png  used on input line 315.
+(pdftex.def)             Requested size: 130.08897pt x 94.94872pt.
+<./images//erro_c1.png, id=66, 416.757pt x 307.74976pt>
+File: ./images//erro_c1.png Graphic file (type png)
+<use ./images//erro_c1.png>
+Package pdftex.def Info: ./images//erro_c1.png  used on input line 322.
+(pdftex.def)             Requested size: 130.08897pt x 96.06355pt.
+<./images//trajetorias_c2.png, id=67, 417.35925pt x 305.34074pt>
 File: ./images//trajetorias_c2.png Graphic file (type png)
 <use ./images//trajetorias_c2.png>
-Package pdftex.def Info: ./images//trajetorias_c2.png  used on input line 295.
-(pdftex.def)             Requested size: 325.2183pt x 155.48376pt.
-<./images//velocidades_c2.png, id=37, 1155.1155pt x 554.07pt>
+Package pdftex.def Info: ./images//trajetorias_c2.png  used on input line 334.
+(pdftex.def)             Requested size: 130.08897pt x 95.17647pt.
+<./images//velocidades_c2.png, id=68, 419.166pt x 305.943pt>
 File: ./images//velocidades_c2.png Graphic file (type png)
 <use ./images//velocidades_c2.png>
-Package pdftex.def Info: ./images//velocidades_c2.png  used on input line 302.
-(pdftex.def)             Requested size: 325.2183pt x 155.99243pt.
-<./images//grafico3d_c2.png, id=38, 419.166pt x 304.7385pt>
+Package pdftex.def Info: ./images//velocidades_c2.png  used on input line 341.
+(pdftex.def)             Requested size: 130.08897pt x 94.94872pt.
+<./images//grafico3d_c2.png, id=69, 417.35925pt x 305.943pt>
 File: ./images//grafico3d_c2.png Graphic file (type png)
 <use ./images//grafico3d_c2.png>
-Package pdftex.def Info: ./images//grafico3d_c2.png  used on input line 309.
-(pdftex.def)             Requested size: 325.2183pt x 236.43958pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[2]
-
-LaTeX Warning: Text page 3 contains only floats.
-
-
-Overfull \vbox (0.76991pt too high) has occurred while \output is active []
-
- [3 <./images//trajetorias_a1.png> <./images//velocidades_a1.png> <./images//grafico3d_a1.png>]
-
-LaTeX Warning: Text page 4 contains only floats.
-
-[4 <./images//trajetorias_a2.png> <./images//velocidades_a2.png> <./images//grafico3d_a2.png>]
-
-LaTeX Warning: Text page 5 contains only floats.
-
-[5 <./images//trajetorias_b1.png> <./images//velocidades_b1.png> <./images//grafico3d_b1.png>]
-
-LaTeX Warning: Text page 6 contains only floats.
-
-[6 <./images//trajetorias_b2.png> <./images//velocidades_b2.png> <./images//grafico3d_b2.png>]
-
-LaTeX Warning: Text page 7 contains only floats.
-
-[7 <./images//trajetorias_c1.png> <./images//velocidades_c1.png> <./images//grafico3d_c1.png>]
-
-LaTeX Warning: Text page 8 contains only floats.
-
-[8 <./images//trajetorias_c2.png> <./images//velocidades_c2.png> <./images//grafico3d_c2.png>] [9] (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/base\latin1.def
+Package pdftex.def Info: ./images//grafico3d_c2.png  used on input line 348.
+(pdftex.def)             Requested size: 130.08897pt x 95.36418pt.
+<./images//erro_c2.png, id=70, 416.757pt x 305.943pt>
+File: ./images//erro_c2.png Graphic file (type png)
+<use ./images//erro_c2.png>
+Package pdftex.def Info: ./images//erro_c2.png  used on input line 355.
+(pdftex.def)             Requested size: 130.08897pt x 95.49957pt.
+ [4 <./images//trajetorias_c1.png> <./images//velocidades_c1.png> <./images//grafico3d_c1.png> <./images//erro_c1.png> <./images//trajetorias_c2.png> <./images//velocidades_c2.png> <./images//grafico3d_c2.png> <./images//erro_c2.png>] [5]
+<./images//parte2_trajetorias_1.png, id=87, 419.166pt x 311.36325pt>
+File: ./images//parte2_trajetorias_1.png Graphic file (type png)
+<use ./images//parte2_trajetorias_1.png>
+Package pdftex.def Info: ./images//parte2_trajetorias_1.png  used on input line 477.
+(pdftex.def)             Requested size: 162.60915pt x 120.78978pt.
+<./images//parte2_trajetoriaxy_1.png, id=88, 417.35925pt x 310.761pt>
+File: ./images//parte2_trajetoriaxy_1.png Graphic file (type png)
+<use ./images//parte2_trajetoriaxy_1.png>
+Package pdftex.def Info: ./images//parte2_trajetoriaxy_1.png  used on input line 484.
+(pdftex.def)             Requested size: 162.60915pt x 121.07774pt.
+<./images//parte2_trajetoriaxyz_1.png, id=89, 417.35925pt x 299.9205pt>
+File: ./images//parte2_trajetoriaxyz_1.png Graphic file (type png)
+<use ./images//parte2_trajetoriaxyz_1.png>
+Package pdftex.def Info: ./images//parte2_trajetoriaxyz_1.png  used on input line 491.
+(pdftex.def)             Requested size: 162.60915pt x 116.8541pt.
+<./images//parte2_erro_1.png, id=90, 419.76825pt x 308.352pt>
+File: ./images//parte2_erro_1.png Graphic file (type png)
+<use ./images//parte2_erro_1.png>
+Package pdftex.def Info: ./images//parte2_erro_1.png  used on input line 497.
+(pdftex.def)             Requested size: 162.60915pt x 119.44751pt.
+<./images//parte2_u_1.png, id=91, 418.56375pt x 302.3295pt>
+File: ./images//parte2_u_1.png Graphic file (type png)
+<use ./images//parte2_u_1.png>
+Package pdftex.def Info: ./images//parte2_u_1.png  used on input line 504.
+(pdftex.def)             Requested size: 162.60915pt x 117.45131pt.
+ [6 <./images//parte2_trajetorias_1.png> <./images//parte2_trajetoriaxy_1.png> <./images//parte2_trajetoriaxyz_1.png> <./images//parte2_erro_1.png> <./images//parte2_u_1.png>]
+<./images//parte2_trajetorias_2.png, id=100, 419.166pt x 310.761pt>
+File: ./images//parte2_trajetorias_2.png Graphic file (type png)
+<use ./images//parte2_trajetorias_2.png>
+Package pdftex.def Info: ./images//parte2_trajetorias_2.png  used on input line 522.
+(pdftex.def)             Requested size: 162.60915pt x 120.55615pt.
+<./images//parte2_trajetoriaxy_2.png, id=101, 419.166pt x 311.36325pt>
+File: ./images//parte2_trajetoriaxy_2.png Graphic file (type png)
+<use ./images//parte2_trajetoriaxy_2.png>
+Package pdftex.def Info: ./images//parte2_trajetoriaxy_2.png  used on input line 529.
+(pdftex.def)             Requested size: 162.60915pt x 120.78978pt.
+<./images//parte2_trajetoriaxyz_2.png, id=102, 419.166pt x 304.7385pt>
+File: ./images//parte2_trajetoriaxyz_2.png Graphic file (type png)
+<use ./images//parte2_trajetoriaxyz_2.png>
+Package pdftex.def Info: ./images//parte2_trajetoriaxyz_2.png  used on input line 536.
+(pdftex.def)             Requested size: 162.60915pt x 118.21979pt.
+<./images//parte2_erro_2.png, id=103, 417.35925pt x 308.95425pt>
+File: ./images//parte2_erro_2.png Graphic file (type png)
+<use ./images//parte2_erro_2.png>
+Package pdftex.def Info: ./images//parte2_erro_2.png  used on input line 542.
+(pdftex.def)             Requested size: 162.60915pt x 120.37381pt.
+<./images//parte2_u_2.png, id=104, 419.166pt x 307.74976pt>
+File: ./images//parte2_u_2.png Graphic file (type png)
+<use ./images//parte2_u_2.png>
+Package pdftex.def Info: ./images//parte2_u_2.png  used on input line 549.
+(pdftex.def)             Requested size: 162.60915pt x 119.38797pt.
+ [7 <./images//parte2_trajetorias_2.png> <./images//parte2_trajetoriaxy_2.png> <./images//parte2_trajetoriaxyz_2.png> <./images//parte2_erro_2.png> <./images//parte2_u_2.png>] (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/base\latin1.def
 File: latin1.def 2021/02/14 v1.3d Input encoding file
 )
-LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 341.
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 570.
  (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmtt.fd
 File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [10] [11] [12] [13] [14] (trabalho2_lsdct.aux) ) 
+) [8] [9] [10] [11] [12] (trabalho2_lsdct.aux) ) 
 Here is how much of TeX's memory you used:
- 19078 strings out of 478338
- 369877 string characters out of 2836700
- 1118985 words of memory out of 3000000
- 37164 multiletter control sequences out of 15000+600000
- 480843 words of font info for 72 fonts, out of 8000000 for 9000
+ 19262 strings out of 478338
+ 374814 string characters out of 2836700
+ 1119272 words of memory out of 3000000
+ 37331 multiletter control sequences out of 15000+600000
+ 481178 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,12n,80p,544b,2723s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt0800.pk> <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1728.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on trabalho2_lsdct.pdf (14 pages, 1231396 bytes).
+ <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt0800.pk> <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1728.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on trabalho2_lsdct.pdf (12 pages, 1218966 bytes).
 PDF statistics:
- 179 PDF objects out of 1000 (max. 8388607)
+ 214 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 108 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 188 words of extra memory for PDF output out of 10000 (max. 10000000)
 
