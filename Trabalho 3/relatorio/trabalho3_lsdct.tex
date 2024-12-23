@@ -1,0 +1,243 @@
+\documentclass[10pt]{article}
+
+% Pacotes extras necessários
+\usepackage{amsmath}
+\usepackage[lmargin=0.5in, rmargin=0.5in, tmargin=0.5in, bmargin=0.5in, includehead, includefoot]{geometry}
+\usepackage{amsfonts}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{appendix} % For creating appendix sections
+\usepackage{subcaption} % Use subcaption para legendas modernas
+
+% More defined colors
+\usepackage[dvipsnames]{xcolor}
+
+% Define a custom style for the code listing
+\lstdefinestyle{mystyle}{
+    language=Matlab,
+    inputencoding=latin1,
+    extendedchars=true,
+    backgroundcolor=\color{white},   % Choose the background color
+    basicstyle=\ttfamily\footnotesize, % Set the font and size for the code
+    numbers=left,                    % Line numbers on the left
+    numberstyle=\tiny\color{gray},   % Line numbers style
+    numbersep=5pt,                   % Distance of line numbers from the code
+    tabsize=2,                       % Set tab size (default is 8 spaces)
+    breaklines=true,                 % Automatically wrap long lines
+    keywordstyle=\color{blue},       % Keywords in blue
+    commentstyle=\color{green!60!black}, % Comments in green
+    stringstyle=\color{orange},      % Strings in orange
+    frame=single,                    % Draw a frame around the code
+    keepspaces=true,                 % Preserve spaces in text
+    showspaces=false,                % Don't show spaces in strings
+    showstringspaces=false,          % Don't show spaces in strings
+    showtabs=false,                  % Don't show tabs in strings
+    % Add any other options you need
+}
+
+\lstset{style=mystyle} % Set the custom style
+ 
+% Required package
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\graphicspath{ {./images/} }
+
+% Sets para outras partes
+\setlength{\parindent}{1cm}
+\setstretch{1.5}
+\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\sinc}{sinc}
+
+%% Facilidades
+%% -- Laplace
+\newcommand{\Lap}[1]{\mathcal{L}\left\{#1\right\}}
+
+%% -- Negrito em matemáticas
+\newcommand{\bm}[1]{\boldsymbol{#1}}
+
+
+% ------- Estilo do trabalho -------- %
+\fancypagestyle{capa}{
+    \fancyhf{}
+    \renewcommand\headrulewidth{0pt}
+}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{\thepage}
+\fancyfoot{}
+% ----------------------------------- %
+
+% Dados do Grupo
+\title{ Robótica e Automação - Trabalho Nº3}
+\author{
+    Leonardo Soares da Costa Tanaka - DRE: 121067652 \\
+    Engenharia de Controle e Automação/UFRJ \\
+    Rio de Janeiro, Brasil \\
+    Dezembro de 2024
+}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{capa}
+
+\section{Introdução}
+
+Para a resolução do trabalho, foi usado o manipulador Kinova Gen3 Ultra lightweight (www.kinovarobotics.com) da Kinova
+Inc.. A estrutura cinemática deste manipulador de 7 juntas pode ser vista na figura a seguir:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1]{kinova.png}
+    \caption{Foto e Diagrama do manipulador Kinova}
+\end{figure}
+
+Além disso, os parâmetros de Denavit-Hartenberg do manipulador são apresentados na Tabela~\ref{tab:dh_parameters}.
+Foi considerado que a orientação do sistema de coordenadas 0 com relação à base é dado por
+$R_{b0}=R_x(\pi)$ onde $R_x(\cdot)$ é uma rotação elementar ao redor do eixo x.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    \textbf{Junta} & $\alpha$ (rad) & $A$ (m) & $\theta$ (rad) & $D$ (m) & \textbf{Offset (rad)} \\ \hline
+    1 & $\pi/2$ & 0 & $\theta_1$ & $-0.2848$ & $\pi$ \\ \hline
+    2 & $\pi/2$ & 0 & $\theta_2$ & $-0.0118$ & $\pi$ \\ \hline
+    3 & $\pi/2$ & 0 & $\theta_3$ & $-0.4208$ & $\pi$ \\ \hline
+    4 & $\pi/2$ & 0 & $\theta_4$ & $-0.0128$ & $\pi$ \\ \hline
+    5 & $\pi/2$ & 0 & $\theta_5$ & $-0.3143$ & $\pi$ \\ \hline
+    6 & $\pi/2$ & 0 & $\theta_6$ & 0 & $\pi$ \\ \hline
+    7 & $\pi$ & 0 & $\theta_7$ & 0 & $\pi$ \\ \hline
+    \end{tabular}
+    \caption{Parâmetros de Denavit-Hartenberg Standard do Kinova Gen3}
+    \label{tab:dh_parameters}
+\end{table}
+
+Ademais, os parâmetros dinâmicos deste sistema robótico são dados no arquivo urdf, kinova\_gen3.urdf,
+onde podem ser obtidos os parâmetros da massa, centro de massa e momento de inércia
+de cada elo no formato urdf. Podendo ser estruturados nas Tabelas~\ref{tab:joints} e~\ref{tab:links}:
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \textbf{Joint i} & \textbf{Parent} & \textbf{Child} & \textbf{xyz} & \textbf{rpy} & \textbf{Type} & \textbf{Axis} \\ \hline
+    1 & base\_link & shoulder\_link & 0, 0, 0.15643 & 3.1416, 0, 0 & continuous & 0, 0, 1 \\ \hline
+    2 & shoulder\_link & half\_arm\_1\_link & 0, 0.005375, -0.12838 & 1.5708, 0, 0 & revolute & 0, 0, 1 \\ \hline
+    3 & half\_arm\_1\_link & half\_arm\_2\_link & 0, -0.21038, -0.006375 & -1.5708, 0, 0 & continuous & 0, 0, 1 \\ \hline
+    4 & half\_arm\_2\_link & forearm\_link & 0, 0.006375, -0.21038 & 1.5708, 0, 0 & revolute & 0, 0, 1 \\ \hline
+    5 & forearm\_link & spherical\_wrist\_1\_link & 0, -0.20843, -0.006375 & -1.5708, 0, 0 & continuous & 0, 0, 1 \\ \hline
+    6 & spherical\_wrist\_1\_link & spherical\_wrist\_2\_link & 0, 0.00017505, -0.10593 & 1.5708, 0, 0 & revolute & 0, 0, 1 \\ \hline
+    7 & spherical\_wrist\_2\_link & bracelet\_link & 0, -0.10593, -0.00017505 & -1.5708, 0, 0 & continuous & 0, 0, 1 \\ \hline
+    8 & bracelet\_link & end\_effector\_link & 0, 0, -0.061525 & 3.14159, 0, 0 & fixed & 0, 0, 0 \\ \hline
+    \end{tabular}
+    \caption{URDF das juntas do manipulador Kinova}
+    \label{tab:joints}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \textbf{Link}          & \textbf{Origem (xyz)}   & \textbf{Origem (rpy)} & \textbf{Massa (kg)} & \textbf{Inércia (ixx, iyy, izz)} \\ \hline
+    base\_link             & -0.000648 -0.000166 0.084487 & 0 0 0                 & 1.697               & 0.004622, 0.004495, 0.002079     \\ \hline
+    shoulder\_link         & -2.3E-05 -0.010364 -0.07336  & 0 0 0                 & 1.377               & 0.00457, 0.004831, 0.001409      \\ \hline
+    half\_arm\_1\_link     & -4.4E-05 -0.09958 -0.013278  & 0 0 0                 & 1.163               & 0.011088, 0.001072, 0.011255     \\ \hline
+    half\_arm\_2\_link     & -4.4E-05 -0.006641 -0.117892 & 0 0 0                 & 1.163               & 0.010932, 0.011127, 0.001043     \\ \hline
+    forearm\_link          & -1.8E-05 -0.075478 -0.015006 & 0 0 0                 & 0.93                & 0.008147, 0.000631, 0.008316     \\ \hline
+    spherical\_wrist\_1\_link & 1E-06 -0.009432 -0.063883  & 0 0 0                 & 0.678               & 0.001596, 0.001607, 0.000399     \\ \hline
+    spherical\_wrist\_2\_link & 1E-06 -0.045483 -0.00965   & 0 0 0                 & 0.678               & 0.001641, 0.00041, 0.001641      \\ \hline
+    bracelet\_link         & -9.3E-05 0.000132 -0.022905  & 0 0 0                 & 0.364               & 0.000214, 0.000223, 0.00024      \\ \hline
+    end\_effector\_link    & 0 0 0                     & 0 0 0                 & 0                   & 0, 0, 0                          \\ \hline
+    \end{tabular}
+    \caption{URDF dos elos do manipulador Kinova}
+    \label{tab:links}
+\end{table}
+
+Para este manipulador, foi projetado os seguintes controladores:
+
+\begin{enumerate}
+    \item \textbf{Controlador PD:}
+    \begin{equation}
+        \tau = K_p (\theta_d - \theta) + K_d (\dot{\theta}_d - \dot{\theta}),
+    \end{equation}
+    de forma que os polos dominantes de cada elo tenham frequência natural \(\omega_n = 10 \, \text{rad/s}\) e coeficiente de amortecimento \(\zeta = 1\).
+
+    \item \textbf{Controlador P-PI:}
+    \begin{equation}
+        \tau = K_d e_2 + K_i \int e_2 \, dt + K_a \ddot{\theta}_d,
+    \end{equation}
+    onde
+    \begin{equation}
+        e_2 = K_p (\theta_d - \theta) + (\dot{\theta}_d - \dot{\theta}),
+    \end{equation}
+    também garantindo \(\omega_n = 10 \, \text{rad/s}\) e \(\zeta = 1\).
+
+    \item \textbf{Controlador por Torque Computado + PD:}
+    \begin{equation}
+        \tau = M(\theta) u + C(\theta, \dot{\theta}) \dot{\theta} + G(\theta),
+    \end{equation}
+    com
+    \begin{equation}
+        u = K_p (\theta_d - \theta) + K_d (\dot{\theta}_d - \dot{\theta}) + \ddot{\theta}_d,
+    \end{equation}
+    assegurando \(\omega_n = 10 \, \text{rad/s}\) e \(\zeta = 1\).
+
+    \item \textbf{Controlador de Slotine e Li:}
+    \begin{equation}
+        \tau = M(\theta) \ddot{\theta}_r + C(\theta, \dot{\theta}) \dot{\theta}_r + G(\theta) - K_d \sigma,
+    \end{equation}
+    onde
+    \begin{equation}
+        \sigma = (\dot{\theta} - \dot{\theta}_d) + \Lambda (\theta - \theta_d) = \dot{\theta} - \dot{\theta}_r,
+    \end{equation}
+    garantindo desempenho similar aos itens anteriores.
+\end{enumerate}
+
+A trajetória desejada, em radianos, é dada por:
+\begin{align}
+    \theta_{1d} &= 0.5236 \cos(\omega_n t), \\
+    \theta_{2d} &= 0.2618 + 0.2618 \cos(\omega_n t), \\
+    \theta_{3d} &= \pi, \\
+    \theta_{4d} &= -2.2689 + 0.2618 \cos(1.2 \omega_n t), \\
+    \theta_{5d} &= 0.0, \\
+    \theta_{6d} &= 0.9599 + 0.2618 \cos(1.3 \omega_n t), \\
+    \theta_{7d} &= \pi/2.
+\end{align}
+
+O comportamento do sistema em malha fechada foi simulado para as condições iniciais do manipulador definidas pelos ângulos de juntas \(\theta = [0, 15, 180, -130, 0, 55, 90] \, (\text{graus})\), considerando as seguintes trajetórias desejadas:
+\begin{itemize}
+    \item Trajetória rápida com \(\omega_n = \pi\);
+    \item Trajetória lenta com \(\omega_n = \pi/2\).
+\end{itemize}
+
+Adicionalmente, foi analisado o caso em que a massa do último elo (\textit{end-effector link}) muda para \(m_l = 10 \, \text{kg}\). As simulações irão avaliar a estabilidade e o desempenho de cada controlador projetado sob essa nova condição.
+
+\section{Desenvolvimento}
+
+
+
+\section{Conclusão}
+
+Após a implementação e simulação dos controladores PD, P-PI, Torque Computado + PD e Slotine \& Li no manipulador Kinova Gen3, considerando trajetórias rápidas e lentas, e a alteração de massa do último elo,
+conclui-se que todos os controladores demonstraram desempenho estável e adequado em condições nominais,
+mas diferiram em robustez frente à alteração de massa.
+O controlador por Torque Computado + PD apresentou melhor desempenho em rastreamento de trajetórias,
+devido à compensação explícita de termos dinâmicos,
+enquanto o controlador de Slotine \& Li destacou-se pela robustez em cenários de incerteza dinâmica.
+Por outro lado, os controladores PD e P-PI apresentaram oscilações e menor precisão nas condições modificadas,
+reforçando a importância de modelos dinâmicos precisos para manipulação robótica eficiente.
+
+\newpage
+
+\section*{Apêndice}
+
+\end{document}
