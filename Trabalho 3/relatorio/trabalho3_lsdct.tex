@@ -191,7 +191,7 @@ Para este manipulador, foi projetado os seguintes controladores:
     \end{equation}
     assegurando \(\omega_n = 10 \, \text{rad/s}\) e \(\zeta = 1\).
 
-    \item \textbf{Controlador de Slotine e Li:}
+    \item \textbf{Controlador de Slotine \& Li:}
     \begin{equation}
         \tau = M(\theta) \ddot{\theta}_r + C(\theta, \dot{\theta}) \dot{\theta}_r + G(\theta) - K_d \sigma,
     \end{equation}
@@ -223,7 +223,66 @@ Adicionalmente, foi analisado o caso em que a massa do último elo (\textit{end-
 
 \section{Desenvolvimento}
 
+Esta seção propõe o projeto e análise de quatro estratégias de controle – PD, P-PI, Torque Computado com PD e Slotine \& Li – ajustadas para assegurar pólos dominantes com frequência natural \(\omega_n = 10 \, \text{rad/s}\) e coeficiente de amortecimento \(\zeta = 1\).
+As simulações consideram trajetórias rápidas (\(\omega_n = \pi\)) e lentas (\(\omega_n = \pi/2\)), além de mudanças no manipulador, como o aumento da massa do último elo para \(m_{l2} = 10 \, \text{kg}\).
+O objetivo é avaliar o desempenho e a estabilidade de cada controlador, destacando suas vantagens e limitações em diferentes cenários operacionais.
+O polinômio característico associado aos pólos dominantes desejados é dado por:
+\begin{equation}
+    p_c(s) = s^2 + 20s + 100
+\end{equation}
 
+\subsection{Controlador PD}
+
+Considera-se que \(M(\theta)\) é expressa como:
+
+\begin{equation}
+    M(\theta) = \bar{M} + \Delta M(\theta),
+\end{equation}
+em que \(\bar{M} \in \mathbb{R}^{n \times n}\) é uma matriz positiva, diagonal e constante, i.e.,
+
+\begin{equation}
+    \bar{M} = \text{diag}(\bar{m}_1, \cdots, \bar{m}_n) > 0, \quad \bar{m}_i \in \mathbb{R}.
+\end{equation}
+Dessa forma, considerando o modelo dinâmico do manipulador, tem-se:
+
+\begin{equation}
+    \tau = (\bar{M} + \Delta M(\theta)) \ddot{\theta} + C(\theta,\dot{\theta}) \dot{\theta} + G(\theta)
+\end{equation}
+Portanto, o modelo dinâmico do manipulador pode ser escrito como:
+
+\begin{equation}
+    \tau = \bar{M} \ddot{\theta} + d,
+\end{equation}
+em que: $d = \Delta M(\theta) \ddot{\theta} + C(\theta,\dot{\theta}) \dot{\theta} + G(\theta)$.
+
+Ao utilizar o controlador PD é obtido o seguinte polinômio característico do manipulador:
+\begin{equation}
+    p_c(s) = s^2 + (K_d s + K_p) \bar{M}^{-1}
+\end{equation}
+em que $K_d = 20\bar{M}$ e $K_p = 100\bar{M}$  para respeitar as especificações do projeto.
+
+\subsection{Controlador P-PI}
+
+\subsection{Controlador por Torque Computado + PD}
+
+É possível cancelar as não linearidades ao utilizar o torque computado (linearização por realimentação):
+
+\begin{equation}
+    \tau = M(\theta) [\ddot{\theta}_d + u] + C(\theta, \dot{\theta}) \dot{\theta} + G(\theta),
+\end{equation}
+obtém-se o sistema em malha fechada com o erro definido como \(\tilde{\theta} = \theta - \theta_d\):
+
+\begin{equation}
+    \ddot{\tilde{\theta}} = u.
+\end{equation}
+Ao se utilizar o controlador PD $(u = -K_p \tilde{\theta} - K_d \dot{\tilde{\theta}})$ no sistema acima, o erro do sistema é dado por:
+
+\begin{equation}
+    \ddot{\tilde{\theta}} + K_d \dot{\tilde{\theta}} + K_p \tilde{\theta} = 0.
+\end{equation}
+em que $K_d = 20$ e $K_p = 100$ para respeitar as especificações do projeto.
+
+\subsection{Controlador de Slotine \& Li}
 
 \section{Conclusão}
 

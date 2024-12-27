@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1734957877 "c:/Users/Lucas/OneDrive/Área de Trabalho/Período 24.2/Robôtica e Automação/Trabalhos/eel855/Trabalho 3/relatorio/trabalho3_lsdct.tex" "trabalho3_lsdct.pdf" "trabalho3_lsdct" 1734957878
+["pdflatex"] 1735262886 "c:/Users/Lucas/OneDrive/Área de Trabalho/Período 24.2/Robôtica e Automação/Trabalhos/eel855/Trabalho 3/relatorio/trabalho3_lsdct.tex" "trabalho3_lsdct.pdf" "trabalho3_lsdct" 1735262888
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1732065002 82705 9cc9f144eacd499bc23a611703921467 ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1683757891 11548 f0501c9ad67d0989464b2884f5d9d9d9 ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1728.pk" 1683389622 20624 b5ef9de7fe9a614af111cda132cc174a ""
@@ -38,7 +38,9 @@
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247596666 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1247596667 32762 7fee39e011c23b3589931effd97b9702 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1247596666 32716 08e384dc442464e7285e891af9f45947 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1247596667 37944 359e864bd06cde3b1cf57bb20757fb06 ""
+  "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1247596673 34694 870c211f62cb72718a00e353f14f254d ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/generic/babel/babel.sty" 1656236434 151254 6babc5fd35bcaab99970dd3ba17ef5b3 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/generic/babel/locale/pt/babel-portuguese.tex" 1656236435 336 8eaf7ae354112e82487b61928329a893 ""
@@ -150,10 +152,10 @@
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/setspace/setspace.sty" 1324294077 22913 a27d7908fc6f0385466454a966a316eb ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "c:/Users/Lucas/OneDrive/Área de Trabalho/Período 24.2/Robôtica e Automação/Trabalhos/eel855/Trabalho 3/relatorio/trabalho3_lsdct.tex" 1734957875 11107 f1cc488c6600c0b6f73ad69390eebc32 ""
+  "c:/Users/Lucas/OneDrive/Área de Trabalho/Período 24.2/Robôtica e Automação/Trabalhos/eel855/Trabalho 3/relatorio/trabalho3_lsdct.tex" 1735262885 13904 987cb9422ff628e770cbb69eb5d03e54 ""
   "images//kinova.png" 1733173058 85552 9d5535a6b66c0e89ab0f0f3eac23a850 ""
-  "trabalho3_lsdct.aux" 1734957878 1199 23229d99d50fee9c1fe6dbbf90f1e8eb "pdflatex"
-  "trabalho3_lsdct.tex" 1734957875 11107 f1cc488c6600c0b6f73ad69390eebc32 ""
+  "trabalho3_lsdct.aux" 1735262887 1666 2bdd44c2393827f4d1e4cbf55b4897bf "pdflatex"
+  "trabalho3_lsdct.tex" 1735262885 13904 987cb9422ff628e770cbb69eb5d03e54 ""
   (generated)
   "trabalho3_lsdct.aux"
   "trabalho3_lsdct.log"
