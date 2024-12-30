@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1735262886 "c:/Users/Lucas/OneDrive/Área de Trabalho/Período 24.2/Robôtica e Automação/Trabalhos/eel855/Trabalho 3/relatorio/trabalho3_lsdct.tex" "trabalho3_lsdct.pdf" "trabalho3_lsdct" 1735262888
+["pdflatex"] 1735517446 "c:/Users/Lucas/OneDrive/Área de Trabalho/Período 24.2/Robôtica e Automação/Trabalhos/eel855/Trabalho 3/relatorio/trabalho3_lsdct.tex" "trabalho3_lsdct.pdf" "trabalho3_lsdct" 1735517448
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1732065002 82705 9cc9f144eacd499bc23a611703921467 ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1683757891 11548 f0501c9ad67d0989464b2884f5d9d9d9 ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1728.pk" 1683389622 20624 b5ef9de7fe9a614af111cda132cc174a ""
@@ -16,6 +16,8 @@
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1233951854 940 228d6584342e91276bf566bcf9716b83 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx10.tfm" 1136765053 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136765053 1324 c910af8c371558dc20f2d7822f66fe64 ""
+  "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx5.tfm" 1136765053 1332 f817c21a1ba54560425663374f1b651a ""
+  "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx7.tfm" 1136765053 1336 3125ccb448c1a09074e3aa4a9832f130 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmex10.tfm" 1136765053 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmmi12.tfm" 1136765053 1524 4414a8315f39513458b80dfc63bff03a ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmmi6.tfm" 1136765053 1512 f21f83efb36853c0b70002322c1ab3ad ""
@@ -152,10 +154,10 @@
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/setspace/setspace.sty" 1324294077 22913 a27d7908fc6f0385466454a966a316eb ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "c:/Users/Lucas/OneDrive/Área de Trabalho/Período 24.2/Robôtica e Automação/Trabalhos/eel855/Trabalho 3/relatorio/trabalho3_lsdct.tex" 1735262885 13904 987cb9422ff628e770cbb69eb5d03e54 ""
+  "c:/Users/Lucas/OneDrive/Área de Trabalho/Período 24.2/Robôtica e Automação/Trabalhos/eel855/Trabalho 3/relatorio/trabalho3_lsdct.tex" 1735517445 16380 d169d993d25cc74653f321dc7fb9ab30 ""
   "images//kinova.png" 1733173058 85552 9d5535a6b66c0e89ab0f0f3eac23a850 ""
-  "trabalho3_lsdct.aux" 1735262887 1666 2bdd44c2393827f4d1e4cbf55b4897bf "pdflatex"
-  "trabalho3_lsdct.tex" 1735262885 13904 987cb9422ff628e770cbb69eb5d03e54 ""
+  "trabalho3_lsdct.aux" 1735517447 1666 a681dd5edc5be7a40744171cd7773edd "pdflatex"
+  "trabalho3_lsdct.tex" 1735517445 16380 d169d993d25cc74653f321dc7fb9ab30 ""
   (generated)
   "trabalho3_lsdct.aux"
   "trabalho3_lsdct.log"

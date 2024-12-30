@@ -162,6 +162,67 @@ de cada elo no formato urdf. Podendo ser estruturados nas Tabelas~\ref{tab:joint
     \label{tab:links}
 \end{table}
 
+
+Para saber a representação dos centros de massa nos sistemas de coordenadas do Denavit-Hartenberg que será usado para gerar o SerialLink,
+é necessário  obter as transformações homogêneas entre os sistemas de coordenadas das duas representações a partir do Denavit-Hartenberg e do URDF.
+A seguir temos as transformações homogêneas:
+
+\begin{equation}
+T_1 = \begin{bmatrix} 
+1 & 0 & 0 & 0 \\ 
+0 & 0 & -1 & 0.12837 \\ 
+0 & 1 & 0 & 0 \\ 
+0 & 0 & 0 & 1 
+\end{bmatrix}, \quad
+T_2 = \begin{bmatrix} 
+-1 & 0 & 0 & 0 \\ 
+0 & 0 & -1 & 0.006425 \\ 
+0 & -1 & 0 & -0.00001 \\ 
+0 & 0 & 0 & 1 
+\end{bmatrix}, \quad
+T_3 = \begin{bmatrix} 
+1 & 0 & 0 & 0 \\ 
+0 & 0 & -1 & 0.21041 \\ 
+0 & 1 & 0 & 0.00005 \\ 
+0 & 0 & 0 & 1 
+\end{bmatrix}, 
+\end{equation}
+
+\begin{equation}
+T_4 = \begin{bmatrix} 
+-1 & 0 & 0 & 0 \\ 
+0 & 0 & -1 & 0.006475 \\ 
+0 & -1 & 0 & 0.00003 \\ 
+0 & 0 & 0 & 1 
+\end{bmatrix}, \quad
+T_5 = \begin{bmatrix} 
+1 & 0 & 0 & 0 \\ 
+0 & 0 & -1 & 0.1059 \\ 
+0 & 1 & 0 & 0.0001 \\ 
+0 & 0 & 0 & 1 
+\end{bmatrix}, \quad
+T_6 = \begin{bmatrix} 
+-1 & 0 & 0 & 0 \\ 
+0 & 0 & -1 & -0.00007505 \\ 
+0 & -1 & 0 & -0.00003 \\ 
+0 & 0 & 0 & 1 
+\end{bmatrix},
+\end{equation}
+
+\begin{equation}
+T_7 = \begin{bmatrix} 
+1 & 0 & 0 & 0 \\ 
+0 & -1 & 0 & -0.0002501 \\ 
+0 & 0 & -1 & 0.10596 \\ 
+0 & 0 & 0 & 1 
+\end{bmatrix}.
+\end{equation}
+
+Os parâmetros dinâmicos do robô incluem massa ($L(i).m$), centro de massa ($L(i).r$) e momentos de inércia ($L(i).I$) para cada elo.
+A massa de cada elo é especificada diretamente, enquanto o centro de massa é calculado utilizando as transformações homogêneas $T_i$ aplicadas às coordenadas locais do elo, resultando em $\text{cmass}_i = T_i \cdot [x \; y \; z \; 1]^T$, com $L(i).r$ sendo os três primeiros elementos.
+Os momentos de inércia são definidos como um vetor contendo os valores em relação aos eixos principais e os produtos de inércia, usados na modelagem dinâmica.
+Além disso, a inércia dos motores é inicializada como $L(i).Jm = 0$ para todos os elos.
+
 Para este manipulador, foi projetado os seguintes controladores:
 
 \begin{enumerate}
@@ -243,6 +304,9 @@ em que \(\bar{M} \in \mathbb{R}^{n \times n}\) é uma matriz positiva, diagonal 
 \begin{equation}
     \bar{M} = \text{diag}(\bar{m}_1, \cdots, \bar{m}_n) > 0, \quad \bar{m}_i \in \mathbb{R}.
 \end{equation}
+
+Para seu cálculo, cada elemento diagonal $\bar{m}_i$ é determinado pela soma dos momentos de inércia ($L(j).I(3,3)$) e das contribuições das massas dos elos ($L(j).m$), ponderadas pela distância do centro de massa ($\|\mathbf{r}_j\|^2$) e a distância acumulada das juntas anteriores até o elo atual. A distância acumulada é calculada como o quadrado do deslocamento das juntas ($|L(j).d|^2$).
+
 Dessa forma, considerando o modelo dinâmico do manipulador, tem-se:
 
 \begin{equation}
