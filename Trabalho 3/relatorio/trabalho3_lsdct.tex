@@ -325,6 +325,74 @@ Ao utilizar o controlador PD é obtido o seguinte polinômio característico do 
 \end{equation}
 em que $K_d = 20\bar{M}$ e $K_p = 100\bar{M}$  para respeitar as especificações do projeto.
 
+A seguir temos o diagrama do controlador PD implementado no Simulink:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.55]{diagrama_pd.png}
+    \caption{Diagrama do controlador PD}
+\end{figure}
+
+Além disso, foi avaliado esse controlador para um intervalo de 10 segundos com um $\omega_n = \pi$.
+Isso foi feito observando as posições das juntas,
+o erro entre as posições das juntas e as posições das trajetórias desejadas e
+o erro entre as velocidades das juntas e as velocidades das trajetórias desejadas.
+A seguir temos os gráficos:
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{posicao_pd_pi.png}
+        \caption{Posições das juntas}
+        \label{fig:posicao_pd_pi}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{erro_pd_pi.png}
+        \caption{Erros de posições das juntas}
+        \label{fig:erro_pd_pi}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{erro_velocidade_pd_pi.png}
+        \caption{Erro de velocidades das juntas}
+        \label{fig:erro_velocidade_pd_pi}
+    \end{subfigure}%
+    \caption{Controlador PD ($\omega_n = \pi$)}
+    \label{fig:imagens_pd_pi}
+\end{figure}
+
+Isso também foi feito para $\omega_n = \pi/2$. Obtendo os seguintes resultados:
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{posicao_pd_pi2.png}
+        \caption{Posições das juntas}
+        \label{fig:posicao_pd_pi2}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{erro_pd_pi2.png}
+        \caption{Erros de posições das juntas}
+        \label{fig:erro_pd_pi2}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{erro_velocidade_pd_pi2.png}
+        \caption{Erro de velocidades das juntas}
+        \label{fig:erro_velocidade_pd_pi2}
+    \end{subfigure}%
+    \caption{Controlador PD ($\omega_n = \pi/2$)}
+    \label{fig:imagens_pd_pi2}
+\end{figure}
+
 \subsection{Controlador P-PI}
 
 \subsection{Controlador por Torque Computado + PD}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  29 DEC 2024 21:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  30 DEC 2024 11:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -526,19 +526,59 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [1
 
-{C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./images//kinova.png>] [2] [3] [4] [5] [6] [7] (trabalho3_lsdct.aux) ) 
+{C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./images//kinova.png>] [2] [3] [4]
+<./images//diagrama_pd.png, id=33, 888.31876pt x 278.2395pt>
+File: ./images//diagrama_pd.png Graphic file (type png)
+<use ./images//diagrama_pd.png>
+Package pdftex.def Info: ./images//diagrama_pd.png  used on input line 332.
+(pdftex.def)             Requested size: 488.57683pt x 153.0322pt.
+<./images//posicao_pd_pi.png, id=34, 1155.1155pt x 522.753pt>
+File: ./images//posicao_pd_pi.png Graphic file (type png)
+<use ./images//posicao_pd_pi.png>
+Package pdftex.def Info: ./images//posicao_pd_pi.png  used on input line 346.
+(pdftex.def)             Requested size: 265.59523pt x 120.19077pt.
+<./images//erro_pd_pi.png, id=35, 1155.1155pt x 522.15076pt>
+File: ./images//erro_pd_pi.png Graphic file (type png)
+<use ./images//erro_pd_pi.png>
+Package pdftex.def Info: ./images//erro_pd_pi.png  used on input line 353.
+(pdftex.def)             Requested size: 265.59523pt x 120.0523pt.
+<./images//erro_velocidade_pd_pi.png, id=36, 1155.1155pt x 522.15076pt>
+File: ./images//erro_velocidade_pd_pi.png Graphic file (type png)
+<use ./images//erro_velocidade_pd_pi.png>
+Package pdftex.def Info: ./images//erro_velocidade_pd_pi.png  used on input line 360.
+(pdftex.def)             Requested size: 265.59523pt x 120.0523pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./images//posicao_pd_pi2.png, id=37, 1155.1155pt x 522.15076pt>
+File: ./images//posicao_pd_pi2.png Graphic file (type png)
+<use ./images//posicao_pd_pi2.png>
+Package pdftex.def Info: ./images//posicao_pd_pi2.png  used on input line 374.
+(pdftex.def)             Requested size: 265.59523pt x 120.0523pt.
+<./images//erro_pd_pi2.png, id=38, 1155.1155pt x 522.15076pt>
+File: ./images//erro_pd_pi2.png Graphic file (type png)
+<use ./images//erro_pd_pi2.png>
+Package pdftex.def Info: ./images//erro_pd_pi2.png  used on input line 381.
+(pdftex.def)             Requested size: 265.59523pt x 120.0523pt.
+<./images//erro_velocidade_pd_pi2.png, id=39, 1155.1155pt x 522.15076pt>
+File: ./images//erro_velocidade_pd_pi2.png Graphic file (type png)
+<use ./images//erro_velocidade_pd_pi2.png>
+Package pdftex.def Info: ./images//erro_velocidade_pd_pi2.png  used on input line 388.
+(pdftex.def)             Requested size: 265.59523pt x 120.0523pt.
+[5 <./images//diagrama_pd.png>] [6 <./images//posicao_pd_pi.png> <./images//erro_pd_pi.png> <./images//erro_velocidade_pd_pi.png> <./images//posicao_pd_pi2.png> <./images//erro_pd_pi2.png> <./images//erro_velocidade_pd_pi2.png>] [7] [8] (trabalho3_lsdct.aux) ) 
 Here is how much of TeX's memory you used:
- 17961 strings out of 478338
- 354585 string characters out of 2836700
- 689636 words of memory out of 3000000
- 36079 multiletter control sequences out of 15000+600000
- 478762 words of font info for 64 fonts, out of 8000000 for 9000
+ 18047 strings out of 478338
+ 356953 string characters out of 2836700
+ 689754 words of memory out of 3000000
+ 36157 multiletter control sequences out of 15000+600000
+ 479061 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,12n,80p,563b,335s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1728.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on trabalho3_lsdct.pdf (7 pages, 261227 bytes).
+ 84i,12n,80p,563b,496s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1728.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on trabalho3_lsdct.pdf (8 pages, 668207 bytes).
 PDF statistics:
- 107 PDF objects out of 1000 (max. 8388607)
+ 129 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 
