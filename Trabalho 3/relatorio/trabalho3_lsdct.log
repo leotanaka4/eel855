@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  30 DEC 2024 15:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  30 DEC 2024 20:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -570,52 +570,89 @@ Package pdftex.def Info: ./images//erro_velocidade_pd_pi2.png  used on input lin
 <./images//diagrama_ppi.png, id=56, 1023.825pt x 278.2395pt>
 File: ./images//diagrama_ppi.png Graphic file (type png)
 <use ./images//diagrama_ppi.png>
-Package pdftex.def Info: ./images//diagrama_ppi.png  used on input line 416.
+Package pdftex.def Info: ./images//diagrama_ppi.png  used on input line 417.
 (pdftex.def)             Requested size: 511.91124pt x 139.1194pt.
  [7 <./images//diagrama_ppi.png>]
 <./images//posicao_ppi_pi.png, id=62, 1155.1155pt x 521.5485pt>
 File: ./images//posicao_ppi_pi.png Graphic file (type png)
 <use ./images//posicao_ppi_pi.png>
-Package pdftex.def Info: ./images//posicao_ppi_pi.png  used on input line 426.
+Package pdftex.def Info: ./images//posicao_ppi_pi.png  used on input line 433.
 (pdftex.def)             Requested size: 265.59523pt x 119.91383pt.
 <./images//erro_ppi_pi.png, id=63, 1155.1155pt x 521.5485pt>
 File: ./images//erro_ppi_pi.png Graphic file (type png)
 <use ./images//erro_ppi_pi.png>
-Package pdftex.def Info: ./images//erro_ppi_pi.png  used on input line 433.
+Package pdftex.def Info: ./images//erro_ppi_pi.png  used on input line 440.
 (pdftex.def)             Requested size: 265.59523pt x 119.91383pt.
 <./images//erro_velocidade_ppi_pi.png, id=64, 1155.1155pt x 522.15076pt>
 File: ./images//erro_velocidade_ppi_pi.png Graphic file (type png)
 <use ./images//erro_velocidade_ppi_pi.png>
-Package pdftex.def Info: ./images//erro_velocidade_ppi_pi.png  used on input line 440.
+Package pdftex.def Info: ./images//erro_velocidade_ppi_pi.png  used on input line 447.
 (pdftex.def)             Requested size: 265.59523pt x 120.0523pt.
 <./images//posicao_ppi_pi2.png, id=65, 1155.1155pt x 522.753pt>
 File: ./images//posicao_ppi_pi2.png Graphic file (type png)
 <use ./images//posicao_ppi_pi2.png>
-Package pdftex.def Info: ./images//posicao_ppi_pi2.png  used on input line 453.
+Package pdftex.def Info: ./images//posicao_ppi_pi2.png  used on input line 460.
 (pdftex.def)             Requested size: 265.59523pt x 120.19077pt.
 <./images//erro_ppi_pi2.png, id=66, 1155.1155pt x 521.5485pt>
 File: ./images//erro_ppi_pi2.png Graphic file (type png)
 <use ./images//erro_ppi_pi2.png>
-Package pdftex.def Info: ./images//erro_ppi_pi2.png  used on input line 460.
+Package pdftex.def Info: ./images//erro_ppi_pi2.png  used on input line 467.
 (pdftex.def)             Requested size: 265.59523pt x 119.91383pt.
 <./images//erro_velocidade_ppi_pi2.png, id=67, 1155.1155pt x 520.94624pt>
 File: ./images//erro_velocidade_ppi_pi2.png Graphic file (type png)
 <use ./images//erro_velocidade_ppi_pi2.png>
-Package pdftex.def Info: ./images//erro_velocidade_ppi_pi2.png  used on input line 467.
+Package pdftex.def Info: ./images//erro_velocidade_ppi_pi2.png  used on input line 474.
 (pdftex.def)             Requested size: 265.59523pt x 119.77536pt.
- [8 <./images//posicao_ppi_pi.png> <./images//erro_ppi_pi.png> <./images//erro_velocidade_ppi_pi.png> <./images//posicao_ppi_pi2.png> <./images//erro_ppi_pi2.png> <./images//erro_velocidade_ppi_pi2.png>] [9] [10] (trabalho3_lsdct.aux) ) 
+ [8 <./images//posicao_ppi_pi.png> <./images//erro_ppi_pi.png> <./images//erro_velocidade_ppi_pi.png> <./images//posicao_ppi_pi2.png> <./images//erro_ppi_pi2.png> <./images//erro_velocidade_ppi_pi2.png>]
+<./images//diagrama_torque_computado_pd.png, id=77, 1048.51724pt x 314.3745pt>
+File: ./images//diagrama_torque_computado_pd.png Graphic file (type png)
+<use ./images//diagrama_torque_computado_pd.png>
+Package pdftex.def Info: ./images//diagrama_torque_computado_pd.png  used on input line 505.
+(pdftex.def)             Requested size: 471.8284pt x 141.46721pt.
+ [9 <./images//diagrama_torque_computado_pd.png>]
+<./images//posicao_torque_computado_pd_pi.png, id=82, 1155.1155pt x 520.94624pt>
+File: ./images//posicao_torque_computado_pd_pi.png Graphic file (type png)
+<use ./images//posicao_torque_computado_pd_pi.png>
+Package pdftex.def Info: ./images//posicao_torque_computado_pd_pi.png  used on input line 521.
+(pdftex.def)             Requested size: 265.59523pt x 119.77536pt.
+<./images//erro_torque_computado_pd_pi.png, id=83, 1155.1155pt x 522.753pt>
+File: ./images//erro_torque_computado_pd_pi.png Graphic file (type png)
+<use ./images//erro_torque_computado_pd_pi.png>
+Package pdftex.def Info: ./images//erro_torque_computado_pd_pi.png  used on input line 528.
+(pdftex.def)             Requested size: 265.59523pt x 120.19077pt.
+<./images//erro_velocidade_torque_computado_pd_pi.png, id=84, 1155.1155pt x 520.94624pt>
+File: ./images//erro_velocidade_torque_computado_pd_pi.png Graphic file (type png)
+<use ./images//erro_velocidade_torque_computado_pd_pi.png>
+Package pdftex.def Info: ./images//erro_velocidade_torque_computado_pd_pi.png  used on input line 535.
+(pdftex.def)             Requested size: 265.59523pt x 119.77536pt.
+<./images//posicao_torque_computado_pd_pi2.png, id=85, 1155.1155pt x 521.5485pt>
+File: ./images//posicao_torque_computado_pd_pi2.png Graphic file (type png)
+<use ./images//posicao_torque_computado_pd_pi2.png>
+Package pdftex.def Info: ./images//posicao_torque_computado_pd_pi2.png  used on input line 549.
+(pdftex.def)             Requested size: 265.59523pt x 119.91383pt.
+<./images//erro_torque_computado_pd_pi2.png, id=86, 1155.1155pt x 522.15076pt>
+File: ./images//erro_torque_computado_pd_pi2.png Graphic file (type png)
+<use ./images//erro_torque_computado_pd_pi2.png>
+Package pdftex.def Info: ./images//erro_torque_computado_pd_pi2.png  used on input line 556.
+(pdftex.def)             Requested size: 265.59523pt x 120.0523pt.
+<./images//erro_velocidade_torque_computado_pd_pi2.png, id=87, 1155.1155pt x 520.94624pt>
+File: ./images//erro_velocidade_torque_computado_pd_pi2.png Graphic file (type png)
+<use ./images//erro_velocidade_torque_computado_pd_pi2.png>
+Package pdftex.def Info: ./images//erro_velocidade_torque_computado_pd_pi2.png  used on input line 563.
+(pdftex.def)             Requested size: 265.59523pt x 119.77536pt.
+ [10 <./images//posicao_torque_computado_pd_pi.png> <./images//erro_torque_computado_pd_pi.png> <./images//erro_velocidade_torque_computado_pd_pi.png> <./images//posicao_torque_computado_pd_pi2.png> <./images//erro_torque_computado_pd_pi2.png> <./images//erro_velocidade_torque_computado_pd_pi2.png>] [11] [12] (trabalho3_lsdct.aux) ) 
 Here is how much of TeX's memory you used:
- 18127 strings out of 478338
- 359285 string characters out of 2836700
- 689899 words of memory out of 3000000
- 36230 multiletter control sequences out of 15000+600000
+ 18204 strings out of 478338
+ 362802 string characters out of 2836700
+ 690035 words of memory out of 3000000
+ 36300 multiletter control sequences out of 15000+600000
  479061 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,12n,80p,563b,496s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1728.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on trabalho3_lsdct.pdf (10 pages, 927582 bytes).
+Output written on trabalho3_lsdct.pdf (12 pages, 1184513 bytes).
 PDF statistics:
- 149 PDF objects out of 1000 (max. 8388607)
+ 169 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 88 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 123 words of extra memory for PDF output out of 10000 (max. 10000000)
 

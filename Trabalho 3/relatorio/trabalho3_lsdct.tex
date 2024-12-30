@@ -398,11 +398,12 @@ Isso também foi feito para $\omega_n = \pi/2$. Obtendo os seguintes resultados:
 
 \subsection{Controlador P-PI}
 
-A equação característica do sistema em malha fechada é escrita como:
+A equação característica do sistema em malha fechada utilizando o controlador P-PI é escrita como:
 \begin{equation}
 p_c(s) = \bar{M}s^3 + K_d s^2 + (K_d K_p + K_i)s + K_i K_p = 0
 \end{equation}
-em que essa equação foi derivada das equações \eqref{eq:pi_ppi}, \eqref{eq:p_ppi} e \eqref{eq:dinamica_simplificada}.
+em que essa equação foi produzida das equações \eqref{eq:pi_ppi}, \eqref{eq:p_ppi} e \eqref{eq:dinamica_simplificada}.
+Ademais, foi considerado $K_a = \bar{M}$ para facilitar as contas.
 A partir disso é desejado a seguinte equação característica respeitando os parâmetros de projeto:
 \begin{equation}
     p_c(s) = \bar{M}(s^2 + 100s + 2500)(s + 10) = \bar{M}(s^3 + 110s^2 + 3500s + 25000)
@@ -416,6 +417,12 @@ A seguir temos o diagrama do controlador P-PI implementado no Simulink:
     \includegraphics[scale=0.5]{diagrama_ppi.png}
     \caption{Diagrama do controlador P-PI}
 \end{figure}
+
+Além disso, foi avaliado esse controlador para um intervalo de $2\pi$ segundos com um $\omega_n = \pi$.
+Isso foi feito observando as posições das juntas,
+o erro entre as posições das juntas e as posições das trajetórias desejadas e
+o erro entre as velocidades das juntas e as velocidades das trajetórias desejadas.
+A seguir temos os gráficos:
 
 \newpage
 
@@ -491,17 +498,87 @@ Ao se utilizar o controlador PD $(u = -K_p \tilde{\theta} - K_d \dot{\tilde{\the
 \end{equation}
 em que $K_d = 20$ e $K_p = 100$ para respeitar as especificações do projeto.
 
+A seguir temos o diagrama do controlador por Torque Computado + PD implementado no Simulink:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.45]{diagrama_torque_computado_pd.png}
+    \caption{Diagrama do controlador por Torque Computado + PD}
+\end{figure}
+
+Além disso, foi avaliado esse controlador para um intervalo de $2\pi$ segundos com um $\omega_n = \pi$.
+Isso foi feito observando as posições das juntas,
+o erro entre as posições das juntas e as posições das trajetórias desejadas e
+o erro entre as velocidades das juntas e as velocidades das trajetórias desejadas.
+A seguir temos os gráficos:
+
+\newpage
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{posicao_torque_computado_pd_pi.png}
+        \caption{Posições das juntas}
+        \label{fig:posicao_torque_computado_pd_pi}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{erro_torque_computado_pd_pi.png}
+        \caption{Erros de posições das juntas}
+        \label{fig:erro_torque_computado_pd_pi}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{erro_velocidade_torque_computado_pd_pi.png}
+        \caption{Erros de velocidades das juntas}
+        \label{fig:erro_velocidade_torque_computado_pd_pi}
+    \end{subfigure}%
+    \caption{Controlador por Torque Computado + PD ($\omega_n = \pi$)}
+    \label{fig:imagens_torque_computado_pd_pi}
+\end{figure}
+
+Isso também foi feito para $\omega_n = \pi/2$. Obtendo os seguintes resultados:
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{posicao_torque_computado_pd_pi2.png}
+        \caption{Posições das juntas}
+        \label{fig:posicao_torque_computado_pd_pi2}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{erro_torque_computado_pd_pi2.png}
+        \caption{Erros de posições das juntas}
+        \label{fig:erro_torque_computado_pd_pi2}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{erro_velocidade_torque_computado_pd_pi2.png}
+        \caption{Erros de velocidades das juntas}
+        \label{fig:erro_velocidade_torque_computado_pd_pi2}
+    \end{subfigure}%
+    \caption{Controlador por Torque Computado + PD ($\omega_n = \pi/2$)}
+    \label{fig:imagens_torque_computado_pd_pi2}
+\end{figure}
+
 \subsection{Controlador de Slotine \& Li}
 
 \section{Conclusão}
 
 Após a implementação e simulação dos controladores PD, P-PI, Torque Computado + PD e Slotine \& Li no manipulador Kinova Gen3, considerando trajetórias rápidas e lentas, e a alteração de massa do último elo,
-conclui-se que todos os controladores demonstraram desempenho estável e adequado em condições nominais,
-mas diferiram em robustez frente à alteração de massa.
-O controlador por Torque Computado + PD apresentou melhor desempenho em rastreamento de trajetórias,
-devido à compensação explícita de termos dinâmicos,
+conclui-se que quase todos os controladores demonstraram desempenho estável e adequado em condições nominais,
+mas o controlador PD não teve um desempenho adequado por não conseguir seguir as trajetórias por não ter uma parcela integradora para zerar o erro em regime permanente e diferiram em robustez frente à alteração de massa.
+Os controladores P-PI e por Torque Computado + PD apresentaram melhor desempenho em rastreamento de trajetórias,
+devido, respectivamente, à parcela integradora do controlador PI e à compensação explícita de termos dinâmicos,
 enquanto o controlador de Slotine \& Li destacou-se pela robustez em cenários de incerteza dinâmica.
-Por outro lado, os controladores PD e P-PI apresentaram oscilações e menor precisão nas condições modificadas,
+Por outro lado, o controlador PD apresentou oscilações e menor precisão nas condições modificadas,
 reforçando a importância de modelos dinâmicos precisos para manipulação robótica eficiente.
 
 \newpage
