@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1735600291 "c:/Users/Lucas/OneDrive/Área de Trabalho/Período 24.2/Robôtica e Automação/Trabalhos/eel855/Trabalho 3/relatorio/trabalho3_lsdct.tex" "trabalho3_lsdct.pdf" "trabalho3_lsdct" 1735600294
+["pdflatex"] 1735665683 "c:/Users/Lucas/OneDrive/Área de Trabalho/Período 24.2/Robôtica e Automação/Trabalhos/eel855/Trabalho 3/relatorio/trabalho3_lsdct.tex" "trabalho3_lsdct.pdf" "trabalho3_lsdct" 1735665687
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1732065002 82705 9cc9f144eacd499bc23a611703921467 ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1683757891 11548 f0501c9ad67d0989464b2884f5d9d9d9 ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1728.pk" 1683389622 20624 b5ef9de7fe9a614af111cda132cc174a ""
@@ -156,7 +156,7 @@
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/setspace/setspace.sty" 1324294077 22913 a27d7908fc6f0385466454a966a316eb ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "c:/Users/Lucas/OneDrive/Área de Trabalho/Período 24.2/Robôtica e Automação/Trabalhos/eel855/Trabalho 3/relatorio/trabalho3_lsdct.tex" 1735600290 24933 4a59614fb268a899937912e75d9a8dae ""
+  "c:/Users/Lucas/OneDrive/Área de Trabalho/Período 24.2/Robôtica e Automação/Trabalhos/eel855/Trabalho 3/relatorio/trabalho3_lsdct.tex" 1735665683 25295 43cda4d68558e07e0dd36c099af1e4a1 ""
   "images//diagrama_pd.png" 1735565605 37933 66b61ae5ea408d11bb0ae5f0f0e78849 ""
   "images//diagrama_ppi.png" 1735583221 41270 dcdb9c6c027fcf656d51a93d806dd286 ""
   "images//diagrama_torque_computado_pd.png" 1735598637 51099 9477659ab872027b15ed16511f0d3a46 ""
@@ -179,8 +179,8 @@
   "images//posicao_ppi_pi2.png" 1735583905 45307 68e62ef86439567f5cea2c0fe26abc51 ""
   "images//posicao_torque_computado_pd_pi.png" 1735598421 50618 94427fd3cf769c202f8af1df082555dc ""
   "images//posicao_torque_computado_pd_pi2.png" 1735598206 45323 1f342732421a1a01eba54d6eca402a6e ""
-  "trabalho3_lsdct.aux" 1735600294 5128 1cf200705e76cdc6051248b77310ba67 "pdflatex"
-  "trabalho3_lsdct.tex" 1735600290 24933 4a59614fb268a899937912e75d9a8dae ""
+  "trabalho3_lsdct.aux" 1735665687 5128 1cf200705e76cdc6051248b77310ba67 "pdflatex"
+  "trabalho3_lsdct.tex" 1735665683 25295 43cda4d68558e07e0dd36c099af1e4a1 ""
   (generated)
   "trabalho3_lsdct.aux"
   "trabalho3_lsdct.log"
