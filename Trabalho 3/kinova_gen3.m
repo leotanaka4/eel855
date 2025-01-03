@@ -90,7 +90,7 @@ for i = 1:7
 end
 
 % Criando o modelo dinâmico do robô Kinova Gen3
-kinova = SerialLink(L, 'name', 'Kinova Gen3', 'comment', 'AK&B');
+kinova = SerialLink(L, 'name', 'Kinova Gen3');
 
 % Definir a transformação base do robô
 Tb0 = trotx(180);
@@ -115,3 +115,38 @@ for i = 1:7
     % Preencher o elemento diagonal correspondente
     M_bar(i, i) = M_bar_i;
 end
+
+% Adição de uma massa adicional de 10kg no "end effector link"
+L_alterado = L;
+L_alterado(7).m = 10.364;
+
+% Cálculo do centro de massa alterado
+cmass_alterado = (0.364 * cmass7(1:3) + 10 * [0; 0; 0.1674]) / 10.364;
+L_alterado(7).r = cmass_alterado;
+
+% Inércia devido à massa adicional (em forma de vetor)
+inercia_massa_adicional = (0.1674 - cmass_alterado(3))^2 * 10 * [1, 1, 0, 0, 0, 0];
+
+% Inércia antiga no formato de matriz
+inercia_antiga = [0.000214, 0.000223, 0.00024, 0, -2E-06, 1E-06];
+I_A = [inercia_antiga(1), inercia_antiga(4), inercia_antiga(6); 
+       inercia_antiga(4), inercia_antiga(2), inercia_antiga(5); 
+       inercia_antiga(6), inercia_antiga(5), inercia_antiga(3)];
+
+% Vetor de deslocamento entre os centros de massa antigo e alterado
+d = cmass_alterado - cmass7(1:3);
+
+% Matriz de inércia no novo ponto (teorema dos eixos paralelos)
+I_P = I_A - 0.364 * ((d * d') - (d' * d) * eye(3) );
+
+% Conversão da matriz de inércia alterada para o formato de vetor
+inercia_massa_antiga_vec = [I_P(1,1), I_P(2,2), I_P(3,3), I_P(1,2), I_P(1,3), I_P(2,3)];
+
+% Soma da nova inércia no formato de vetor
+L_alterado(7).I = inercia_massa_adicional + inercia_massa_antiga_vec;
+
+% Criando o modelo dinâmico do robô Kinova Gen3
+kinova_alterado = SerialLink(L_alterado, 'name', 'Kinova Gen3 Alterado');
+
+% Definir a transformação base do robô
+kinova_alterado.base = Tb0;

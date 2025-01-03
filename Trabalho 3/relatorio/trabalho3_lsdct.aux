@@ -10,14 +10,14 @@
 \newlabel{tab:dh_parameters}{{1}{2}}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces URDF das juntas do manipulador Kinova\relax }}{2}{}\protected@file@percent }
 \newlabel{tab:joints}{{2}{2}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces URDF dos elos do manipulador Kinova\relax }}{2}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces URDF dos elos do manipulador Kinova com rpy="0 0 0" para todos os elos\relax }}{2}{}\protected@file@percent }
 \newlabel{tab:links}{{3}{2}}
 \newlabel{eq:pi_ppi}{{5}{3}}
 \newlabel{eq:p_ppi}{{6}{3}}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Desenvolvimento}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Controlador PD}{4}{}\protected@file@percent }
-\newlabel{eq:dinamica_simplificada}{{22}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Diagrama do controlador PD\relax }}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Desenvolvimento}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Controlador PD}{5}{}\protected@file@percent }
+\newlabel{eq:dinamica_simplificada}{{25}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Diagrama do controlador PD\relax }}{6}{}\protected@file@percent }
 \newlabel{fig:posicao_pd_pi}{{3a}{6}}
 \newlabel{sub@fig:posicao_pd_pi}{{a}{6}}
 \newlabel{fig:erro_pd_pi}{{3b}{6}}
@@ -26,50 +26,133 @@
 \newlabel{sub@fig:erro_velocidade_pd_pi}{{c}{6}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Controlador PD ($\omega _n = \pi $)\relax }}{6}{}\protected@file@percent }
 \newlabel{fig:imagens_pd_pi}{{3}{6}}
-\newlabel{fig:posicao_pd_pi2}{{4a}{6}}
-\newlabel{sub@fig:posicao_pd_pi2}{{a}{6}}
-\newlabel{fig:erro_pd_pi2}{{4b}{6}}
-\newlabel{sub@fig:erro_pd_pi2}{{b}{6}}
-\newlabel{fig:erro_velocidade_pd_pi2}{{4c}{6}}
-\newlabel{sub@fig:erro_velocidade_pd_pi2}{{c}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Controlador PD ($\omega _n = \pi /2$)\relax }}{6}{}\protected@file@percent }
-\newlabel{fig:imagens_pd_pi2}{{4}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Controlador P-PI}{7}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Diagrama do controlador P-PI\relax }}{7}{}\protected@file@percent }
-\newlabel{fig:posicao_ppi_pi}{{6a}{8}}
-\newlabel{sub@fig:posicao_ppi_pi}{{a}{8}}
-\newlabel{fig:erro_ppi_pi}{{6b}{8}}
-\newlabel{sub@fig:erro_ppi_pi}{{b}{8}}
-\newlabel{fig:erro_velocidade_ppi_pi}{{6c}{8}}
-\newlabel{sub@fig:erro_velocidade_ppi_pi}{{c}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Controlador P-PI ($\omega _n = \pi $)\relax }}{8}{}\protected@file@percent }
-\newlabel{fig:imagens_ppi_pi}{{6}{8}}
-\newlabel{fig:posicao_ppi_pi2}{{7a}{8}}
-\newlabel{sub@fig:posicao_ppi_pi2}{{a}{8}}
-\newlabel{fig:erro_ppi_pi2}{{7b}{8}}
-\newlabel{sub@fig:erro_ppi_pi2}{{b}{8}}
-\newlabel{fig:erro_velocidade_ppi_pi2}{{7c}{8}}
-\newlabel{sub@fig:erro_velocidade_ppi_pi2}{{c}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Controlador P-PI ($\omega _n = \pi /2$)\relax }}{8}{}\protected@file@percent }
-\newlabel{fig:imagens_ppi_pi2}{{7}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Controlador por Torque Computado + PD}{9}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Diagrama do controlador por Torque Computado + PD\relax }}{9}{}\protected@file@percent }
-\newlabel{fig:posicao_torque_computado_pd_pi}{{9a}{10}}
-\newlabel{sub@fig:posicao_torque_computado_pd_pi}{{a}{10}}
-\newlabel{fig:erro_torque_computado_pd_pi}{{9b}{10}}
-\newlabel{sub@fig:erro_torque_computado_pd_pi}{{b}{10}}
-\newlabel{fig:erro_velocidade_torque_computado_pd_pi}{{9c}{10}}
-\newlabel{sub@fig:erro_velocidade_torque_computado_pd_pi}{{c}{10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Controlador por Torque Computado + PD ($\omega _n = \pi $)\relax }}{10}{}\protected@file@percent }
-\newlabel{fig:imagens_torque_computado_pd_pi}{{9}{10}}
-\newlabel{fig:posicao_torque_computado_pd_pi2}{{10a}{10}}
-\newlabel{sub@fig:posicao_torque_computado_pd_pi2}{{a}{10}}
-\newlabel{fig:erro_torque_computado_pd_pi2}{{10b}{10}}
-\newlabel{sub@fig:erro_torque_computado_pd_pi2}{{b}{10}}
-\newlabel{fig:erro_velocidade_torque_computado_pd_pi2}{{10c}{10}}
-\newlabel{sub@fig:erro_velocidade_torque_computado_pd_pi2}{{c}{10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Controlador por Torque Computado + PD ($\omega _n = \pi /2$)\relax }}{10}{}\protected@file@percent }
-\newlabel{fig:imagens_torque_computado_pd_pi2}{{10}{10}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Controlador de Slotine \& Li}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3}Conclusão}{11}{}\protected@file@percent }
-\gdef \@abspage@last{12}
+\newlabel{fig:posicao_pd_pi2}{{4a}{7}}
+\newlabel{sub@fig:posicao_pd_pi2}{{a}{7}}
+\newlabel{fig:erro_pd_pi2}{{4b}{7}}
+\newlabel{sub@fig:erro_pd_pi2}{{b}{7}}
+\newlabel{fig:erro_velocidade_pd_pi2}{{4c}{7}}
+\newlabel{sub@fig:erro_velocidade_pd_pi2}{{c}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Controlador PD ($\omega _n = \pi /2$)\relax }}{7}{}\protected@file@percent }
+\newlabel{fig:imagens_pd_pi2}{{4}{7}}
+\newlabel{fig:posicao_pd_pi_m}{{5a}{7}}
+\newlabel{sub@fig:posicao_pd_pi_m}{{a}{7}}
+\newlabel{fig:erro_pd_pi_m}{{5b}{7}}
+\newlabel{sub@fig:erro_pd_pi_m}{{b}{7}}
+\newlabel{fig:erro_velocidade_pd_pi_m}{{5c}{7}}
+\newlabel{sub@fig:erro_velocidade_pd_pi_m}{{c}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Controlador PD com massa adicional ($\omega _n = \pi $)\relax }}{7}{}\protected@file@percent }
+\newlabel{fig:imagens_pd_pi_m}{{5}{7}}
+\newlabel{fig:posicao_pd_pi2_m}{{6a}{8}}
+\newlabel{sub@fig:posicao_pd_pi2_m}{{a}{8}}
+\newlabel{fig:erro_pd_pi2_m}{{6b}{8}}
+\newlabel{sub@fig:erro_pd_pi2_m}{{b}{8}}
+\newlabel{fig:erro_velocidade_pd_pi2_m}{{6c}{8}}
+\newlabel{sub@fig:erro_velocidade_pd_pi2_m}{{c}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Controlador PD com massa adicional ($\omega _n = \pi /2$)\relax }}{8}{}\protected@file@percent }
+\newlabel{fig:imagens_pd_pi2_m}{{6}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Controlador P-PI}{8}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Diagrama do controlador P-PI\relax }}{9}{}\protected@file@percent }
+\newlabel{fig:posicao_ppi_pi}{{8a}{9}}
+\newlabel{sub@fig:posicao_ppi_pi}{{a}{9}}
+\newlabel{fig:erro_ppi_pi}{{8b}{9}}
+\newlabel{sub@fig:erro_ppi_pi}{{b}{9}}
+\newlabel{fig:erro_velocidade_ppi_pi}{{8c}{9}}
+\newlabel{sub@fig:erro_velocidade_ppi_pi}{{c}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Controlador P-PI ($\omega _n = \pi $)\relax }}{9}{}\protected@file@percent }
+\newlabel{fig:imagens_ppi_pi}{{8}{9}}
+\newlabel{fig:posicao_ppi_pi2}{{9a}{10}}
+\newlabel{sub@fig:posicao_ppi_pi2}{{a}{10}}
+\newlabel{fig:erro_ppi_pi2}{{9b}{10}}
+\newlabel{sub@fig:erro_ppi_pi2}{{b}{10}}
+\newlabel{fig:erro_velocidade_ppi_pi2}{{9c}{10}}
+\newlabel{sub@fig:erro_velocidade_ppi_pi2}{{c}{10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Controlador P-PI ($\omega _n = \pi /2$)\relax }}{10}{}\protected@file@percent }
+\newlabel{fig:imagens_ppi_pi2}{{9}{10}}
+\newlabel{fig:posicao_ppi_pi_m}{{10a}{10}}
+\newlabel{sub@fig:posicao_ppi_pi_m}{{a}{10}}
+\newlabel{fig:erro_ppi_pi_m}{{10b}{10}}
+\newlabel{sub@fig:erro_ppi_pi_m}{{b}{10}}
+\newlabel{fig:erro_velocidade_ppi_pi_m}{{10c}{10}}
+\newlabel{sub@fig:erro_velocidade_ppi_pi_m}{{c}{10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Controlador P-PI com massa adicional ($\omega _n = \pi $)\relax }}{10}{}\protected@file@percent }
+\newlabel{fig:imagens_ppi_pi_m}{{10}{10}}
+\newlabel{fig:posicao_ppi_pi2_m}{{11a}{11}}
+\newlabel{sub@fig:posicao_ppi_pi2_m}{{a}{11}}
+\newlabel{fig:erro_ppi_pi2_m}{{11b}{11}}
+\newlabel{sub@fig:erro_ppi_pi2_m}{{b}{11}}
+\newlabel{fig:erro_velocidade_ppi_pi2_m}{{11c}{11}}
+\newlabel{sub@fig:erro_velocidade_ppi_pi2_m}{{c}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Controlador P-PI com massa adicional ($\omega _n = \pi /2$)\relax }}{11}{}\protected@file@percent }
+\newlabel{fig:imagens_ppi_pi2_m}{{11}{11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Controlador por Torque Computado + PD}{11}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Diagrama do controlador por Torque Computado + PD\relax }}{12}{}\protected@file@percent }
+\newlabel{fig:posicao_torque_computado_pd_pi}{{13a}{12}}
+\newlabel{sub@fig:posicao_torque_computado_pd_pi}{{a}{12}}
+\newlabel{fig:erro_torque_computado_pd_pi}{{13b}{12}}
+\newlabel{sub@fig:erro_torque_computado_pd_pi}{{b}{12}}
+\newlabel{fig:erro_velocidade_torque_computado_pd_pi}{{13c}{12}}
+\newlabel{sub@fig:erro_velocidade_torque_computado_pd_pi}{{c}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Controlador por Torque Computado + PD ($\omega _n = \pi $)\relax }}{12}{}\protected@file@percent }
+\newlabel{fig:imagens_torque_computado_pd_pi}{{13}{12}}
+\newlabel{fig:posicao_torque_computado_pd_pi2}{{14a}{13}}
+\newlabel{sub@fig:posicao_torque_computado_pd_pi2}{{a}{13}}
+\newlabel{fig:erro_torque_computado_pd_pi2}{{14b}{13}}
+\newlabel{sub@fig:erro_torque_computado_pd_pi2}{{b}{13}}
+\newlabel{fig:erro_velocidade_torque_computado_pd_pi2}{{14c}{13}}
+\newlabel{sub@fig:erro_velocidade_torque_computado_pd_pi2}{{c}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Controlador por Torque Computado + PD ($\omega _n = \pi /2$)\relax }}{13}{}\protected@file@percent }
+\newlabel{fig:imagens_torque_computado_pd_pi2}{{14}{13}}
+\newlabel{fig:posicao_torque_computado_pd_pi_m}{{15a}{13}}
+\newlabel{sub@fig:posicao_torque_computado_pd_pi_m}{{a}{13}}
+\newlabel{fig:erro_torque_computado_pd_pi_m}{{15b}{13}}
+\newlabel{sub@fig:erro_torque_computado_pd_pi_m}{{b}{13}}
+\newlabel{fig:erro_velocidade_torque_computado_pd_pi_m}{{15c}{13}}
+\newlabel{sub@fig:erro_velocidade_torque_computado_pd_pi_m}{{c}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Controlador por Torque Computado + PD ($\omega _n = \pi $)\relax }}{13}{}\protected@file@percent }
+\newlabel{fig:imagens_torque_computado_pd_pi_m}{{15}{13}}
+\newlabel{fig:posicao_torque_computado_pd_pi2_m}{{16a}{14}}
+\newlabel{sub@fig:posicao_torque_computado_pd_pi2_m}{{a}{14}}
+\newlabel{fig:erro_torque_computado_pd_pi2_m}{{16b}{14}}
+\newlabel{sub@fig:erro_torque_computado_pd_pi2_m}{{b}{14}}
+\newlabel{fig:erro_velocidade_torque_computado_pd_pi2_m}{{16c}{14}}
+\newlabel{sub@fig:erro_velocidade_torque_computado_pd_pi2_m}{{c}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Controlador por Torque Computado + PD ($\omega _n = \pi /2$)\relax }}{14}{}\protected@file@percent }
+\newlabel{fig:imagens_torque_computado_pd_pi2_m}{{16}{14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Controlador de Slotine \& Li}{14}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Diagrama do controlador de Slotine \& Li\relax }}{14}{}\protected@file@percent }
+\newlabel{fig:posicao_slotine_li_pi}{{18a}{15}}
+\newlabel{sub@fig:posicao_slotine_li_pi}{{a}{15}}
+\newlabel{fig:erro_slotine_li_pi}{{18b}{15}}
+\newlabel{sub@fig:erro_slotine_li_pi}{{b}{15}}
+\newlabel{fig:erro_velocidade_slotine_li_pi}{{18c}{15}}
+\newlabel{sub@fig:erro_velocidade_slotine_li_pi}{{c}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Controlador por Slotine \& Li ($\omega _n = \pi $)\relax }}{15}{}\protected@file@percent }
+\newlabel{fig:imagens_slotine_li_pi}{{18}{15}}
+\newlabel{fig:posicao_slotine_li_pi2}{{19a}{15}}
+\newlabel{sub@fig:posicao_slotine_li_pi2}{{a}{15}}
+\newlabel{fig:erro_slotine_li_pi2}{{19b}{15}}
+\newlabel{sub@fig:erro_slotine_li_pi2}{{b}{15}}
+\newlabel{fig:erro_velocidade_slotine_li_pi2}{{19c}{15}}
+\newlabel{sub@fig:erro_velocidade_slotine_li_pi2}{{c}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Controlador por Slotine \& Li ($\omega _n = \pi /2$)\relax }}{15}{}\protected@file@percent }
+\newlabel{fig:imagens_slotine_li_pi2}{{19}{15}}
+\newlabel{fig:posicao_slotine_li_pi_m}{{20a}{16}}
+\newlabel{sub@fig:posicao_slotine_li_pi_m}{{a}{16}}
+\newlabel{fig:erro_slotine_li_pi_m}{{20b}{16}}
+\newlabel{sub@fig:erro_slotine_li_pi_m}{{b}{16}}
+\newlabel{fig:erro_velocidade_slotine_li_pi_m}{{20c}{16}}
+\newlabel{sub@fig:erro_velocidade_slotine_li_pi_m}{{c}{16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Controlador por Slotine \& Li ($\omega _n = \pi $)\relax }}{16}{}\protected@file@percent }
+\newlabel{fig:imagens_slotine_li_pi_m}{{20}{16}}
+\newlabel{fig:posicao_slotine_li_pi2_m}{{21a}{16}}
+\newlabel{sub@fig:posicao_slotine_li_pi2_m}{{a}{16}}
+\newlabel{fig:erro_slotine_li_pi2_m}{{21b}{16}}
+\newlabel{sub@fig:erro_slotine_li_pi2_m}{{b}{16}}
+\newlabel{fig:erro_velocidade_slotine_li_pi2_m}{{21c}{16}}
+\newlabel{sub@fig:erro_velocidade_slotine_li_pi2_m}{{c}{16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Controlador por Slotine \& Li ($\omega _n = \pi /2$)\relax }}{16}{}\protected@file@percent }
+\newlabel{fig:imagens_slotine_li_pi2_m}{{21}{16}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Conclusão}{17}{}\protected@file@percent }
+\newlabel{code:codigo}{{1}{18}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}{\ignorespaces Código principal do trabalho}}{18}{}\protected@file@percent }
+\gdef \@abspage@last{21}
