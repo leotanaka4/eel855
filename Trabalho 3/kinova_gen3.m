@@ -116,8 +116,55 @@ for i = 1:7
     M_bar(i, i) = M_bar_i;
 end
 
+clear L_alterado
+
+% Definição dos parâmetros DH para cada elo do robô
+%            theta    d(m)     a    alpha type offset
+L_alterado(1) = Link([  0      -0.2848  0      pi/2  0   0], 'standard');
+L_alterado(2) = Link([  0      -0.0118  0      pi/2  0   pi], 'standard');
+L_alterado(3) = Link([  0      -0.4208  0      pi/2  0   pi], 'standard');
+L_alterado(4) = Link([  0      -0.0128  0      pi/2  0   pi], 'standard');
+L_alterado(5) = Link([  0      -0.3143  0      pi/2  0   pi], 'standard');
+L_alterado(6) = Link([  0      0        0      pi/2  0   pi], 'standard');
+L_alterado(7) = Link([  0      0        0      pi    0   pi], 'standard');
+
+% Massa, centro de massa e inércia para cada elo
+L_alterado(1).m = 1.377; % Massa do shoulder_link
+cmass1 = T1.T*[-2.3E-05; -0.010364; -0.07336; 1];
+L_alterado(1).r = cmass1(1:3); % Centro de massa
+L_alterado(1).I = [0.00457, 0.004831, 0.001409, 1E-06, 0.000448, 2E-06]; % Inércia
+
+L_alterado(2).m = 1.163; % Massa do half_arm_1_link
+cmass2 = T2.T*[-4.4E-05; -0.09958; -0.013278; 1];
+L_alterado(2).r = cmass2(1:3);
+L_alterado(2).I = [0.011088, 0.001072, 0.011255, 5E-06, -0.000691, 0];
+
+L_alterado(3).m = 1.163; % Massa do half_arm_2_link
+cmass3 = T3.T*[-4.4E-05; -0.006641; -0.117892; 1];
+L_alterado(3).r = cmass3(1:3);
+L_alterado(3).I = [0.010932, 0.011127, 0.001043, 0, 0.000606, -7E-06];
+
+L_alterado(4).m = 0.93; % Massa do forearm_link
+cmass4 = T4.T*[-1.8E-05; -0.075478; -0.015006; 1];
+L_alterado(4).r = cmass4(1:3);
+L_alterado(4).I = [0.008147, 0.000631, 0.008316, -1E-06, -0.0005, 0];
+
+L_alterado(5).m = 0.678; % Massa do spherical_wrist_1_link
+cmass5 = T5.T*[1E-06; -0.009432; -0.063883; 1];
+L_alterado(5).r = cmass5(1:3);
+L_alterado(5).I = [0.001596, 0.001607, 0.000399, 0, 0.000256, 0];
+
+L_alterado(6).m = 0.678; % Massa do spherical_wrist_2_link
+cmass6 = T6.T*[1E-06; -0.045483; -0.00965; 1];
+L_alterado(6).r = cmass6(1:3);
+L_alterado(6).I = [0.001641, 0.00041, 0.001641, 0, -2E-06, 0];
+
+% Inicializar a inércia do motor para todas as juntas como zero
+for i = 1:7
+    L_alterado(i).Jm = 0;
+end
+
 % Adição de uma massa adicional de 10kg no "end effector link"
-L_alterado = L;
 L_alterado(7).m = 10.364;
 
 % Cálculo do centro de massa alterado
@@ -140,7 +187,7 @@ d = cmass_alterado - cmass7(1:3);
 I_P = I_A - 0.364 * ((d * d') - (d' * d) * eye(3) );
 
 % Conversão da matriz de inércia alterada para o formato de vetor
-inercia_massa_antiga_vec = [I_P(1,1), I_P(2,2), I_P(3,3), I_P(1,2), I_P(1,3), I_P(2,3)];
+inercia_massa_antiga_vec = [I_P(1,1), I_P(2,2), I_P(3,3), I_P(1,2), I_P(2,3), I_P(1,3)];
 
 % Soma da nova inércia no formato de vetor
 L_alterado(7).I = inercia_massa_adicional + inercia_massa_antiga_vec;
